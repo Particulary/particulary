@@ -35,8 +35,8 @@ form {
     padding: 0;
     &.input-has-focus {
       .item-inner {
-        border-bottom-color: color($colors, orange) !important;
-        caret-color: color($colors, orange);
+        border-bottom-color: color($colors, primary) !important;
+        caret-color: color($colors, primary);
       }
     }
     &.input-has-focus, &.input-has-value {

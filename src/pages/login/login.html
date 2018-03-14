@@ -1,0 +1,45 @@
+<ion-content padding>
+
+  <div class="content-align-wrapper">
+    <div class="content-align">
+
+      <img src="assets/imgs/logo.png" class="gsad-icon"/>
+
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+        <div class="email-input">
+          <ion-item>
+            <ion-input type="email" formControlName="email" (ionblur)="validateEmail()"></ion-input>
+            <ion-label>Correo electrónico</ion-label>
+          </ion-item>
+          <p class="error-message">Formato de correo no válido</p>
+        </div>
+
+        <div class="password-input">
+          <ion-item>
+            <ion-input [type]="show ? 'text' : 'password'" formControlName="password"></ion-input>
+            <ion-label>Contraseña</ion-label>
+          </ion-item>
+          <p class="error-message">Mínimo 6 caracteres</p>
+          <a (click)="togglePassword()">{{ show ? 'ocultar' : 'mostrar' }}</a>
+        </div>
+
+        <div class="remember-input">
+          <ion-item text-right>
+            <ion-label>Mantener sesión iniciada</ion-label>
+            <ion-checkbox formControlName="session" color="particulary_orange"></ion-checkbox>
+          </ion-item>
+        </div>
+
+        <div class="forgot-password-wrapper">
+          <a class="forgot-password" (click)="forgotPassword()">¿Has olvidado tu contraseña?</a>
+        </div>
+
+        <button class="enter" ion-button type="submit" [disabled]="!loginForm.valid">Entrar</button>
+        <a class="register" (click)="register()">Registrate</a>
+
+      </form>
+    </div>
+  </div>
+
+</ion-content>

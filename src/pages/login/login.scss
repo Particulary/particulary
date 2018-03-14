@@ -1,0 +1,70 @@
+page-login {
+  .content-align-wrapper {
+    height: 100%;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    .content-align {
+      margin: auto;
+      text-align: center;
+      padding: 0 39px;
+      width: 100%;
+      img {
+        width: 70px;
+        margin-bottom: 40px;
+      }
+
+      .email-input {
+        margin-bottom: 36px;
+        position: relative;
+      }
+      .password-input {
+        position: relative;
+        a {
+          position: absolute;
+          bottom: 13px;
+          right: 0;
+          font-size: 16px;
+          color: rgba(0, 0, 0, 0.38);
+        }
+      }
+      .forgot-password-wrapper {
+        text-align: left;
+        margin-top: 70px;
+        .forgot-password {
+          font-size: 14px;
+          line-height: 1.14;
+          background: none;
+          color: rgba(0, 0, 0, 0.38);
+        }
+      }
+      .remember-input {
+        .item .item-inner {
+          border: none !important;
+        }
+
+        ion-checkbox.checkbox {
+          margin: 17px 18px 0 0;
+        }
+      }
+      button.enter {
+        margin-top: 30px;
+        height: 36px;
+        width: 100%;
+        background-color: color($colors, primary);
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+      a.register {
+        display: block;
+        margin-top: 40px;
+        width: 100%;
+        color: color($colors, primary);
+        background: none;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+}

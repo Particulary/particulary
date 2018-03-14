@@ -20,4 +20,10 @@ export class TeacherProvider {
     });
   }
 
+  experiences() {
+    return this.api.get('teacher/experience').then(data => {
+      return data;
+    });
+  }
+
 }

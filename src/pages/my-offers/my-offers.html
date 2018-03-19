@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Offers</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let offer of offers">
+      <h2>Nombre: {{offer.name}}</h2>
+      <h2>Lugar: {{offer.location}}</h2>
+      <h2>Precio: {{offer.price}}</h2>
+      <h2>Fecha inicio: {{offer.start_date}}</h2>
+      <h2>Fecha fin: {{offer.end_date}}</h2>
+      <a (click)="editOffer(offer)">Editar</a>
+      <a (click)="deleteOffer(offer)">Eliminar</a>
+    </ion-item>
+  </ion-list>
+  <button ion-button full (click)="addOffer()">Añadir oferta</button>
+
+</ion-content>

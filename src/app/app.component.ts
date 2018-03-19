@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { LoginPage } from "../pages/login/login";
 import {HomePage} from "../pages/home/home";
+import {MyOffersPage} from "../pages/my-offers/my-offers";
 
 @Component({
   templateUrl: 'app.html'
@@ -17,8 +18,6 @@ export class MyApp {
 
   constructor(public platform: Platform, public statusBar: StatusBar, public events: Events, public menuCtrl: MenuController) {
     this.initializeApp();
-
-    // used for an example of ngFor and navigation
 
     this.pages = [
       { title: 'Ayuda', component: LoginPage, icon: 'help-buoy' },

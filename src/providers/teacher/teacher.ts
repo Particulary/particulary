@@ -32,4 +32,22 @@ export class TeacherProvider {
     });
   }
 
+  addOffer(offer) {
+    return this.api.get('teacher/offer/create', offer).then(data => {
+      return data;
+    });
+  }
+
+  editOffer(offer, offer_id) {
+    return this.api.get('teacher/offer/edit/' + offer_id, offer).then(data => {
+      return data;
+    });
+  }
+
+  deleteOffer(offer_id) {
+    return this.api.get('teacher/offer/delete/' + offer_id).then(data => {
+      return data;
+    });
+  }
+
 }

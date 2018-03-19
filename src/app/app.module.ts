@@ -17,6 +17,7 @@ import { TokenInterceptor } from '../providers/teacher/TokenInterceptor';
 import { DaysTillTodayPipe } from '../pipes/days-till-today/days-till-today';
 import { ParseDatePipe } from "../pipes/parse-date/parse-date";
 import { LoginProvider } from "../providers/login/login";
+import {MyOffersPage} from "../pages/my-offers/my-offers";
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { LoginProvider } from "../providers/login/login";
     MyApp,
     HomePage,
     LoginPage,
+    MyOffersPage,
 
     // Pipes
     DaysTillTodayPipe,
@@ -40,6 +42,7 @@ import { LoginProvider } from "../providers/login/login";
     MyApp,
     HomePage,
     LoginPage,
+    MyOffersPage,
 
   ],
   providers: [

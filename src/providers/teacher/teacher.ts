@@ -26,4 +26,10 @@ export class TeacherProvider {
     });
   }
 
+  myOffers() {
+    return this.api.get('teacher/offer').then(data => {
+      return data;
+    });
+  }
+
 }

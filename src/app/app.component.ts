@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import {Nav, Platform, Events, MenuController} from 'ionic-angular';
+import {Nav, Platform, Events, MenuController, NavController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { LoginPage } from "../pages/login/login";
@@ -21,14 +21,18 @@ export class MyApp {
 
     this.pages = [
       { title: 'Ayuda', component: LoginPage, icon: 'help-buoy' },
+      { title: 'Mis Ofertas', component: MyOffersPage, icon: 'help-buoy' },
     ];
 
   }
 
   initializeApp() {
-
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
     });
+  }
+
+  goToPage(page) {
+    this.nav.setRoot(page.component);
   }
 }

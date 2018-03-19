@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import {Events, NavController, NavParams} from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { TeacherProvider } from "../../providers/teacher/teacher";
 import { CreateOfferPage } from "../create-offer/create-offer";
-import {EditOfferPage} from "../edit-offer/edit-offer";
+import { EditOfferPage } from "../edit-offer/edit-offer";
 
 
 @Component({

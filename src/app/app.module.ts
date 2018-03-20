@@ -17,6 +17,8 @@ import { TokenInterceptor } from '../providers/teacher/TokenInterceptor';
 import { DaysTillTodayPipe } from '../pipes/days-till-today/days-till-today';
 import { ParseDatePipe } from "../pipes/parse-date/parse-date";
 import { LoginProvider } from "../providers/login/login";
+import {EditAlumPage} from "../pages/edit-alum/edit-alum";
+import {AlumProvider} from "../providers/alum/alum";
 
 
 @NgModule({
@@ -24,6 +26,7 @@ import { LoginProvider } from "../providers/login/login";
     MyApp,
     HomePage,
     LoginPage,
+    EditAlumPage,
 
     // Pipes
     DaysTillTodayPipe,
@@ -40,12 +43,14 @@ import { LoginProvider } from "../providers/login/login";
     MyApp,
     HomePage,
     LoginPage,
+    EditAlumPage,
 
   ],
   providers: [
     StatusBar,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     TeacherProvider,
+    AlumProvider,
     LoginProvider,
     ApiProvider,
     {

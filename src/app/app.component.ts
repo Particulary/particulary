@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { LoginPage } from "../pages/login/login";
 import {HomePage} from "../pages/home/home";
+import {EditAlumPage} from "../pages/edit-alum/edit-alum";
 
 @Component({
   templateUrl: 'app.html'
@@ -11,7 +12,7 @@ import {HomePage} from "../pages/home/home";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = EditAlumPage;
 
   pages: Array<{ title: string, component: any, tabIndex?: number, icon?: string}>;
 

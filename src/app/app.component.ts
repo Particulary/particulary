@@ -1,9 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
-import {Nav, Platform, Events, MenuController} from 'ionic-angular';
+import {Nav, Platform, Events, MenuController, NavController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { LoginPage } from "../pages/login/login";
 import {HomePage} from "../pages/home/home";
+import {MyOffersPage} from "../pages/my-offers/my-offers";
 
 @Component({
   templateUrl: 'app.html'
@@ -18,22 +19,20 @@ export class MyApp {
   constructor(public platform: Platform, public statusBar: StatusBar, public events: Events, public menuCtrl: MenuController) {
     this.initializeApp();
 
-    // used for an example of ngFor and navigation
-
     this.pages = [
       { title: 'Ayuda', component: LoginPage, icon: 'help-buoy' },
+      { title: 'Mis Ofertas', component: MyOffersPage, icon: 'help-buoy' },
     ];
 
   }
 
   initializeApp() {
-
     this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
-      this.menuCtrl.enable(false, 'leftMenu');
-
     });
+  }
+
+  goToPage(page) {
+    this.nav.setRoot(page.component);
   }
 }

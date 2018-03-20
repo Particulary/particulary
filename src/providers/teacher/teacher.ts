@@ -50,4 +50,11 @@ export class TeacherProvider {
     });
   }
 
+  editTeacher(teacher) {
+    return this.api.get('teacher/edit/' + teacher).then(data => {
+      return data;
+    });
+  }
+
+
 }

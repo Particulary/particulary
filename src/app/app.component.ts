@@ -5,6 +5,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { LoginPage } from "../pages/login/login";
 import {HomePage} from "../pages/home/home";
 import {MyOffersPage} from "../pages/my-offers/my-offers";
+import {EditTeacherPage} from "../pages/edit-teacher/edit-teacher";
 
 @Component({
   templateUrl: 'app.html'
@@ -12,7 +13,7 @@ import {MyOffersPage} from "../pages/my-offers/my-offers";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = EditTeacherPage;
 
   pages: Array<{ title: string, component: any, tabIndex?: number, icon?: string}>;
 
@@ -22,6 +23,7 @@ export class MyApp {
     this.pages = [
       { title: 'Ayuda', component: LoginPage, icon: 'help-buoy' },
       { title: 'Mis Ofertas', component: MyOffersPage, icon: 'help-buoy' },
+      { title: 'Editar profesor', component: EditTeacherPage, icon: 'help-buoy' },
     ];
 
   }

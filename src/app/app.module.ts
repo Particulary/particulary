@@ -20,6 +20,7 @@ import { LoginProvider } from "../providers/login/login";
 import {MyOffersPage} from "../pages/my-offers/my-offers";
 import {CreateOfferPage} from "../pages/create-offer/create-offer";
 import {EditOfferPage} from "../pages/edit-offer/edit-offer";
+import {EditTeacherPage} from "../pages/edit-teacher/edit-teacher";
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import {EditOfferPage} from "../pages/edit-offer/edit-offer";
     MyOffersPage,
     CreateOfferPage,
     EditOfferPage,
+    EditTeacherPage,
 
     // Pipes
     DaysTillTodayPipe,
@@ -49,6 +51,7 @@ import {EditOfferPage} from "../pages/edit-offer/edit-offer";
     MyOffersPage,
     CreateOfferPage,
     EditOfferPage,
+    EditTeacherPage,
 
   ],
   providers: [

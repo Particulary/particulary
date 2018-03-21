@@ -31,7 +31,7 @@
 
     <div class="surname-input">
       <ion-item>
-        <ion-input type="text" formControlName="surname" [value]="alum.surname"></ion-input>
+        <ion-input type="text" formControlName="surname" [value]="alum.surname?alum.surname:''"></ion-input>
         <ion-label>Appellidos</ion-label>
       </ion-item>
       <p class="error-message">Mínimo 3 caracteres</p>
@@ -39,23 +39,16 @@
 
     <div class="email-input">
       <ion-item>
-        <ion-input type="email" formControlName="email" [value]="alum.email" (ionblur)="validateEmail()"></ion-input>
+        <ion-input type="email" formControlName="email" [value]="alum.email?alum.email:''" (ionblur)="validateEmail()"></ion-input>
         <ion-label>Email</ion-label>
       </ion-item>
       <p class="error-message">Formato de correo no válido</p>
     </div>
 
-    <div class="password-input">
-      <ion-item>
-        <ion-input type="password" formControlName="password" [value]="alum.password" ></ion-input>
-        <ion-label>Password</ion-label>
-      </ion-item>
-      <p class="error-message">Password no válida</p>
-    </div>
 
     <div class="phone-input">
       <ion-item>
-        <ion-input type="tel" formControlName="phone" [value]="alum.phone"></ion-input>
+        <ion-input type="tel" formControlName="phone" [value]="alum.phone?alum.phone:''"></ion-input>
         <ion-label>Teléfono</ion-label>
       </ion-item>
       <p class="error-message">Formato de teléfono no válido</p>
@@ -63,7 +56,7 @@
 
     <div class="address-input">
       <ion-item>
-        <ion-input type="text" formControlName="address" [value]="alum.address" ></ion-input>
+        <ion-input type="text" formControlName="address" [value]="alum.address?alum.address:''" ></ion-input>
         <ion-label>Dirección</ion-label>
       </ion-item>
       <p class="error-message">Mínimo 5 caracteres</p>
@@ -71,7 +64,7 @@
 
     <div class="bio-input">
       <ion-item>
-        <ion-input type="text" formControlName="bio" [value]="alum.bio" ></ion-input>
+        <ion-input type="text" formControlName="bio" [value]="alum.bio?alum.bio:''" ></ion-input>
         <ion-label>Biografía</ion-label>
       </ion-item>
       <p class="error-message">Mínimo 5 caracteres</p>

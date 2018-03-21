@@ -20,6 +20,7 @@ export class EditAlumPage {
     this.alum=false;
     this.alumProvider.infoAlum().then(data => {
       this.alum = data;
+      console.log(data);
     });
 
     this.editAlumForm = this.formBuilder.group({
@@ -27,7 +28,7 @@ export class EditAlumPage {
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       surname: new FormControl('', [Validators.required, Validators.minLength(3)]),
       email: new FormControl('', [Validators.required,/* Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$')*/]),
-      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      //password: new FormControl('', [Validators.required, Validators.minLength(6)]),
       phone: new FormControl('', [Validators.required,/*Validators.pattern('^(6|7|8|9)+d{9}')*/]),
       address: new FormControl('', [Validators.required, Validators.minLength(5)]),
       bio: new FormControl('', [Validators.required, Validators.minLength(5)]),
@@ -49,7 +50,7 @@ export class EditAlumPage {
       name: this.editAlumForm.value.name,
       surname: this.editAlumForm.value.surname,
       email: this.editAlumForm.value.email,
-      password: this.editAlumForm.value.password,
+      //password: this.editAlumForm.value.password,
       phone: this.editAlumForm.value.phone,
       address: this.editAlumForm.value.address,
       bio: this.editAlumForm.value.bio,

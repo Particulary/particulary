@@ -28,14 +28,14 @@ export class AlumProvider {
   }*/
 
   editAlum(alum) {
-    return this.api.get('alum/edit/' ,alum).then(data => {
+    return this.api.post('alum/edit', alum).then(data => {
       return data;
     });
   }
 
 
   infoAlum() {
-    return this.api.get('alum/info/').then(data => {
+    return this.api.get('alum/info').then(data => {
       return data;
     });
   }

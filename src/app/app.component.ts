@@ -5,7 +5,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { LoginPage } from "../pages/login/login";
 import {CreateExperiencePage} from "../pages/create-experience/create-experience";
 import {MyOffersPage} from "../pages/my-offers/my-offers";
+<<<<<<< HEAD
 import {MyExperiencesPage} from "../pages/my-experiences/my-experiences";
+=======
+import {CreateOfferPage} from "../pages/create-offer/create-offer";
+>>>>>>> Fran
 
 @Component({
   templateUrl: 'app.html'
@@ -13,7 +17,11 @@ import {MyExperiencesPage} from "../pages/my-experiences/my-experiences";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
+<<<<<<< HEAD
   rootPage: any = CreateExperiencePage;
+=======
+  rootPage: any = MyOffersPage;
+>>>>>>> Fran
 
   pages: Array<{ title: string, component: any, tabIndex?: number, icon?: string}>;
 

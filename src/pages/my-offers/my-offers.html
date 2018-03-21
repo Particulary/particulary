@@ -12,15 +12,26 @@
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let offer of offers">
-      <h2>Nombre: {{offer.name}}</h2>
-      <h2>Lugar: {{offer.location}}</h2>
-      <h2>Precio: {{offer.price}}</h2>
-      <h2>Fecha inicio: {{offer.start_date}}</h2>
-      <h2>Fecha fin: {{offer.end_date}}</h2>
-      <a (click)="editOffer(offer)">Editar</a>
-      <a (click)="deleteOffer(offer)">Eliminar</a>
+      <div class="first">
+        <h2> {{offer.name}}</h2>
+        <h2><ion-icon name='md-calendar' is-active="false"></ion-icon> {{offer.start_date}}</h2>
+        <h2><ion-icon name='md-calendar' is-active="false"></ion-icon> {{offer.end_date}}</h2>
+      </div>
+      <div class="second">
+        <h2 float="right"><ion-icon name='ios-pin' is-active="false"></ion-icon> {{offer.location}}</h2>
+        <h2 float="right"><ion-icon name='md-cash' is-active="false"></ion-icon> {{offer.price}} </h2>
+
+        <button class="botones" title="Delete" ion-button color="danger" (click)="deleteOffer(offer)" clear icon-only>
+          <ion-icon name='trash' is-active="false"></ion-icon>
+        </button>
+        <button class="botones" title="Edit" ion-button (click)="editOffer(offer)" clear icon-only>
+          <ion-icon name='md-create' is-active="false"></ion-icon>
+        </button>
+      </div>
+
     </ion-item>
+    <br>
   </ion-list>
-  <button ion-button full (click)="addOffer()">Añadir oferta</button>
+  <button class="botonfinal" ion-button full color="secondary"(click)="addOffer()">Añadir oferta</button>
 
 </ion-content>

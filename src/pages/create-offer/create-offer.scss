@@ -6,37 +6,56 @@ create-offer {
     height: 4em;
   }
   * {
-    padding: 8px;
+    padding: 6px;
   }
   form {
     font-size: 12px;
-    margin-bottom: 5em;
+    margin-bottom: 1em;
     .name-input {
       position: relative;
+      ion-label{
+        color: #488aff;
+      }
       input{
         color: black;
       }
     }
     .place-input {
       position: relative;
+      ion-label{
+        color: #488aff;
+      }
       input{
         color: black;
       }
     }
     .price-input {
       position: relative;
+      ion-label{
+        color: #488aff;
+      }
       input{
         color: black;
       }
     }
     .start-date-input {
+      ion-label{
+        color: #488aff;
+      }
       input{
+        padding-top: 30px;
+        padding-left: 20px;
         color: black;
       }
     }
     .end-date-input {
       position: relative;
+      ion-label{
+        color: #488aff;
+      }
       input{
+        padding-top: 30px;
+        padding-left: 20px;
         color: black;
       }
     }
@@ -51,7 +70,7 @@ create-offer {
       font-weight: 200;
       font-size: 18px;
       color: #ffffff;
-      background-color: #0C85DF;
+      background-color: #488aff;
       border-radius: 6px;
       border: 2px solid #1026C4;
       margin-bottom: 20px;
@@ -61,8 +80,9 @@ create-offer {
       text-transform: uppercase;
     }
     .enter:hover {
-      color: #0C85DF;
-      background-color: #ffffff;
+      color: white;
+      background-color: #77a8ff;
+      border: 2px solid #1026C4;
     }
   }
 }

@@ -13,7 +13,7 @@ import {CreateOfferPage} from "../pages/create-offer/create-offer";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = CreateOfferPage;
+  rootPage: any = MyOffersPage;
 
   pages: Array<{ title: string, component: any, tabIndex?: number, icon?: string}>;
 

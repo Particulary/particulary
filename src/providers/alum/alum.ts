@@ -21,6 +21,12 @@ export class AlumProvider {
     });
   }
 */
+  /*pasAlum() {
+    return this.api.get('alum/info' ,alum).then(data => {
+      return data;
+    });
+  }*/
+
   editAlum(alum) {
     return this.api.get('alum/edit/' ,alum).then(data => {
       return data;
@@ -28,4 +34,14 @@ export class AlumProvider {
   }
 
 
+  infoAlum() {
+    return this.api.get('alum/info/').then(data => {
+      return data;
+    });
+  }
 }
+  /*offers() {
+    return this.api.get('alum/offers').then(data => {
+      return data;
+    });
+  }*/

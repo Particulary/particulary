@@ -23,7 +23,7 @@
 
     <div class="name-input">
       <ion-item>
-        <ion-input type="text" formControlName="name" [value]="alum.name"></ion-input>
+        <ion-input type="text" formControlName="name" [value]="alum.name?alum.name:''"></ion-input>
         <ion-label>Nombre</ion-label>
       </ion-item>
       <p class="error-message">Mínimo 3 caracteres</p>

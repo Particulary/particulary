@@ -3,6 +3,7 @@ import {NavController, NavParams } from 'ionic-angular';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {AlumProvider} from "../../providers/alum/alum";
 import {HomePage} from "../home/home";
+//import {MyOffersPage} from "../my-offers/my-offers";
 
 @Component({
   selector: 'edit-alum',
@@ -16,10 +17,13 @@ export class EditAlumPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private alumProvider: AlumProvider) {
-    this.alum = navParams.data;
+    this.alum=false;
+    this.alumProvider.infoAlum().then(data => {
+      this.alum = data;
+    });
 
     this.editAlumForm = this.formBuilder.group({
-      //subject: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      //class: new FormControl('', [Validators.required, Validators.minLength(3)]),
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       surname: new FormControl('', [Validators.required, Validators.minLength(3)]),
       email: new FormControl('', [Validators.required,/* Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$')*/]),

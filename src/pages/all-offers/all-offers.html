@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Offers</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let offer of offers">
+      <div class="first">
+        <h2> {{offer.name}}</h2>
+        <h2><ion-icon name='md-calendar' is-active="false"></ion-icon> {{offer.start_date}}</h2>
+        <h2><ion-icon name='md-calendar' is-active="false"></ion-icon> {{offer.end_date}}</h2>
+      </div>
+      <div class="second">
+        <h2 float="right"><ion-icon name='ios-pin' is-active="false"></ion-icon> {{offer.location}}</h2>
+        <h2 float="right"><ion-icon name='md-cash' is-active="false"></ion-icon> {{offer.price}} </h2>
+
+        <button class="botones" title="Edit" ion-button (click)="applyOffer(offer)" clear icon-only>
+          <ion-icon name='md-create' is-active="false"></ion-icon>
+        </button>
+      </div>
+
+    </ion-item>
+    <br>
+  </ion-list>
+
+</ion-content>

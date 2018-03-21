@@ -20,6 +20,11 @@ import { LoginProvider } from "../providers/login/login";
 import {MyOffersPage} from "../pages/my-offers/my-offers";
 import {CreateOfferPage} from "../pages/create-offer/create-offer";
 import {EditOfferPage} from "../pages/edit-offer/edit-offer";
+import {MyExperiencesPage} from "../pages/my-experiences/my-experiences";
+import {CreateExperiencePage} from "../pages/create-experience/create-experience";
+import {EditExperiencePage} from "../pages/edit-experience/edit-experience";
+import {AlumProvider} from "../providers/alum/alum";
+import {AllOffersPage} from "../pages/all-offers/all-offers";
 
 
 @NgModule({
@@ -30,6 +35,10 @@ import {EditOfferPage} from "../pages/edit-offer/edit-offer";
     MyOffersPage,
     CreateOfferPage,
     EditOfferPage,
+    MyExperiencesPage,
+    CreateExperiencePage,
+    EditExperiencePage,
+    AllOffersPage,
 
     // Pipes
     DaysTillTodayPipe,
@@ -49,12 +58,17 @@ import {EditOfferPage} from "../pages/edit-offer/edit-offer";
     MyOffersPage,
     CreateOfferPage,
     EditOfferPage,
+    MyExperiencesPage,
+    CreateExperiencePage,
+    EditExperiencePage,
+    AllOffersPage,
 
   ],
   providers: [
     StatusBar,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     TeacherProvider,
+    AlumProvider,
     LoginProvider,
     ApiProvider,
     {

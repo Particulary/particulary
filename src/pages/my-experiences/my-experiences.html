@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Experiences</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let experience of experiences">
+      <h2>Nombre: {{experience.name}}</h2>
+      <h2>Descripción: {{experience.description}}</h2>
+      <h2>Fecha: {{experience.date}}</h2>
+
+      <a (click)="editExperience(experience)">Editar</a>
+      <a (click)="deleteExperience(experience)">Eliminar</a>
+    </ion-item>
+  </ion-list>
+  <button ion-button full (click)="addExperience()">Añadir experiencia</button>
+
+</ion-content>

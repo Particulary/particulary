@@ -1,5 +1,5 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import {HttpClient, HttpParams} from '@angular/common/http';
+import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/toPromise';
 
 /*
@@ -25,7 +25,7 @@ export class ApiProvider {
       }
     }
 
-    return this.http.get(this.url + '/' + endpoint, { params: Params }).toPromise();
+    return this.http.get(this.url + '/' + endpoint, {params: Params}).toPromise();
   }
 
   post(endpoint: string, body: any, reqOpts?: any) {
@@ -37,7 +37,7 @@ export class ApiProvider {
   }
 
   delete(endpoint: string, reqOpts?: any) {
-    return this.http.delete(this.url + '/' + endpoint, reqOpts).toPromise();
+      return this.http.delete(this.url + '/' + endpoint, reqOpts).toPromise();
   }
 
   patch(endpoint: string, body: any, reqOpts?: any) {

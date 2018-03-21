@@ -13,7 +13,7 @@ import {Storage} from "@ionic/storage";
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  
+
   rootPage: any = MyOffersPage;
 
 

@@ -16,7 +16,10 @@ export class TokenInterceptor implements HttpInterceptor {
     token: string;
 
     constructor(private storage: Storage, private events: Events) {
-        this.token = 'iRV5XSbrgcttVViF18NHFaS0fDMnU13SsXBHNkGaTZtuUREnMI0sSy0sJJ6y';
+      events.subscribe('token:update', (token) => {
+          this.token = token;
+      console.log(this.token);
+      });
     }
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {

@@ -13,8 +13,17 @@ import {Storage} from "@ionic/storage";
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+  rootPage: any = HomePage;
+=======
+  
+>>>>>>> Fran
   rootPage: any = MyOffersPage;
+>>>>>>> development
 
 
   pages: Array<{ title: string, component: any, tabIndex?: number, icon?: string}>;

@@ -10,11 +10,16 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let experience of experiences">
-      <h2>{{experience.name}}</h2>
-    </ion-item>
-  </ion-list>
+  <img src="assets/imgs/logo.png" class="gsad-icon"/>
+
+  <div class="text" align="left">
+    <p class="p1">Este es el MVP de Particulary. </p>
+    <p class="p2">En su menú lateral encontrarás la opción de logearte como alumno y como profesor,
+      para poder así, acceder a las diferentes funcionalidades dependiendo del rol.</p>
+    <p class="p3">Como profesor puedes crear ofertas, editar tus datos y añadir experiencias
+      a tu perfil.</p>
+    <p class="p4">Como alumno podrás acceder a la lista de ofertas disponibles e inscribirte a las que desees.</p>
+  </div>
 
   <ion-infinite-scroll (ionInfinite)="loadMore($event)">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>

@@ -29,9 +29,7 @@ export class MyExperiencesPage {
 
   deleteExperience(experience) {
     this.teacherProvider.deleteExperience(experience.id).then(data => {
-      var i = this.experiences.indexOf(experience);
-      console.log(this.experiences);
-      console.log(i);
+     var i = this.experiences.indexOf(experience);
       if(i != -1) {
         this.experiences.splice(i, 1);
       }

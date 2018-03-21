@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {MyOffersPage} from "../my-offers/my-offers";
 import {TeacherProvider} from "../../providers/teacher/teacher";
+import {MyExperiencesPage} from "../my-experiences/my-experiences";
 
 
 @Component({
@@ -33,7 +34,7 @@ export class EditExperiencePage {
     };
 
     this.teacherProvider.editExperience(experience, this.experience.id).then(data => {
-      this.navCtrl.setRoot(MyOffersPage);
+      this.navCtrl.setRoot(MyExperiencesPage);
     }).catch(err => {
       console.log(err);
     });

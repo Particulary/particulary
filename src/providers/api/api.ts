@@ -37,7 +37,7 @@ export class ApiProvider {
   }
 
   delete(endpoint: string, reqOpts?: any) {
-    return this.http.delete(this.url + '/' + endpoint, reqOpts);
+    return this.http.delete(this.url + '/' + endpoint, reqOpts).toPromise();
   }
 
   patch(endpoint: string, body: any, reqOpts?: any) {

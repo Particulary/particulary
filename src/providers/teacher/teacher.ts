@@ -62,7 +62,9 @@ export class TeacherProvider {
     });
   }
   deleteExperience(experience_id) {
-    return this.api.delete('teacher/experience' + experience_id)
+    return this.api.delete('teacher/experience/' + experience_id).then(data => {
+      return data;
+    });
   }
   myExperiences() {
     return this.api.get('teacher/experience').then(data => {

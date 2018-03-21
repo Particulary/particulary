@@ -7,10 +7,16 @@
   <ion-content>
 
 
-    <ion-list no-lines particulary_sidebar *ngIf="!newBeneficiary" class="user-sidebar">
+    <ion-list no-lines particulary_sidebar class="user-sidebar">
       <button menuClose ion-item *ngFor="let p of pages" (click)="goToPage(p)">
         <ion-icon name="{{ p.icon }}"></ion-icon>
         <span>{{p.title}}</span>
+      </button>
+      <button (click)="loginAsTeacher()">
+        Login as Teacher
+      </button>
+      <button (click)="loginAsAlum()">
+        Login as Alum
       </button>
     </ion-list>
 

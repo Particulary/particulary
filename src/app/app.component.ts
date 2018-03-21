@@ -6,6 +6,7 @@ import { LoginPage } from "../pages/login/login";
 import {CreateExperiencePage} from "../pages/create-experience/create-experience";
 import {MyOffersPage} from "../pages/my-offers/my-offers";
 import {MyExperiencesPage} from "../pages/my-experiences/my-experiences";
+import {HomePage} from "../pages/home/home";
 
 @Component({
   templateUrl: 'app.html'
@@ -21,9 +22,10 @@ export class MyApp {
     this.initializeApp();
 
     this.pages = [
-      { title: 'Ayuda', component: LoginPage, icon: 'help-buoy' },
-      { title: 'Mis Ofertas', component: MyOffersPage, icon: 'help-buoy' },
-      { title: 'Mis Experiencias', component: MyExperiencesPage, icon: 'help-buoy' },
+      { title: 'Inicio', component: HomePage, icon: 'ios-home' },
+      { title: 'Mis Ofertas', component: MyOffersPage, icon: 'md-ribbon' },
+      { title: 'Mis Experiencias', component: MyExperiencesPage, icon: 'ios-school' },
+      { title: 'Ayuda', component: LoginPage, icon: 'ios-help-circle' },
     ];
 
   }

@@ -4,7 +4,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>My Experiences</ion-title>
+    <ion-title><ion-icon name='md-ribbon' is-active="false"></ion-icon> Experiences</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -12,12 +12,15 @@
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let experience of experiences">
-      <h2>Nombre: {{experience.name}}</h2>
-      <h2>Descripción: {{experience.description}}</h2>
-      <h2>Fecha: {{experience.date}}</h2>
-
-      <a (click)="editExperience(experience)">Editar</a>
-      <a (click)="deleteExperience(experience)">Eliminar</a>
+      <h4><ion-icon name='ios-school' color="" is-active="false"></ion-icon> {{experience.name}}</h4>
+      <h4><ion-icon name='ios-quote' is-active="false"></ion-icon> {{experience.description}}</h4>
+      <h4><ion-icon name='md-calendar' is-active="false"></ion-icon> {{experience.date}}</h4>
+      <button class="botones" title="Delete" ion-button color="danger" (click)="deleteExperience(experience)" clear icon-only>
+        <ion-icon name='trash' is-active="false"></ion-icon>
+      </button>
+      <button class="botones" title="Edit" ion-button (click)="editExperience(experience)" clear icon-only>
+        <ion-icon name='md-create' is-active="false"></ion-icon>
+      </button>
     </ion-item>
   </ion-list>
   <button ion-button full (click)="addExperience()">Añadir experiencia</button>

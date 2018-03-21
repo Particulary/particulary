@@ -5,6 +5,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { LoginPage } from "../pages/login/login";
 import {HomePage} from "../pages/home/home";
 import {MyOffersPage} from "../pages/my-offers/my-offers";
+import {CreateOfferPage} from "../pages/create-offer/create-offer";
 
 @Component({
   templateUrl: 'app.html'
@@ -12,7 +13,7 @@ import {MyOffersPage} from "../pages/my-offers/my-offers";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = CreateOfferPage;
 
   pages: Array<{ title: string, component: any, tabIndex?: number, icon?: string}>;
 

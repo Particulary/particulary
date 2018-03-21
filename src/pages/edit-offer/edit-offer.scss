@@ -1,3 +1,55 @@
 edit-offer {
-
+  .button {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 0;
+    height: 4em;
+  }
+  form {
+    font-size: 12px;
+    .name-input {
+      margin-bottom: 36px;
+      position: relative;
+    }
+    .place-input {
+      margin-bottom: 36px;
+      position: relative;
+    }
+    .status-input {
+      margin-bottom: 36px;
+      position: relative;
+      ion-select {
+        font-size: 12px;
+      }
+      ion-select:hover {
+        font-size: 14px;
+      }
+    }
+    .price-input {
+      margin-bottom: 36px;
+      position: relative;
+    }
+    .start-date-input {
+      margin-bottom: 36px;
+      position: relative;
+    }
+    .end-date-input {
+      margin-bottom: 36px;
+      position: relative;
+    }
+    .enter {
+      text-decoration: none;
+      padding: 10px;
+      font-weight: 300;
+      font-size: 10px;
+      color: #ffffff;
+      background-color: #1883ba;
+      border-radius: 6px;
+      border: 2px solid #0016b0;
+    }
+    .enter:hover {
+      color: #1883ba;
+      background-color: #ffffff;
+    }
+  }
 }

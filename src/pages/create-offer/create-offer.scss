@@ -1,3 +1,68 @@
 create-offer {
-
+  .button {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 0;
+    height: 4em;
+  }
+  * {
+    padding: 8px;
+  }
+  form {
+    font-size: 12px;
+    margin-bottom: 5em;
+    .name-input {
+      position: relative;
+      input{
+        color: black;
+      }
+    }
+    .place-input {
+      position: relative;
+      input{
+        color: black;
+      }
+    }
+    .price-input {
+      position: relative;
+      input{
+        color: black;
+      }
+    }
+    .start-date-input {
+      input{
+        color: black;
+      }
+    }
+    .end-date-input {
+      position: relative;
+      input{
+        color: black;
+      }
+    }
+    .enter {
+      width: 40%;
+      height: 8%;
+      text-decoration: none;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      font-weight: 200;
+      font-size: 18px;
+      color: #ffffff;
+      background-color: #0C85DF;
+      border-radius: 6px;
+      border: 2px solid #1026C4;
+      margin-bottom: 20px;
+      margin-left: 20px;
+      margin-top: 30px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .enter:hover {
+      color: #0C85DF;
+      background-color: #ffffff;
+    }
+  }
 }

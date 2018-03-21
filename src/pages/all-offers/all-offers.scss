@@ -1,0 +1,43 @@
+all-offers {
+  .button {
+    bottom: 0;
+    margin-bottom: 0;
+    height: 4em;
+  }
+  ion-item:last-child {
+    margin-bottom: 5em;
+  }
+
+  .botones{float:right;
+  }
+
+  .botonfinal{position:fixed;}
+
+  ion-list .item .item-inner{
+
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 5px;
+    margin-right: 20px;
+    background-color: #f8f8f8;
+    resize: none;
+    border-style: none;
+  }
+
+  ion-list .item .div .icon {
+    margin-left: 15px;
+  }
+
+  .first{
+    float:left;
+  }
+
+  .second{
+    float:right;
+  }
+
+  .title{
+    color:red;
+  }
+
+}

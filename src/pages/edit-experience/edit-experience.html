@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Edit Experience</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <form [formGroup]="editExperienceForm" (ngSubmit)="editExperience()">
+
+    <div class="name-input">
+      <ion-item>
+        <ion-input type="text" formControlName="name" [value]="experience.name"></ion-input>
+        <ion-label>Nombre</ion-label>
+      </ion-item>
+      <p class="error-message">Mínimo 3 caracteres</p>
+    </div>
+
+    <div class="description-input">
+      <ion-item>
+        <ion-input type="text" formControlName="description" [value]="experience.description"></ion-input>
+        <ion-label>Descripción</ion-label>
+      </ion-item>
+      <p class="error-message">Mínimo 6 caracteres</p>
+    </div>
+
+    <div class="date-input">
+      <ion-item>
+        <ion-input type="date" formControlName="date" [value]="experience.date"></ion-input>
+        <ion-label>Fecha</ion-label>
+      </ion-item>
+    </div>
+
+    <button class="enter" ion-button type="submit" [disabled]="!editExperienceForm.valid">Editar</button>
+
+  </form>
+</ion-content>
+

@@ -3,8 +3,9 @@ import {Nav, Platform, Events, MenuController, NavController} from 'ionic-angula
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { LoginPage } from "../pages/login/login";
-import {HomePage} from "../pages/home/home";
+import {CreateExperiencePage} from "../pages/create-experience/create-experience";
 import {MyOffersPage} from "../pages/my-offers/my-offers";
+import {MyExperiencesPage} from "../pages/my-experiences/my-experiences";
 
 @Component({
   templateUrl: 'app.html'
@@ -12,7 +13,7 @@ import {MyOffersPage} from "../pages/my-offers/my-offers";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = CreateExperiencePage;
 
   pages: Array<{ title: string, component: any, tabIndex?: number, icon?: string}>;
 
@@ -22,6 +23,7 @@ export class MyApp {
     this.pages = [
       { title: 'Ayuda', component: LoginPage, icon: 'help-buoy' },
       { title: 'Mis Ofertas', component: MyOffersPage, icon: 'help-buoy' },
+      { title: 'Mis Experiencias', component: MyExperiencesPage, icon: 'help-buoy' },
     ];
 
   }

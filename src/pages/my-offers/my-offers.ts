@@ -30,13 +30,11 @@ export class MyOffersPage {
   deleteOffer(offer) {
     this.teacherProvider.deleteOffer(offer.id).then(data => {
       var i = this.offers.indexOf(offer);
-      console.log(this.offers);
-      console.log(i);
       if(i != -1) {
         this.offers.splice(i, 1);
       }
     }).catch(err => {
-      console.log('ERROR: ' + err);
+      console.log(err);
     });
   }
 }

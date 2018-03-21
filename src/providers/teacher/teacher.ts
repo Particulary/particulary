@@ -50,4 +50,24 @@ export class TeacherProvider {
     });
   }
 
+  addExperience(experience) {
+    return this.api.post('teacher/experience', experience).then(data => {
+      return data;
+    });
+  }
+
+  editExperience(experience, experience_id) {
+    return this.api.put('teacher/experience/' + experience_id, experience).then(data => {
+      return data;
+    });
+  }
+  deleteExperience(experience_id) {
+    return this.api.delete('teacher/experience' + experience_id)
+  }
+  myExperiences() {
+    return this.api.get('teacher/experience').then(data => {
+      return data;
+    });
+  }
+
 }

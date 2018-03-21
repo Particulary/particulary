@@ -46,8 +46,17 @@ export class EditTeacherPage {
 
   editTeacher() {
     //let teacher = this.teacher;
+    let teacher = {
+      name: this.editTeacherForm.value.name,
+      surname: this.editTeacherForm.value.surname,
+      email: this.editTeacherForm.value.email,
+      phone: this.editTeacherForm.value.phone,
+      address: this.editTeacherForm.value.address,
+      bio: this.editTeacherForm.value.bio,
+    };
 
-    this.teacherProvider.editTeacher(this.teacher).then(data => {
+
+    this.teacherProvider.editTeacher(teacher).then(data => {
       this.navCtrl.setRoot(HomePage);
     }).catch(err => {
       console.log(err);

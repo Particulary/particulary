@@ -19,9 +19,12 @@
   font-size: 32px;
 }
 
-ion-header, .toolbar-title, .bar-button-menutoggle {
-    color: color($colors, light);
+.bar-button-menutoggle {
+    color: color($colors, dark);
+
 }
+
+
 
 ///////////// FORMS //////////////////////
 

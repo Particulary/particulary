@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title><ion-icon name='md-ribbon' is-active="false"></ion-icon>Create Experience</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="guay">
+  <div class="guay">
+    <form [formGroup]="createExperienceForm" (ngSubmit)="createExperience()">
+      <fieldset>
+        <legend><span class="number">1</span> Candidate Info</legend>
+          <ion-label>Nombre</ion-label>
+          <ion-input type="text" formControlName="name" placeholder="Min. 3 caracteres"></ion-input>
+          <ion-label>Fecha</ion-label>
+          <ion-input type="date" formControlName="date"></ion-input>
+      </fieldset>
+      <fieldset>
+        <legend><span class="number">2</span> Additional Info</legend>
+          <ion-label>Descripción</ion-label>
+          <ion-input type="text" formControlName="description" placeholder="Min. 6 caracteres"></ion-input>
+      </fieldset>
+      <button class="enter" ion-button round type="submit" [disabled]="!createExperienceForm.valid">Crear</button>
+    </form>
+  </div>
+</ion-content>

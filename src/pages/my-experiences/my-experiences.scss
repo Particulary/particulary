@@ -1,0 +1,54 @@
+my-experiences {
+  .button {
+    bottom: 0;
+    margin-bottom: 0;
+    height: 4em;
+  }
+
+  ion-item:last-child {
+    margin-bottom: 5em;
+  }
+
+  .botones{float:right;}
+
+  .botonfinal{position:fixed;}
+
+  .botonfinal{
+    position:fixed;
+    width: 84%;
+    height: 8%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-weight: 500;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #f9c00f;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-top: 30px;
+  }
+
+  .botonfinal:hover{
+    color: white;
+    font-weight: 500;
+    background-color: #FFDC3E;
+  }
+
+  ion-list .item .item-inner{
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 5px;
+    margin-right: 20px;
+    background-color: white;
+    resize: none;
+    border: 4px solid #f9c00f;
+  }
+
+  ion-list .item .icon {
+    margin-left: 15px;
+  }
+
+
+}

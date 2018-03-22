@@ -18,7 +18,16 @@ import { DaysTillTodayPipe } from '../pipes/days-till-today/days-till-today';
 import { ParseDatePipe } from "../pipes/parse-date/parse-date";
 import { LoginProvider } from "../providers/login/login";
 import {EditAlumPage} from "../pages/edit-alum/edit-alum";
+import {MyOffersPage} from "../pages/my-offers/my-offers";
+import {CreateOfferPage} from "../pages/create-offer/create-offer";
+import {EditOfferPage} from "../pages/edit-offer/edit-offer";
+import {EditTeacherPage} from "../pages/edit-teacher/edit-teacher";
+import {MyExperiencesPage} from "../pages/my-experiences/my-experiences";
+import {CreateExperiencePage} from "../pages/create-experience/create-experience";
+import {EditExperiencePage} from "../pages/edit-experience/edit-experience";
 import {AlumProvider} from "../providers/alum/alum";
+import {AllOffersPage} from "../pages/all-offers/all-offers";
+
 
 
 @NgModule({
@@ -27,6 +36,15 @@ import {AlumProvider} from "../providers/alum/alum";
     HomePage,
     LoginPage,
     EditAlumPage,
+    MyOffersPage,
+    CreateOfferPage,
+    EditOfferPage,
+    EditTeacherPage,
+    MyExperiencesPage,
+    CreateExperiencePage,
+    EditExperiencePage,
+    AllOffersPage,
+
 
     // Pipes
     DaysTillTodayPipe,
@@ -44,6 +62,15 @@ import {AlumProvider} from "../providers/alum/alum";
     HomePage,
     LoginPage,
     EditAlumPage,
+    MyOffersPage,
+    CreateOfferPage,
+    EditOfferPage,
+    EditTeacherPage,
+    MyExperiencesPage,
+    CreateExperiencePage,
+    EditExperiencePage,
+    AllOffersPage,
+
 
   ],
   providers: [

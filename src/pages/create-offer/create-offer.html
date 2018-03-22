@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Create Offer</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="createOfferForm" (ngSubmit)="createOffer()">
+
+    <div class="name-input">
+      <ion-item>
+        <ion-input type="text" formControlName="name"></ion-input>
+        <ion-label>Nombre</ion-label>
+      </ion-item>
+      <p class="error-message">Mínimo 3 caracteres</p>
+    </div>
+
+    <div class="place-input">
+      <ion-item>
+        <ion-input type="text" formControlName="location"></ion-input>
+        <ion-label>Lugar de la clase</ion-label>
+      </ion-item>
+      <p class="error-message">Mínimo 6 caracteres</p>
+    </div>
+
+    <div class="price-input">
+      <ion-item>
+        <ion-input type="text" formControlName="price"></ion-input>
+        <ion-label>Precio</ion-label>
+      </ion-item>
+    </div>
+
+    <div class="start-date-input">
+      <ion-item>
+        <ion-input type="date" formControlName="start_date"></ion-input>
+        <ion-label>Fecha de inicio</ion-label>
+      </ion-item>
+    </div>
+
+    <div class="end-date-input">
+      <ion-item>
+        <ion-input type="date" formControlName="end_date"></ion-input>
+        <ion-label>Fecha de fin</ion-label>
+      </ion-item>
+    </div>
+
+    <button class="enter" ion-button type="submit" [disabled]="!createOfferForm.valid">Crear</button>
+
+  </form>
+</ion-content>

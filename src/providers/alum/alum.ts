@@ -14,34 +14,32 @@ export class AlumProvider {
   constructor(public api: ApiProvider) {
   }
 
-  /*
-  points() {
-    return this.api.get('alum/points').then(data => {
-      return data;
-    });
-  }
-*/
-  /*pasAlum() {
-    return this.api.get('alum/info' ,alum).then(data => {
-      return data;
-    });
-  }*/
-
   editAlum(alum) {
-    return this.api.post('alum/edit', alum).then(data => {
+    return this.api.post('student/edit', alum).then(data => {
       return data;
     });
   }
+
+      offers() {
+        return this.api.get('student/offer').then(data => {
+          return data;
+        });
+      }
+
+      apply(offer) {
+        return this.api.get('student/offer/apply/' + offer.id).then(data => {
+          return data;
+        });
+      }
+
 
 
   infoAlum() {
-    return this.api.get('alum/info').then(data => {
+    return this.api.get('student/info').then(data => {
       return data;
     });
   }
+
+
 }
-  /*offers() {
-    return this.api.get('alum/offers').then(data => {
-      return data;
-    });
-  }*/
+

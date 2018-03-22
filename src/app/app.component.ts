@@ -1,10 +1,21 @@
 import { Component, ViewChild } from '@angular/core';
-import {Nav, Platform, Events, MenuController} from 'ionic-angular';
+import {Nav, Platform, Events, MenuController, NavController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 
-import { LoginPage } from "../pages/login/login";
+import {CreateExperiencePage} from "../pages/create-experience/create-experience";
+import {MyOffersPage} from "../pages/my-offers/my-offers";
+
+import {EditTeacherPage} from "../pages/edit-teacher/edit-teacher";
+
+import {MyExperiencesPage} from "../pages/my-experiences/my-experiences";
+
 import {HomePage} from "../pages/home/home";
 import {EditAlumPage} from "../pages/edit-alum/edit-alum";
+import {AllOffersPage} from "../pages/all-offers/all-offers";
+import {Storage} from "@ionic/storage";
+import {LoginPage} from "../pages/login/login";
+
+
 
 @Component({
   templateUrl: 'app.html'
@@ -14,27 +25,41 @@ export class MyApp {
 
   rootPage: any = EditAlumPage;
 
+
   pages: Array<{ title: string, component: any, tabIndex?: number, icon?: string}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public events: Events, public menuCtrl: MenuController) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public events: Events, public menuCtrl: MenuController, public storage: Storage) {
     this.initializeApp();
 
-    // used for an example of ngFor and navigation
-
     this.pages = [
-      { title: 'Ayuda', component: LoginPage, icon: 'help-buoy' },
+
+      { title: 'Inicio', component: HomePage, icon: 'ios-home' },
+      { title: 'Mis Ofertas', component: MyOffersPage, icon: 'md-ribbon' },
+      { title: 'Mis Experiencias', component: MyExperiencesPage, icon: 'ios-school' },
+      { title: 'Ayuda', component: LoginPage, icon: 'ios-help-circle' },
+      { title: 'List Ofertas (Alumno)', component: AllOffersPage, icon: 'md-ribbon' },
+      { title: 'Editar profesor', component: EditTeacherPage, icon: 'help-buoy' },
+
     ];
 
   }
 
   initializeApp() {
-
     this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
-      this.menuCtrl.enable(false, 'leftMenu');
-
     });
   }
+
+  goToPage(page) {
+    this.nav.setRoot(page.component);
+  }
+
+  loginAsTeacher() {
+    this.events.publish('token:update', 'iRV5XSbrgcttVViF18NHFaS0fDMnU13SsXBHNkGaTZtuUREnMI0sSy0sJJ6y');
+  }
+
+  loginAsAlum() {
+    this.events.publish('token:update', 'aRV5XSbrgcttVViF18NHFaS0fDMnU13SsXBHNkGaTZtuUREnMI0sSy0sJJ6y');
+  }
+
 }

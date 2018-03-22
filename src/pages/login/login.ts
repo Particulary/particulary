@@ -21,7 +21,10 @@ export class LoginPage {
   emailError: boolean = false;
   show: boolean = false;
 
-  constructor(public navCtrl: NavController, private loginProvider: LoginProvider, private storage: Storage, private formBuilder: FormBuilder, private toastCtrl: ToastController, public events: Events, private modal: ModalController, public menu: MenuController) {
+  constructor(public navCtrl: NavController, private loginProvider: LoginProvider,
+              private storage: Storage, private formBuilder: FormBuilder,
+              private toastCtrl: ToastController, public events: Events, private modal: ModalController,
+              public menu: MenuController) {
 
 
     // TODO: Already logged -> Redirect to main page

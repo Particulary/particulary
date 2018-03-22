@@ -4,13 +4,13 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title><ion-icon name='ios-school' is-active="false"></ion-icon> Offers</ion-title>
+    <ion-title><ion-icon name='ios-school' is-active="false"></ion-icon> Clases</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content>
-  <ion-input class="busqueda" type="text" (keyup)="reloadOffers($event)" placeholder="Buscar ofertas"></ion-input>
+  <ion-input class="busqueda" type="text" (keyup)="reloadOffers($event)" placeholder="Buscar clases"></ion-input>
   <ion-list>
     <ion-item *ngFor="let offer of offers">
       <div class="first">
@@ -22,7 +22,7 @@
         <h4><ion-icon name='md-calendar' is-active="false"></ion-icon> {{offer.start_date}}</h4>
         <h4><ion-icon name='md-calendar' is-active="false"></ion-icon> {{offer.end_date}}</h4>
 
-        <button class="botones" title="Edit" ion-button (click)="applyOffer(offer)" clear icon-only>
+        <button class="botones" title="Contratar" ion-button (click)="applyOffer(offer)" clear icon-only>
           <ion-icon name='md-create' is-active="false"></ion-icon>
         </button>
       </div>

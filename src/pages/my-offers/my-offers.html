@@ -4,7 +4,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title><ion-icon name='ios-school' is-active="false"></ion-icon> My offers</ion-title>
+    <ion-title><ion-icon name='ios-school' is-active="false"></ion-icon> Clases</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -20,10 +20,10 @@
       <div class="second">
         <h4><ion-icon name='md-calendar' is-active="false"></ion-icon> {{offer.start_date}}</h4>
         <h4><ion-icon name='md-calendar' is-active="false"></ion-icon> {{offer.end_date}}</h4>
-        <button class="botones" title="Delete" ion-button color="danger" (click)="deleteOffer(offer)" clear icon-only>
+        <button class="botones" title="Eliminar" ion-button color="danger" (click)="deleteOffer(offer)" clear icon-only>
           <ion-icon name='trash' is-active="false"></ion-icon>
         </button>
-        <button class="botones" title="Edit" ion-button (click)="editOffer(offer)" clear icon-only>
+        <button class="botones" title="Editar" ion-button (click)="editOffer(offer)" clear icon-only>
           <ion-icon name='md-create' is-active="false"></ion-icon>
         </button>
       </div>
@@ -31,6 +31,6 @@
     </ion-item>
     <br>
   </ion-list>
-  <button class="botonfinal" *ngIf="this.showButton==true" ion-button round color="default"(click)="addOffer()" >Añadir oferta</button>
+  <button class="botonfinal" *ngIf="this.showButton==true" ion-button round color="default"(click)="addOffer()" >Crear clase</button>
 
 </ion-content>

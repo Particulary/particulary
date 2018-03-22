@@ -4,7 +4,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title><ion-icon name='ios-school' is active="false"></ion-icon>Edit Offer</ion-title>
+    <ion-title><ion-icon name='ios-school' is active="false"></ion-icon> Editar clase</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,12 +15,12 @@
   <form [formGroup]="editOfferForm" (ngSubmit)="editOffer()">
 
     <fieldset>
-      <legend><span class="number">1</span> Candidate Info</legend>
+      <legend><span class="number">1</span> Info clase</legend>
 
         <ion-label>Nombre</ion-label>
         <ion-input type="text" formControlName="name" placeholder="Min. 3 caracteres" [value]="offer.name"></ion-input>
 
-      <ion-label>Lugar de la clase</ion-label>
+      <ion-label>Lugar </ion-label>
       <ion-input type="text" formControlName="location" placeholder="Min. 6 caracteres" [value]="offer.location"></ion-input>
 
       <ion-label>Estado de la clase</ion-label>
@@ -35,18 +35,18 @@
     </fieldset>
 
     <fieldset>
-      <legend><span class="number">2</span> Price</legend>
-      <ion-label>Precio</ion-label>
+      <legend><span class="number">2</span> Precio</legend>
+      <ion-label>Por hora</ion-label>
       <ion-input type="text" formControlName="price" [value]="offer.price"></ion-input>
     </fieldset>
 
     <fieldset>
-      <legend><span class="number">3</span> Date</legend>
+      <legend><span class="number">3</span> Fecha</legend>
 
-      <ion-label>Fecha de inicio</ion-label>
+      <ion-label>Inicio</ion-label>
       <ion-input type="date" formControlName="start_date" [value]="offer.start_date"></ion-input>
 
-      <ion-label>Fecha de fin</ion-label>
+      <ion-label>Fin</ion-label>
       <ion-input type="date" formControlName="end_date" [value]="offer.end_date"></ion-input>
     </fieldset>
     <button class="enter" ion-button type="submit" round [disabled]="!editOfferForm.valid">Editar</button>

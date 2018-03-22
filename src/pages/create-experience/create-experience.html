@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title><ion-icon name='md-ribbon' is-active="false"></ion-icon>Create Experience</ion-title>
+    <ion-title><ion-icon name='md-ribbon' is-active="false"></ion-icon> Crear experiencia</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -11,7 +11,7 @@
   <div class="guay">
     <form [formGroup]="createExperienceForm" (ngSubmit)="createExperience()">
       <fieldset>
-        <legend><span class="number">1</span> Candidate Info</legend>
+        <legend><span class="number">1</span> Info Experiencia</legend>
           <ion-label>Nombre</ion-label>
           <ion-input type="text" formControlName="name" placeholder="Min. 3 caracteres"></ion-input>
           <ion-label>Fecha</ion-label>

@@ -20,7 +20,7 @@
   <div class="guay">
     <form [formGroup]="editTeacherForm" (ngSubmit)="editTeacher()">
       <fieldset>
-        <legend><span class="number">1</span> Teacher info</legend>
+        <legend><span class="number">1</span> Info Profesor</legend>
 
         <div class="name-input">
           <ion-label>Nombre</ion-label>
@@ -51,7 +51,7 @@
 
       </fieldset>
       <fieldset>
-        <legend><span class="number">2</span> Additional Info</legend>
+        <legend><span class="number">2</span>Info Adicional</legend>
         <div class="bio-input">
           <ion-label>Biografía</ion-label>
             <ion-input type="text" formControlName="bio" [value]="teacher.bio?teacher.bio:''" placeholder="Mín. 5 caracteres"></ion-input>

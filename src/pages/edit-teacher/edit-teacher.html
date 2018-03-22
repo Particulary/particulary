@@ -16,64 +16,48 @@
 </ion-header>
 
 
-
-<ion-content >
-
-      <form [formGroup]="editTeacherForm" (ngSubmit)="editTeacher()">
-
+<ion-content class="guay">
+  <div class="guay">
+    <form [formGroup]="editTeacherForm" (ngSubmit)="editTeacher()">
+      <fieldset>
+        <legend><span class="number">1</span> Teacher info</legend>
 
         <div class="name-input">
-          <ion-item>
-            <ion-input type="text" formControlName="name" [value]="teacher.name?teacher.name:''"></ion-input>
-            <ion-label>Nombre</ion-label>
-          </ion-item>
-          <p class="error-message">Mínimo 3 caracteres</p>
+          <ion-label>Nombre</ion-label>
+            <ion-input type="text" formControlName="name" [value]="teacher.name?teacher.name:''" placeholder="Mín. 3 caracteres"></ion-input>
         </div>
 
         <div class="surname-input">
-          <ion-item>
-            <ion-input type="text" formControlName="surname" [value]="teacher.surname?teacher.surname:''"></ion-input>
-            <ion-label>Apellidos</ion-label>
-          </ion-item>
-          <p class="error-message">Mínimo 3 caracteres</p>
+          <ion-label>Apellidos</ion-label>
+            <ion-input type="text" formControlName="surname" [value]="teacher.surname?teacher.surname:''" placeholder="Mín. 3 caracteres"></ion-input>
         </div>
 
         <div class="email-input">
-          <ion-item>
-            <ion-input type="email" formControlName="email" [value]="teacher.email?teacher.email:''" (ionblur)="validateEmail()"></ion-input>
-            <ion-label>Email</ion-label>
-          </ion-item>
-          <p class="error-message">Formato de correo no válido</p>
+          <ion-label>Email</ion-label>
+            <ion-input type="email" formControlName="email" [value]="teacher.email?teacher.email:''" (ionblur)="validateEmail()" placeholder="mail@example.com"></ion-input>
+            <p *ngIf="this.emailError==true">Formato no válido</p>
         </div>
 
-
         <div class="phone-input">
-          <ion-item>
+          <ion-label>Teléfono</ion-label>
             <ion-input type="tel" formControlName="phone" [value]="teacher.phone?teacher.phone:''"></ion-input>
-            <ion-label>Teléfono</ion-label>
-          </ion-item>
-          <p class="error-message">Formato de teléfono no válido</p>
+            <p *ngIf="this.telefonoError==true">Formato no válido</p>
         </div>
 
         <div class="address-input">
-          <ion-item>
-            <ion-input type="text" formControlName="address" [value]="teacher.address?teacher.address:''" ></ion-input>
-            <ion-label>Dirección</ion-label>
-          </ion-item>
-          <p class="error-message">Mínimo 5 caracteres</p>
+          <ion-label>Dirección</ion-label>
+            <ion-input type="text" formControlName="address" [value]="teacher.address?teacher.address:''" placeholder="Mín. 5 caracteres"></ion-input>
         </div>
 
+      </fieldset>
+      <fieldset>
+        <legend><span class="number">2</span> Additional Info</legend>
         <div class="bio-input">
-          <ion-item>
-            <ion-input type="text" formControlName="bio" [value]="teacher.bio?teacher.bio:''" ></ion-input>
-            <ion-label>Biografía</ion-label>
-          </ion-item>
-          <p class="error-message">Mínimo 5 caracteres</p>
+          <ion-label>Biografía</ion-label>
+            <ion-input type="text" formControlName="bio" [value]="teacher.bio?teacher.bio:''" placeholder="Mín. 5 caracteres"></ion-input>
         </div>
-
-        <button class="enter" ion-button type="submit" [disabled]="!editTeacherForm.valid">Editar</button>
-
-
-      </form>
-
+      </fieldset>
+      <button class="enter" ion-button type="submit" [disabled]="!editTeacherForm.valid">Editar</button>
+    </form>
+  </div>
 </ion-content>

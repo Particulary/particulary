@@ -23,7 +23,7 @@ import {LoginPage} from "../pages/login/login";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = EditAlumPage;
+  rootPage: any = HomePage;
 
 
   pages: Array<{ title: string, component: any, tabIndex?: number, icon?: string}>;
@@ -39,6 +39,7 @@ export class MyApp {
       { title: 'Ayuda', component: LoginPage, icon: 'ios-help-circle' },
       { title: 'List Ofertas (Alumno)', component: AllOffersPage, icon: 'md-ribbon' },
       { title: 'Editar profesor', component: EditTeacherPage, icon: 'help-buoy' },
+      { title: 'Editar alumno', component: EditAlumPage, icon: 'help-buoy' },
 
     ];
 
@@ -59,7 +60,7 @@ export class MyApp {
   }
 
   loginAsAlum() {
-    this.events.publish('token:update', 'aRV5XSbrgcttVViF18NHFaS0fDMnU13SsXBHNkGaTZtuUREnMI0sSy0sJJ6y');
+    this.events.publish('token:update', 'iRV5XSbrgcttVViF18NHFaS0fDMnU13SsXBHNkGaTZtuUREnMI0sSy0sJJ6y');
   }
 
 }

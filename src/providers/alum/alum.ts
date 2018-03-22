@@ -15,7 +15,7 @@ export class AlumProvider {
   }
 
   editAlum(alum) {
-    return this.api.post('student/edit', alum).then(data => {
+    return this.api.get('student/edit', alum).then(data => {
       return data;
     });
   }

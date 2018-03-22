@@ -19,6 +19,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = HomePage;
+  aux: boolean = true;
 
 
   pages: Array<{ title: string, component: any, tabIndex?: number, icon?: string}>;
@@ -52,6 +53,7 @@ export class MyApp {
       duration: 3000,
       position: 'bottom'
     }).present();
+    this.aux=true;
   }
 
   loginAsAlum() {
@@ -61,6 +63,7 @@ export class MyApp {
       duration: 3000,
       position: 'bottom'
     }).present();
+    this.aux=false;
   }
 
 }

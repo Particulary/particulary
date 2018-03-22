@@ -7,20 +7,32 @@
   <ion-content>
 
 
-    <ion-list no-lines particulary_sidebar class="user-sidebar">
+    <ion-list  no-lines particulary_sidebar class="user-sidebar">
       <button menuClose ion-item *ngFor="let p of pages" (click)="goToPage(p)">
         <ion-icon name="{{ p.icon }}"></ion-icon>
         <span>{{p.title}}</span>
       </button>
       <br>
-      <button (click)="loginAsTeacher()">
-        Acceder como profesor
+      <ion-item *ngIf="this.aux==true">
+      <button ion-button color="secondary" (click)="loginAsTeacher()">
+        Loggeado como profesor
       </button>
-    <br>
+       <br>
       <br>
-      <button (click)="loginAsAlum()">
+      <button ion-button (click)="loginAsAlum()">
         Acceder como alumno
       </button>
+      </ion-item>
+      <ion-item *ngIf="this.aux==false">
+        <button ion-button (click)="loginAsTeacher()">
+          Acceder como profesor
+        </button>
+        <br>
+        <br>
+        <button ion-button color="secondary" (click)="loginAsAlum()">
+          Loggeado como alumno
+        </button>
+      </ion-item>
     </ion-list>
 
   </ion-content>

@@ -1,6 +1,5 @@
-
-import { Injectable } from '@angular/core';
-import { ApiProvider } from '../api/api';
+import {Injectable} from '@angular/core';
+import {ApiProvider} from '../api/api';
 
 /*
   Generated class for the CustomerProvider provider.
@@ -15,23 +14,22 @@ export class AlumProvider {
   }
 
   editAlum(alum) {
-    return this.api.get('student/edit', alum).then(data => {
+    return this.api.post('student/edit', alum).then(data => {
       return data;
     });
   }
 
-      offers() {
-        return this.api.get('student/offer').then(data => {
-          return data;
-        });
-      }
+  offers(search) {
+    return this.api.get('student/offer', {name: search}).then(data => {
+      return data;
+    });
+  }
 
-      apply(offer) {
-        return this.api.get('student/offer/apply/' + offer.id).then(data => {
-          return data;
-        });
-      }
-
+  apply(offer) {
+    return this.api.get('student/offer/apply/' + offer.id).then(data => {
+      return data;
+    });
+  }
 
 
   infoAlum() {

@@ -66,4 +66,16 @@ export class TeacherProvider {
     });
   }
 
+  editTeacher(teacher) {
+    return this.api.post('teacher/edit', teacher).then(data => {
+      return data;
+    });
+  }
+
+  infoTeacher() {
+  return this.api.get('teacher/info').then(data => {
+  return data;
+  });
+  }
+
 }

@@ -4,12 +4,16 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import {CreateExperiencePage} from "../pages/create-experience/create-experience";
 import {MyOffersPage} from "../pages/my-offers/my-offers";
+
+import {EditTeacherPage} from "../pages/edit-teacher/edit-teacher";
+
 import {MyExperiencesPage} from "../pages/my-experiences/my-experiences";
 
 import {HomePage} from "../pages/home/home";
 import {AllOffersPage} from "../pages/all-offers/all-offers";
 import {Storage} from "@ionic/storage";
 import {LoginPage} from "../pages/login/login";
+
 
 
 @Component({
@@ -28,10 +32,13 @@ export class MyApp {
     this.initializeApp();
 
     this.pages = [
+
       { title: 'Inicio', component: HomePage, icon: 'ios-home' },
       { title: 'Mis Ofertas', component: MyOffersPage, icon: 'md-ribbon' },
       { title: 'Mis Experiencias', component: MyExperiencesPage, icon: 'ios-school' },
       { title: 'Lista Ofertas (Alumno)', component: AllOffersPage, icon: 'md-ribbon' },
+      { title: 'Editar profesor', component: EditTeacherPage, icon: 'help-buoy' },
+
     ];
 
   }

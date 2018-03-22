@@ -18,7 +18,6 @@ export class EditExperiencePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private teacherProvider: TeacherProvider) {
     this.experience = navParams.data;
-
     this.editExperienceForm = this.formBuilder.group({
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       description: new FormControl('', [Validators.required, Validators.minLength(6)]),

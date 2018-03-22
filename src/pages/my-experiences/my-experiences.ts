@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {NavController, NavParams, ToastController} from 'ionic-angular';
 import { TeacherProvider } from "../../providers/teacher/teacher";
 import { CreateExperiencePage } from "../create-experience/create-experience";
 import {EditExperiencePage} from "../edit-experience/edit-experience";
+import {HomePage} from "../home/home";
 
 
 @Component({
@@ -14,12 +15,18 @@ export class MyExperiencesPage {
   experiences: any;
 showButton: boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private teacherProvider: TeacherProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private teacherProvider: TeacherProvider,  public toastCtrl: ToastController) {
     this.teacherProvider.myExperiences().then(data => {
       this.experiences = data;
       this.showButton=true;
     }).catch(err => {
       console.log('Not authorized');
+      this.navCtrl.setRoot(HomePage);
+      this.toastCtrl.create({
+        message: 'No autorizado, debes ser profesor para acceder',
+        duration: 3000,
+        position: 'bottom'
+      }).present();
       this.showButton= false;
     });
   }

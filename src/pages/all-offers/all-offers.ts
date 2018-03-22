@@ -11,9 +11,10 @@ import {HomePage} from "../home/home";
 export class AllOffersPage {
 
   offers: any;
+  searchInput: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private alumProvider: AlumProvider, public toastCtrl: ToastController,) {
-    this.alumProvider.offers().then(data => {
+    this.alumProvider.offers('').then(data => {
       this.offers = data;
     }).catch(err => {
       console.log('Not authorized');
@@ -36,6 +37,20 @@ export class AllOffersPage {
     }).catch(err => {
       this.toastCtrl.create({
         message: err.error.message,
+        duration: 3000,
+        position: 'bottom'
+      }).present();
+    });
+  }
+
+  reloadOffers(e) {
+    this.alumProvider.offers(e.target.value).then(data => {
+      this.offers = data;
+    }).catch(err => {
+      console.log('Not authorized');
+      this.navCtrl.setRoot(HomePage);
+      this.toastCtrl.create({
+        message: 'No autorizado, debes ser alumno para acceder',
         duration: 3000,
         position: 'bottom'
       }).present();

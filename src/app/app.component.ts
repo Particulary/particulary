@@ -67,7 +67,7 @@ export class MyApp {
   }
 
   loginAsAlum() {
-    this.events.publish('token:update', 'aRV5XSbrgcttVViF18NHFaS0fDMnU13SsXBHNkGaTZtuUREnMI0sSy0sJJ6y');
+    this.events.publish('token:update',  'aRV5XSbrgcttVViF18NHFaS0fDMnU13SsXBHNkGaTZtuUREnMI0sSy0sJJ6y');
     this.toastCtrl.create({
       message: 'Estás logueado como alumno',
       duration: 3000,

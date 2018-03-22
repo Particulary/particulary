@@ -24,8 +24,14 @@ export class EditOfferPage {
       status: new FormControl('', Validators.required),
       price: new FormControl('', [Validators.required, Validators.min(0.00)]),
       start_date: new FormControl('', Validators.required),
-      end_date: new FormControl('', Validators.required),
-    });
+      end_date: new FormControl('', [Validators.required]),
+    }, { 'validator': this.pastDateValidator });
+  }
+
+  pastDateValidator(control: FormGroup) {
+    console.log(control.controls['start_date'].value)
+    if (control.controls['end_date'].value < control.controls['start_date'].value)
+      return {"invalid_end_date": true};
   }
 
   editOffer() {

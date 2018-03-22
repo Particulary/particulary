@@ -36,9 +36,9 @@ export class MyApp {
     this.pages = [
 
       { title: 'Inicio', component: HomePage, icon: 'ios-home' },
-      { title: 'Mis Ofertas', component: MyOffersPage, icon: 'md-ribbon' },
-      { title: 'Mis Experiencias', component: MyExperiencesPage, icon: 'ios-school' },
-      { title: 'Lista Ofertas (Alumno)', component: AllOffersPage, icon: 'md-ribbon' },
+      { title: 'Mis Ofertas', component: MyOffersPage, icon: 'ios-school' },
+      { title: 'Mis Experiencias', component: MyExperiencesPage, icon: 'md-ribbon' },
+      { title: 'Lista Ofertas (Alumno)', component: AllOffersPage, icon: 'ios-school' },
       { title: 'Editar profesor', component: EditTeacherPage, icon: 'md-color-palette' },
       { title: 'Editar alumno', component: EditAlumPage, icon: 'ios-brush' },
 
@@ -67,7 +67,7 @@ export class MyApp {
   }
 
   loginAsAlum() {
-    this.events.publish('token:update', 'aRV5XSbrgcttVViF18NHFaS0fDMnU13SsXBHNkGaTZtuUREnMI0sSy0sJJ6y');
+    this.events.publish('token:update',  'aRV5XSbrgcttVViF18NHFaS0fDMnU13SsXBHNkGaTZtuUREnMI0sSy0sJJ6y');
     this.toastCtrl.create({
       message: 'Estás logueado como alumno',
       duration: 3000,

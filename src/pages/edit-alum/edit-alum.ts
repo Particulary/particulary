@@ -1,5 +1,5 @@
 import { Component} from "@angular/core";
-import {NavController, NavParams } from 'ionic-angular';
+import {NavController, NavParams, ToastController} from 'ionic-angular';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {AlumProvider} from "../../providers/alum/alum";
 import {HomePage} from "../home/home";
@@ -16,11 +16,19 @@ export class EditAlumPage {
   emailError: boolean = false;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private alumProvider: AlumProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private alumProvider: AlumProvider, public toastCtrl: ToastController) {
     this.alum=false;
     this.alumProvider.infoAlum().then(data => {
       this.alum = data;
       console.log(data);
+    }).catch(err => {
+      console.log('No autorizado');
+      this.navCtrl.setRoot(HomePage);
+      this.toastCtrl.create({
+        message: 'No autorizado, debes ser alumno para acceder',
+        duration: 3000,
+        position: 'bottom'
+      }).present();
     });
 
     this.editAlumForm = this.formBuilder.group({

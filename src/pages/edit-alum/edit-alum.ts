@@ -27,12 +27,10 @@ export class EditAlumPage {
       //class: new FormControl('', [Validators.required, Validators.minLength(3)]),
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       surname: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      email: new FormControl('', [Validators.required,/* Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$')*/]),
-      //password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-      phone: new FormControl('', [Validators.required,/*Validators.pattern('^(6|7|8|9)+d{9}')*/]),
+      email: new FormControl('', [Validators.required, Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$')]),
+      phone: new FormControl('', [Validators.required,Validators.pattern('(\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}')]),
       address: new FormControl('', [Validators.required, Validators.minLength(5)]),
       bio: new FormControl('', [Validators.required, Validators.minLength(5)]),
-      //appreciation: new FormControl('', [Validators.required, Validators.max(5)]),
     });
   }
 

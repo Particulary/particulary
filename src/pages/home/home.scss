@@ -1,4 +1,11 @@
 page-home {
+
+  .content{
+
+    background-image: url("../../assets/imgs/home.jpg");
+    background-size: cover;
+    background-position: center;
+  }
   .gsad-icon {
     display: block;
     margin: auto;
@@ -6,11 +13,26 @@ page-home {
     padding-top: 30px;
     padding-bottom: 10px;
   }
+
   .text {
+    font-family: "Little Days";
     text-align: center;
-    color: #1f4282;
+    color: white;
     font-size: 15px;
     margin-left: 15px;
     margin-right: 15px;
   }
+
+  .botones{
+
+    background: none;
+  }
+
+  .first{
+    margin-left: 50px;
+    float:left;}
+
+  .second{
+    margin-right: 50px;
+    float:right;}
 }

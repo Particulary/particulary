@@ -10,6 +10,8 @@
 </ion-header>
 
 <ion-content>
+
+  <ion-input type="text" (keyup)="reloadOffers($event)" placeholder="Buscar ofertas..."></ion-input>
   <ion-list>
     <ion-item *ngFor="let offer of offers">
       <div class="first">

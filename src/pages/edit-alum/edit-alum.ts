@@ -32,7 +32,6 @@ export class EditAlumPage {
     });
 
     this.editAlumForm = this.formBuilder.group({
-      //class: new FormControl('', [Validators.required, Validators.minLength(3)]),
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       surname: new FormControl('', [Validators.required, Validators.minLength(3)]),
       email: new FormControl('', [Validators.required,Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$')]),

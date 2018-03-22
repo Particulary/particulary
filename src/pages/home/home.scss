@@ -18,17 +18,21 @@ page-home {
     font-family: "Little Days";
     text-align: center;
     color: white;
-    font-size: 17px;
+    font-size: 15px;
     margin-left: 15px;
     margin-right: 15px;
   }
 
   .botones{
+
     background: none;
-    text-align: center;
   }
 
-  .botones button {
-    display: inline-block;
-  }
+  .first{
+    margin-left: 50px;
+    float:left;}
+
+  .second{
+    margin-right: 50px;
+    float:right;}
 }

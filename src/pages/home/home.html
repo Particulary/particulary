@@ -10,8 +10,7 @@
 </ion-header>
 
 <ion-content>
-  <img src="assets/imgs/logo-ini.png" class="gsad-icon"/>
-
+  <img src="assets/imgs/logo-ini.png" width="20px" height="130px" class="gsad-icon"/>
   <div class="text" align="left">
     <h3 class="p1">Este es el MVP de Particulary. </h3>
     <p class="p2">En esta pantalla encontrarás la opción de logearte como alumno y como profesor,
@@ -22,23 +21,19 @@
   </div>
 
   <ion-item class="botones" *ngIf="this.aux==true">
-    <button ion-button color="secondary" (click)="loginAsTeacher()">
-      Loggeado como profesor
+    <button class="first" ion-button color="secondary" (click)="loginAsTeacher()">
+      Profesor
     </button>
-    <br>
-    <br>
-    <button ion-button (click)="loginAsAlum()">
-      Acceder como alumno
+    <button class="second" ion-button color="danger" (click)="loginAsAlum()">
+      Alumno
     </button>
   </ion-item>
   <ion-item class="botones" *ngIf="this.aux==false">
-    <button ion-button (click)="loginAsTeacher()">
-      Acceder como profesor
+    <button class="first" ion-button color="danger" (click)="loginAsTeacher()">
+      Profesor
     </button>
-    <br>
-    <br>
-    <button ion-button color="secondary" (click)="loginAsAlum()">
-      Loggeado como alumno
+    <button class="second" ion-button color="secondary" (click)="loginAsAlum()">
+      Alumno
     </button>
   </ion-item>
 

@@ -13,26 +13,6 @@
         <span>{{p.title}}</span>
       </button>
       <br>
-      <ion-item *ngIf="this.aux==true">
-      <button ion-button color="secondary" (click)="loginAsTeacher()">
-        Loggeado como profesor
-      </button>
-       <br>
-      <br>
-      <button ion-button (click)="loginAsAlum()">
-        Acceder como alumno
-      </button>
-      </ion-item>
-      <ion-item *ngIf="this.aux==false">
-        <button ion-button (click)="loginAsTeacher()">
-          Acceder como profesor
-        </button>
-        <br>
-        <br>
-        <button ion-button color="secondary" (click)="loginAsAlum()">
-          Loggeado como alumno
-        </button>
-      </ion-item>
     </ion-list>
 
   </ion-content>

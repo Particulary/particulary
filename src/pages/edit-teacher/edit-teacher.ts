@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NavController, NavParams } from 'ionic-angular';
+import {NavController, NavParams, ToastController} from 'ionic-angular';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {TeacherProvider} from "../../providers/teacher/teacher";
 import {HomePage} from "../home/home";
@@ -16,11 +16,19 @@ export class EditTeacherPage {
   emailError: boolean = false;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private teacherProvider: TeacherProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private teacherProvider: TeacherProvider,  public toastCtrl: ToastController) {
     this.teacher=false;
     this.teacherProvider.infoTeacher().then(data => {
       this.teacher = data;
       console.log(data);
+    }).catch(err => {
+      console.log('No autorizado');
+      this.navCtrl.setRoot(HomePage);
+      this.toastCtrl.create({
+        message: 'No autorizado, debes ser profesor para acceder',
+        duration: 3000,
+        position: 'bottom'
+      }).present();
     });
 
 
@@ -28,8 +36,8 @@ export class EditTeacherPage {
       //subject: new FormControl('', [Validators.required, Validators.minLength(3)]),
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       surname: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      email: new FormControl('', [Validators.required,/* Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$')*/]),
-      phone: new FormControl('', [Validators.required,/*Validators.pattern('^(6|7|8|9)+d{9}')*/]),
+      email: new FormControl('', [Validators.required, Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$')]),
+      phone: new FormControl('', [Validators.required,Validators.pattern('(\\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}')]),
       address: new FormControl('', [Validators.required, Validators.minLength(5)]),
       bio: new FormControl('', [Validators.required, Validators.minLength(5)]),
       //appreciation: new FormControl('', [Validators.required, Validators.max(5)]),

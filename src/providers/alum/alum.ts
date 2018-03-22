@@ -13,16 +13,33 @@ export class AlumProvider {
 
   constructor(public api: ApiProvider) {
   }
-  offers() {
-    return this.api.get('student/offer').then(data => {
+
+  editAlum(alum) {
+    return this.api.get('student/edit', alum).then(data => {
       return data;
     });
   }
 
-  apply(offer) {
-    return this.api.get('student/offer/apply/' + offer.id).then(data => {
+      offers() {
+        return this.api.get('student/offer').then(data => {
+          return data;
+        });
+      }
+
+      apply(offer) {
+        return this.api.get('student/offer/apply/' + offer.id).then(data => {
+          return data;
+        });
+      }
+
+
+
+  infoAlum() {
+    return this.api.get('student/info').then(data => {
       return data;
     });
   }
+
 
 }
+

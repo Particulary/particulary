@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams, ToastController} from 'ionic-angular';
 import {AlumProvider} from "../../providers/alum/alum";
+import {HomePage} from "../home/home";
 
 
 @Component({
@@ -11,11 +12,17 @@ export class AllOffersPage {
 
   offers: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alumProvider: AlumProvider, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alumProvider: AlumProvider, public toastCtrl: ToastController,) {
     this.alumProvider.offers().then(data => {
       this.offers = data;
     }).catch(err => {
       console.log('Not authorized');
+      this.navCtrl.setRoot(HomePage);
+      this.toastCtrl.create({
+        message: 'No autorizado, debes ser alumno para acceder',
+        duration: 3000,
+        position: 'bottom'
+      }).present();
     });
   }
 

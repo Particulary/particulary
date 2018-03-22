@@ -10,6 +10,7 @@ import {EditTeacherPage} from "../pages/edit-teacher/edit-teacher";
 import {MyExperiencesPage} from "../pages/my-experiences/my-experiences";
 
 import {HomePage} from "../pages/home/home";
+import {EditAlumPage} from "../pages/edit-alum/edit-alum";
 import {AllOffersPage} from "../pages/all-offers/all-offers";
 import {Storage} from "@ionic/storage";
 import {LoginPage} from "../pages/login/login";
@@ -26,6 +27,7 @@ export class MyApp {
   aux: boolean = true;
 
 
+
   pages: Array<{ title: string, component: any, tabIndex?: number, icon?: string}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public events: Events, public menuCtrl: MenuController, public storage: Storage,  public toastCtrl: ToastController) {
@@ -34,10 +36,11 @@ export class MyApp {
     this.pages = [
 
       { title: 'Inicio', component: HomePage, icon: 'ios-home' },
-      { title: 'Mis Ofertas', component: MyOffersPage, icon: 'md-ribbon' },
-      { title: 'Mis Experiencias', component: MyExperiencesPage, icon: 'ios-school' },
-      { title: 'Lista Ofertas (Alumno)', component: AllOffersPage, icon: 'md-ribbon' },
-      { title: 'Editar profesor', component: EditTeacherPage, icon: 'help-buoy' },
+      { title: 'Mis Ofertas', component: MyOffersPage, icon: 'ios-school' },
+      { title: 'Mis Experiencias', component: MyExperiencesPage, icon: 'md-ribbon' },
+      { title: 'Lista Ofertas (Alumno)', component: AllOffersPage, icon: 'ios-school' },
+      { title: 'Editar profesor', component: EditTeacherPage, icon: 'md-color-palette' },
+      { title: 'Editar alumno', component: EditAlumPage, icon: 'ios-brush' },
 
     ];
 
@@ -64,7 +67,7 @@ export class MyApp {
   }
 
   loginAsAlum() {
-    this.events.publish('token:update', 'aRV5XSbrgcttVViF18NHFaS0fDMnU13SsXBHNkGaTZtuUREnMI0sSy0sJJ6y');
+    this.events.publish('token:update',  'aRV5XSbrgcttVViF18NHFaS0fDMnU13SsXBHNkGaTZtuUREnMI0sSy0sJJ6y');
     this.toastCtrl.create({
       message: 'Estás logueado como alumno',
       duration: 3000,

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {Events, NavController, NavParams, ToastController} from 'ionic-angular';
 import {TeacherProvider} from "../../providers/teacher/teacher";
 
 
@@ -9,14 +9,35 @@ import {TeacherProvider} from "../../providers/teacher/teacher";
 })
 export class HomePage {
 
- /* experiences: any;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, private teacherProvider: TeacherProvider) {
-    this.teacherProvider.experiences().then(data => {
-      this.experiences = data;
-    });
-  }*/
+  aux: boolean = true;
+  constructor(public navCtrl: NavController, public navParams: NavParams,  public events: Events, private teacherProvider: TeacherProvider, public toastCtrl: ToastController) {
+    this.loginAsTeacherAux();
+  }
 
   loadMore() {}
 
+  loginAsTeacher() {
+    this.events.publish('token:update', 'iRV5XSbrgcttVViF18NHFaS0fDMnU13SsXBHNkGaTZtuUREnMI0sSy0sJJ6y');
+    this.toastCtrl.create({
+      message: 'Estás logueado como profesor',
+      duration: 3000,
+      position: 'bottom'
+    }).present();
+    this.aux=true;
+  }
+
+  loginAsTeacherAux() {
+    this.events.publish('token:update', 'iRV5XSbrgcttVViF18NHFaS0fDMnU13SsXBHNkGaTZtuUREnMI0sSy0sJJ6y');
+    this.aux=true;
+  }
+
+  loginAsAlum() {
+    this.events.publish('token:update',  'aRV5XSbrgcttVViF18NHFaS0fDMnU13SsXBHNkGaTZtuUREnMI0sSy0sJJ6y');
+    this.toastCtrl.create({
+      message: 'Estás logueado como alumno',
+      duration: 3000,
+      position: 'bottom'
+    }).present();
+    this.aux=false;
+  }
 }

@@ -31,6 +31,6 @@
     </ion-item>
     <br>
   </ion-list>
-  <button class="botonfinal" ion-button round color="default"(click)="addOffer()" >Añadir oferta</button>
+  <button class="botonfinal" *ngIf="this.showButton==true" ion-button round color="default"(click)="addOffer()" >Añadir oferta</button>
 
 </ion-content>

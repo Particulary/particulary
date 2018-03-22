@@ -12,10 +12,14 @@ import { EditOfferPage } from "../edit-offer/edit-offer";
 export class MyOffersPage {
 
   offers: any;
-
+showButton: boolean;
   constructor(public navCtrl: NavController, public navParams: NavParams, private teacherProvider: TeacherProvider) {
     this.teacherProvider.myOffers().then(data => {
       this.offers = data;
+      this.showButton=true;
+    }).catch(err => {
+      console.log('Not authorized');
+      this.showButton= false;
     });
   }
 

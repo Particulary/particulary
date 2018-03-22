@@ -12,10 +12,15 @@ import {EditExperiencePage} from "../edit-experience/edit-experience";
 export class MyExperiencesPage {
 
   experiences: any;
+showButton: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private teacherProvider: TeacherProvider) {
     this.teacherProvider.myExperiences().then(data => {
       this.experiences = data;
+      this.showButton=true;
+    }).catch(err => {
+      console.log('Not authorized');
+      this.showButton= false;
     });
   }
 

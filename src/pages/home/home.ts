@@ -9,13 +9,13 @@ import {TeacherProvider} from "../../providers/teacher/teacher";
 })
 export class HomePage {
 
-  experiences: any;
+ /* experiences: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private teacherProvider: TeacherProvider) {
     this.teacherProvider.experiences().then(data => {
       this.experiences = data;
     });
-  }
+  }*/
 
   loadMore() {}
 

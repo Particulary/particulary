@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NavController, NavParams } from 'ionic-angular';
+import {NavController, NavParams, ToastController} from 'ionic-angular';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {TeacherProvider} from "../../providers/teacher/teacher";
 import {HomePage} from "../home/home";
@@ -16,11 +16,19 @@ export class EditTeacherPage {
   emailError: boolean = false;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private teacherProvider: TeacherProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private teacherProvider: TeacherProvider,  public toastCtrl: ToastController) {
     this.teacher=false;
     this.teacherProvider.infoTeacher().then(data => {
       this.teacher = data;
       console.log(data);
+    }).catch(err => {
+      console.log('No autorizado');
+      this.navCtrl.setRoot(HomePage);
+      this.toastCtrl.create({
+        message: 'No autorizado, debes ser profesor para acceder',
+        duration: 3000,
+        position: 'bottom'
+      }).present();
     });
 
 

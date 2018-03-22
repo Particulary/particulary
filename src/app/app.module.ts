@@ -17,6 +17,7 @@ import { TokenInterceptor } from '../providers/teacher/TokenInterceptor';
 import { DaysTillTodayPipe } from '../pipes/days-till-today/days-till-today';
 import { ParseDatePipe } from "../pipes/parse-date/parse-date";
 import { LoginProvider } from "../providers/login/login";
+import {EditAlumPage} from "../pages/edit-alum/edit-alum";
 import {MyOffersPage} from "../pages/my-offers/my-offers";
 import {CreateOfferPage} from "../pages/create-offer/create-offer";
 import {EditOfferPage} from "../pages/edit-offer/edit-offer";
@@ -28,11 +29,13 @@ import {AlumProvider} from "../providers/alum/alum";
 import {AllOffersPage} from "../pages/all-offers/all-offers";
 
 
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LoginPage,
+    EditAlumPage,
     MyOffersPage,
     CreateOfferPage,
     EditOfferPage,
@@ -58,6 +61,7 @@ import {AllOffersPage} from "../pages/all-offers/all-offers";
     MyApp,
     HomePage,
     LoginPage,
+    EditAlumPage,
     MyOffersPage,
     CreateOfferPage,
     EditOfferPage,
@@ -66,6 +70,7 @@ import {AllOffersPage} from "../pages/all-offers/all-offers";
     CreateExperiencePage,
     EditExperiencePage,
     AllOffersPage,
+
 
   ],
   providers: [

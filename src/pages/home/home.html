@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content>
-  <img src="assets/imgs/logo.png" class="gsad-icon"/>
+  <img src="assets/imgs/logo-ini.png" class="gsad-icon"/>
 
   <div class="text" align="left">
     <h3 class="p1">Este es el MVP de Particulary. </h3>
@@ -21,7 +21,7 @@
     <p class="p4">Como alumno podrás acceder a la lista de ofertas disponibles, inscribirte a las que desees y modificar tu perfil.</p>
   </div>
 
-  <ion-item *ngIf="this.aux==true">
+  <ion-item class="botones" *ngIf="this.aux==true">
     <button ion-button color="secondary" (click)="loginAsTeacher()">
       Loggeado como profesor
     </button>
@@ -31,7 +31,7 @@
       Acceder como alumno
     </button>
   </ion-item>
-  <ion-item *ngIf="this.aux==false">
+  <ion-item class="botones" *ngIf="this.aux==false">
     <button ion-button (click)="loginAsTeacher()">
       Acceder como profesor
     </button>

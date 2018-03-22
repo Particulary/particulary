@@ -37,7 +37,7 @@ export class MyApp {
       { title: 'Mis Ofertas', component: MyOffersPage, icon: 'md-ribbon' },
       { title: 'Mis Experiencias', component: MyExperiencesPage, icon: 'ios-school' },
       { title: 'Lista Ofertas (Alumno)', component: AllOffersPage, icon: 'md-ribbon' },
-      { title: 'Editar profesor', component: EditTeacherPage, icon: 'help-buoy' },
+      { title: 'Editar profesor', component: EditTeacherPage, icon: 'md-color-palette' },
 
     ];
 

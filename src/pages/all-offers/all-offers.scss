@@ -1,5 +1,24 @@
 all-offers {
 
+    .busqueda{
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-top: 10px;
+      margin-bottom: 3px;
+      width:270px;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 20px;
+      font-size: 15px;
+      padding-left: 30px;
+      background-image: url("../../assets/imgs/search.png");
+      background-size: 15px;
+      background-position: 12px 14px;
+      background-repeat: no-repeat;
+      -webkit-transition: width 0.4s ease-in-out;
+      transition: width 0.4s ease-in-out;
+    }
+
     .button {
       bottom: 0;
       margin-bottom: 0;

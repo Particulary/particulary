@@ -3,51 +3,38 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Create Offer</ion-title>
+    <ion-title><ion-icon name='ios-school' is active="false"></ion-icon>Create Offer</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="createOffer">
   <form [formGroup]="createOfferForm" (ngSubmit)="createOffer()">
-
-    <div class="name-input">
-      <ion-item>
-        <ion-input type="text" formControlName="name"></ion-input>
-        <ion-label>Nombre</ion-label>
-      </ion-item>
-      <p class="error-message">Mínimo 3 caracteres</p>
-    </div>
-
-    <div class="place-input">
-      <ion-item>
-        <ion-input type="text" formControlName="location"></ion-input>
+    <div class="createOffer">
+    <fieldset>
+      <legend><span class="number">1</span> Candidate Info</legend>
+        <ion-label>Nombre del profesor</ion-label>
+        <ion-input type="text" formControlName="name" placeholder="Min. 3 caracteres"></ion-input>
         <ion-label>Lugar de la clase</ion-label>
-      </ion-item>
-      <p class="error-message">Mínimo 6 caracteres</p>
-    </div>
+        <ion-input type="text" formControlName="location" placeholder="Min. 6 caracteres"></ion-input>
+    </fieldset>
 
-    <div class="price-input">
-      <ion-item>
-        <ion-input type="number" formControlName="price"></ion-input>
+    <fieldset>
+      <legend><span class="number">2</span> Price</legend>
         <ion-label>Precio</ion-label>
-      </ion-item>
-    </div>
+        <ion-input type="number" formControlName="price"></ion-input>
 
-    <div class="start-date-input">
-      <ion-item>
-        <ion-input type="date" formControlName="start_date"></ion-input>
+    </fieldset>
+
+    <fieldset>
+      <legend><span class="number">3</span> Date</legend>
         <ion-label>Fecha de inicio</ion-label>
-      </ion-item>
-    </div>
-
-    <div class="end-date-input">
-      <ion-item>
-        <ion-input type="date" formControlName="end_date"></ion-input>
+        <ion-input type="date" formControlName="start_date"></ion-input>
         <ion-label>Fecha de fin</ion-label>
-      </ion-item>
-    </div>
+        <ion-input type="date" formControlName="end_date"></ion-input>
+    </fieldset>
 
-    <button class="enter" ion-button type="submit" [disabled]="!createOfferForm.valid">Crear</button>
+    <button class="enter" ion-button round type="submit" [disabled]="!createOfferForm.valid">Crear</button>
+    </div>
 
   </form>
 </ion-content>

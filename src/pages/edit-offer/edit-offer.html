@@ -4,66 +4,54 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Edit Offer</ion-title>
+    <ion-title><ion-icon name='ios-school' is active="false"></ion-icon>Edit Offer</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content>
+<ion-content class="guay">
+  <div class="guay">
   <form [formGroup]="editOfferForm" (ngSubmit)="editOffer()">
 
-    <div class="name-input">
-      <ion-item>
-        <ion-input type="text" formControlName="name" [value]="offer.name"></ion-input>
+    <fieldset>
+      <legend><span class="number">1</span> Candidate Info</legend>
+
         <ion-label>Nombre</ion-label>
-      </ion-item>
-      <p class="error-message">Mínimo 3 caracteres</p>
-    </div>
+        <ion-input type="text" formControlName="name" placeholder="Min. 3 caracteres" [value]="offer.name"></ion-input>
 
-    <div class="place-input">
-      <ion-item>
-        <ion-input type="text" formControlName="location" [value]="offer.location"></ion-input>
-        <ion-label>Lugar de la clase</ion-label>
-      </ion-item>
-      <p class="error-message">Mínimo 6 caracteres</p>
-    </div>
-
-    <div class="status-input">
-      <ion-item>
+      <ion-label>Lugar de la clase</ion-label>
+      <ion-input type="text" formControlName="location" placeholder="Min. 6 caracteres" [value]="offer.location"></ion-input>
+<div class="lol">
+      <ion-label>Estado de la clase</ion-label>
         <ion-select formControlName="status" [(ngModel)]="offer.status">
           <ion-option value="OFFERED">Ofertado</ion-option>
           <ion-option value="CANCELLED">Cancelado</ion-option>
           <ion-option value="IMPARTED">Impartido</ion-option>
           <ion-option value="RESERVED">Reservado</ion-option>
         </ion-select>
-        <ion-label>Estado de la clase</ion-label>
-      </ion-item>
-      <p class="error-message">Mínimo 6 caracteres</p>
-    </div>
+  <br>
+</div>
 
-    <div class="price-input">
-      <ion-item>
-        <ion-input type="text" formControlName="price" [value]="offer.price"></ion-input>
-        <ion-label>Precio</ion-label>
-      </ion-item>
-    </div>
+    </fieldset>
 
-    <div class="start-date-input">
-      <ion-item>
-        <ion-input type="date" formControlName="start_date" [value]="offer.start_date"></ion-input>
-        <ion-label>Fecha de inicio</ion-label>
-      </ion-item>
-    </div>
+    <fieldset>
+      <legend><span class="number">2</span> Price</legend>
+      <ion-label>Precio</ion-label>
+      <ion-input type="text" formControlName="price" [value]="offer.price"></ion-input>
+    </fieldset>
 
-    <div class="end-date-input">
-      <ion-item>
-        <ion-input type="date" formControlName="end_date" [value]="offer.end_date"></ion-input>
-        <ion-label>Fecha de fin</ion-label>
-      </ion-item>
-    </div>
+    <fieldset>
+      <legend><span class="number">3</span> Date</legend>
 
-    <button class="enter" ion-button type="submit" [disabled]="!editOfferForm.valid">Editar</button>
+      <ion-label>Fecha de inicio</ion-label>
+      <ion-input type="date" formControlName="start_date" [value]="offer.start_date"></ion-input>
+
+      <ion-label>Fecha de fin</ion-label>
+      <ion-input type="date" formControlName="end_date" [value]="offer.end_date"></ion-input>
+    </fieldset>
+    <button class="enter" ion-button type="submit" round [disabled]="!editOfferForm.valid">Editar</button>
 
   </form>
+  </div>
 </ion-content>

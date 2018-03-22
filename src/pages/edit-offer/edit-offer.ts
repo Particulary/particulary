@@ -19,7 +19,7 @@ export class EditOfferPage {
     this.offer = navParams.data;
 
     this.editOfferForm = this.formBuilder.group({
-      name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      name: new FormControl('', [Validators.required, Validators.minLength(3),Validators.pattern('[a-zA-Z ]*')]),
       location: new FormControl('', [Validators.required, Validators.minLength(6)]),
       status: new FormControl('', Validators.required),
       price: new FormControl('', [Validators.required, Validators.min(0.00)]),

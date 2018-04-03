@@ -1,8 +1,16 @@
 page-home {
 
+  .scroll-content {
+    text-align: center;
+  }
+
+  img.icon {
+    width: auto;
+  }
+
   .content{
 
-    background-image: url("../../assets/imgs/home.jpg");
+    background-image: url("../assets/imgs/home.jpg");
     background-size: cover;
     background-position: center;
   }

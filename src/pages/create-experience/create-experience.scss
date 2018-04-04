@@ -43,6 +43,26 @@ create-experience {
 
   }
 
+  .guay .date {
+    background: rgba(255,255,255,.1);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 0;
+    outline: 0;
+    padding: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background-color: #e8eeef;
+    color:#8a97a0;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
   .guay .number {
     background: #1abc9c;
     color: #fff;
@@ -57,7 +77,7 @@ create-experience {
     border-radius: 15px 15px 15px 0px;
   }
 
-  .guay button {
+  .guay .enter {
     position: relative;
     display: block;
     padding: 19px 39px 18px 39px;
@@ -72,7 +92,7 @@ create-experience {
     border-width: 1px 1px 3px;
     margin-bottom: 10px;
   }
-  .guay button:hover
+  .guay .enter:hover
   {
     background: #109177;
   }

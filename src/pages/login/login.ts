@@ -9,6 +9,7 @@ import {
 
 import {LoginProvider} from "../../providers/login/login";
 import {HomePage} from "../home/home";
+import {RegisterPage} from "../../pages/register/register";
 
 
 @Component({
@@ -75,7 +76,7 @@ export class LoginPage {
   register() {
 
     // TODO: redirect to register page
-    // this.navCtrl.push(CheckBeneficiaryPage, {}, {animate: true, direction: 'forward'});
+    this.navCtrl.push(RegisterPage, {}, {animate: true, direction: 'forward'});
   }
 
   validateEmail() {

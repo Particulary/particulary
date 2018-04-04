@@ -41,6 +41,7 @@ export class MyApp {
       { title: 'Lista Ofertas (Alumno)', component: AllOffersPage, icon: 'ios-school' },
       { title: 'Editar profesor', component: EditTeacherPage, icon: 'md-color-palette' },
       { title: 'Editar alumno', component: EditAlumPage, icon: 'ios-brush' },
+      { title: 'Login', component: LoginPage, icon: 'ios-brush' },
 
     ];
 

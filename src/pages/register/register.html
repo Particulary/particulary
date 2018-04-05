@@ -12,9 +12,9 @@
   <div class="content-align-wrapper">
     <div class="content-align">
 
-      <img src="assets/imgs/logo.png" class="gsad-icon"/>
-
       <form [formGroup]="registerForm" (ngSubmit)="register()">
+
+        <img src="assets/imgs/logo.png" class="gsad-icon"/>
 
         <fieldset>
           <legend class="legend"><span class="number">1</span>Información básica</legend>
@@ -68,8 +68,6 @@
             <ion-option value="teacher">Profesor</ion-option>
             <ion-option value="alum">Alumno</ion-option>
           </ion-select>
-
-          <br>
 
           <ion-item>
             <ion-input type="text" formControlName="bio" ></ion-input>

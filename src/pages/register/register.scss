@@ -1,19 +1,8 @@
 page-register {
 
-  *, *:before, *:after {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: 'Nunito', sans-serif;
-    color: #384047;
-  }
-
   form {
     position: relative;
-    max-width: 300px;
+    max-width: 800px;
     margin: 10px auto;
     padding: 10px 20px;
     background: #f4f7f8;
@@ -25,14 +14,23 @@ page-register {
        text-align: center;
        img {
          width: 90px;
-         margin-bottom: 40px;
+         margin-bottom: 30px;
        }
 
-       .ion-input{
+       ion-label{
+         font-family: 'Nunito', sans-serif;
+         color: #384047;
+         display: block;
+         text-align: left;
+         font-size: 16px;
+       }
+
+       ion-item ion-input {
+         background: rgba(255,255,255,0.1);
          border: none;
          font-size: 16px;
          height: auto;
-         margin: 0px;
+         margin: 0;
          outline: 0;
          padding: 15px;
          width: 100%;
@@ -40,7 +38,6 @@ page-register {
          color: #8a97a0;
          box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
          margin-bottom: 30px;
-         position: relative;
        }
 
        .password-input {
@@ -81,7 +78,7 @@ page-register {
          width: 30px;
          display: inline-block;
          font-size: 0.8em;
-         margin-right: 8px;
+         margin-right: 6px;
          margin-left: 4px;
          line-height: 30px;
          text-align: center;
@@ -91,7 +88,14 @@ page-register {
 
        .legend{
          margin-right: 4px;
+       }
 
+       fieldset {
+         margin-bottom: 0px;
+         border: none;
+         color: #4D9BBA;
+         font-size: 18px;
+         font-family: 'Nunito', sans-serif;
        }
 
        button.enter {
@@ -116,7 +120,20 @@ page-register {
 
        .rol{
          position: relative;
-         background: #FFF;
+         background: rgba(255,255,255,0.1);
+         border: none;
+         font-size: 16px;
+         height: auto;
+         margin: 0;
+         outline: 0;
+         padding: 10px;
+         width: 100%;
+         background-color: #e8eeef;
+         color: #8a97a0;
+         box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+         margin-bottom: 30px;
+         text-align: left;
+         border-radius: 2px;
        }
 
        a.register {

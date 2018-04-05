@@ -24,7 +24,7 @@ import {RegisterPage} from "../pages/register/register";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = RegisterPage;
+  rootPage: any = HomePage;
   aux: boolean = true;
 
 

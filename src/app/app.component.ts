@@ -14,6 +14,7 @@ import {EditAlumPage} from "../pages/edit-alum/edit-alum";
 import {AllOffersPage} from "../pages/all-offers/all-offers";
 import {Storage} from "@ionic/storage";
 import {LoginPage} from "../pages/login/login";
+import {RegisterPage} from "../pages/register/register";
 
 
 
@@ -23,7 +24,7 @@ import {LoginPage} from "../pages/login/login";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = RegisterPage;
   aux: boolean = true;
 
 

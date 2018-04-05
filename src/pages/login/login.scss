@@ -14,12 +14,17 @@ page-login {
         margin-bottom: 40px;
       }
 
+      .rol{
+        position: relative;
+      }
+
       .email-input {
         margin-bottom: 36px;
         position: relative;
       }
       .password-input {
         position: relative;
+        color: black;
         a {
           position: absolute;
           bottom: 13px;

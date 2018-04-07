@@ -1,31 +1,49 @@
 page-login {
+
+  form {
+    position: relative;
+    max-width: 800px;
+    margin: 10px auto;
+    padding: 6px 15px;
+    border-radius: 8px;
+  }
+
   .content-align-wrapper {
-    height: 100%;
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
     .content-align {
-      margin: auto;
       text-align: center;
-      padding: 0 39px;
-      width: 100%;
       img {
-        width: 70px;
-        margin-bottom: 40px;
+        margin-top: 5px;
+        width: 90px;
+        margin-bottom: 20px;
       }
 
-      .rol{
-        position: relative;
+      ion-label{
+        font-family: 'Nunito', sans-serif;
+        color: #384047;
+       /* text-align: left;*/
+        font-size: 16px;
       }
 
-      .email-input {
-        margin-bottom: 36px;
-        position: relative;
+      ion-input {
+        background: rgba(255,255,255,0.1);
+        border: none;
+        font-size: 16px;
+        height: auto;
+        margin: 0;
+        outline: 0;
+        padding: 4px;
+        width: 100%;
+        background-color: #e8eeef;
+        color: #8a97a0;
+        box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+        margin-bottom: 20px;
       }
+
       .password-input {
         position: relative;
         color: black;
         a {
+          padding-right: 8px;
           position: absolute;
           bottom: 13px;
           right: 0;
@@ -33,9 +51,10 @@ page-login {
           color: rgba(0, 0, 0, 0.38);
         }
       }
+
       .forgot-password-wrapper {
         text-align: left;
-        margin-top: 70px;
+        margin-top: 30px;
         .forgot-password {
           font-size: 14px;
           line-height: 1.14;
@@ -43,6 +62,7 @@ page-login {
           color: rgba(0, 0, 0, 0.38);
         }
       }
+
       .remember-input {
         .item .item-inner {
           border: none !important;
@@ -52,25 +72,47 @@ page-login {
           margin: 17px 18px 0 0;
         }
       }
-      button.enter {
-        margin-top: 30px;
-        height: 36px;
-        width: 100%;
-        background-color: #0C85DF;
-        font-size: 14px;
-        border-radius: 6px;
-        border: 2px solid #1026C4;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
+
+      fieldset {
+        margin-bottom: 0px;
+        border: none;
+        color: #4D9BBA;
+        font-size: 18px;
+        font-family: 'Nunito', sans-serif;
       }
+
+      button.enter {
+        margin-top: 14px;
+        padding: 19px 39px 18px 39px;
+        color: #FFF;
+        background-color: #4D9BBA;
+        font-size: 18px;
+        text-align: center;
+        font-style: normal;
+        border-radius: 5px;
+        width: 100%;
+        border: 1px solid #4071A3;
+        border-width: 2px;
+        box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+        margin-bottom: 0px;
+      }
+
+      button.enter:hover{
+        background: #4071A3;
+      }
+
       a.register {
         display: block;
-        margin-top: 40px;
+        margin-top: 30px;
         width: 100%;
         color: #0C85DF;
         background: none;
         font-size: 14px;
         letter-spacing: 0.5px;
+      }
+
+      a.register:hover{
+        color: #4071A3;
       }
     }
   }

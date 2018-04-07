@@ -1,5 +1,4 @@
 page-register {
-
   form {
     position: relative;
     max-width: 800px;
@@ -12,9 +11,9 @@ page-register {
      .content-align {
        text-align: center;
        img {
-         margin-top: 10px;
+         margin-top: 5px;
          width: 90px;
-         margin-bottom: 30px;
+         margin-bottom: 20px;
        }
 
        ion-label{
@@ -37,14 +36,13 @@ page-register {
          color: #8a97a0;
          box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
          margin-bottom: 30px;
-
        }
 
        .password-input {
          position: relative;
          color: black;
          a {
-           padding-right: 6px;
+           padding-right: 8px;
            position: absolute;
            bottom: 13px;
            right: 0;
@@ -52,6 +50,7 @@ page-register {
            color: rgba(0, 0, 0, 0.38);
          }
        }
+
        .forgot-password-wrapper {
          text-align: left;
          margin-top: 70px;
@@ -62,6 +61,7 @@ page-register {
            color: rgba(0, 0, 0, 0.38);
          }
        }
+
        .remember-input {
          .item .item-inner {
            border: none !important;
@@ -135,17 +135,6 @@ page-register {
          margin-bottom: 30px;
          text-align: left;
          border-radius: 2px;
-       }
-
-       a.register {
-         display: block;
-         margin-top: 40px;
-         width: 100%;
-         color: black;
-         background: none;
-         font-size: 14px;
-         letter-spacing: 0.5px;
-         text-align: right;
        }
 
      }

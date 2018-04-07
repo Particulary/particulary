@@ -4,7 +4,7 @@ page-register {
     position: relative;
     max-width: 800px;
     margin: 10px auto;
-    padding: 10px 20px;
+    padding: 6px 15px;
     background: #f4f7f8;
     border-radius: 8px;
   }
@@ -13,6 +13,7 @@ page-register {
      .content-align {
        text-align: center;
        img {
+         margin-top: 20px;
          width: 90px;
          margin-bottom: 30px;
        }
@@ -20,24 +21,24 @@ page-register {
        ion-label{
          font-family: 'Nunito', sans-serif;
          color: #384047;
-         display: block;
          text-align: left;
          font-size: 16px;
        }
 
-       ion-item ion-input {
+       ion-input, ion-textarea {
          background: rgba(255,255,255,0.1);
          border: none;
          font-size: 16px;
          height: auto;
          margin: 0;
          outline: 0;
-         padding: 15px;
+         padding: 4px;
          width: 100%;
          background-color: #e8eeef;
          color: #8a97a0;
          box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
          margin-bottom: 30px;
+
        }
 
        .password-input {
@@ -140,10 +141,11 @@ page-register {
          display: block;
          margin-top: 40px;
          width: 100%;
-         color: #0C85DF;
+         color: black;
          background: none;
          font-size: 14px;
          letter-spacing: 0.5px;
+         text-align: right;
        }
 
      }

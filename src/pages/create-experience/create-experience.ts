@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {AlertController, NavController, NavParams} from 'ionic-angular';
 import {FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { MyExperiencesPage } from "../my-experiences/my-experiences";
 import { TeacherProvider } from "../../providers/teacher/teacher";
@@ -13,7 +13,8 @@ export class CreateExperiencePage {
 
   createExperienceForm: FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private teacherProvider: TeacherProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private teacherProvider: TeacherProvider,
+              private alertCtrl: AlertController) {
     this.createExperienceForm = this.formBuilder.group({
       name: new FormControl('', [Validators.required, Validators.minLength(3),Validators.pattern('[a-zA-Z ]*')]),
       description: new FormControl('', [Validators.required, Validators.minLength(6),]),
@@ -30,9 +31,17 @@ export class CreateExperiencePage {
 
     this.teacherProvider.addExperience(experience).then(data => {
       this.navCtrl.setRoot(MyExperiencesPage);
+      this.experienceCreated();
     }).catch(err => {
       console.log(err);
     });
+  }
+
+  experienceCreated() {
+    let alert = this.alertCtrl.create({
+      message: 'Experiencia creada correctamente',
+    });
+    alert.present();
   }
 
 }

@@ -12,76 +12,49 @@
   <div class="content-align-wrapper">
     <div class="content-align">
 
-      <img src="assets/imgs/logo.png" class="gsad-icon"/>
-
       <form [formGroup]="registerForm" (ngSubmit)="register()">
 
-        <div class="type-input">
+        <img src="assets/imgs/logo.png" class="gsad-icon"/>
+
+        <fieldset>
+          <legend class="legend"><span class="number">1</span>Información básica</legend>
+
+            <ion-label>Nombre:</ion-label>
+            <ion-input type="text" formControlName="name" ></ion-input>
+
+            <ion-label>Apellidos:</ion-label>
+            <ion-input type="text" formControlName="surname" ></ion-input>
+
+            <ion-label>Correo electrónico:</ion-label>
+            <ion-input type="email" formControlName="email" (ionblur)="validateEmail()"></ion-input>
+
+            <ion-label>Teléfono:</ion-label>
+            <ion-input type="tel" formControlName="phone" ></ion-input>
+
+            <ion-label>Dirección:</ion-label>
+            <ion-input type="text" formControlName="address" ></ion-input>
+
+          <div class="password-input">
+              <ion-label>Contraseña:</ion-label>
+              <ion-input [type]="show ? 'text' : 'password'" formControlName="password"></ion-input>
+            <a (click)="togglePassword()">{{ show ? 'ocultar' : 'mostrar' }}</a>
+          </div>
+
+        </fieldset>
+
+        <fieldset>
+          <legend class="legend"><span class="number">2</span>Tu perfil</legend>
+
           <ion-label>Rol</ion-label>
-          <ion-select formControlName="type" >
+          <ion-select class="rol" formControlName="type" >
             <ion-option value="teacher">Profesor</ion-option>
             <ion-option value="alum">Alumno</ion-option>
           </ion-select>
-          <br>
-        </div>
 
-        <div class="name-input">
-          <ion-item>
-            <ion-input type="text" formControlName="name" ></ion-input>
-            <ion-label>Nombre</ion-label>
-          </ion-item>
-          <p class="error-message">Nombre no válido</p>
-        </div>
+            <ion-label>Descripción:</ion-label>
+            <ion-textarea formControlName="bio" ></ion-textarea>
 
-        <div class="surname-input">
-          <ion-item>
-            <ion-input type="text" formControlName="surname" ></ion-input>
-            <ion-label>Apellidos</ion-label>
-          </ion-item>
-          <p class="error-message">Nombre no válido</p>
-        </div>
-
-        <div class="email-input">
-          <ion-item>
-            <ion-input type="email" formControlName="email" (ionblur)="validateEmail()"></ion-input>
-            <ion-label>Correo electrónico</ion-label>
-          </ion-item>
-          <p class="error-message">Formato de correo no válido</p>
-        </div>
-
-        <div class="phone-input">
-          <ion-item>
-            <ion-input type="tel" formControlName="phone" ></ion-input>
-            <ion-label>Teléfono</ion-label>
-          </ion-item>
-          <p class="error-message">Teléfono no válido</p>
-        </div>
-
-        <div class="address-input">
-          <ion-item>
-            <ion-input type="text" formControlName="address" ></ion-input>
-            <ion-label>Dirección</ion-label>
-          </ion-item>
-          <p class="error-message">Dirección no válida</p>
-        </div>
-
-        <div class="description-input">
-          <ion-item>
-            <ion-input type="text" formControlName="bio" ></ion-input>
-            <ion-label>Descripción</ion-label>
-          </ion-item>
-          <p class="error-message">Dirección no válida</p>
-        </div>
-
-        <div class="password-input">
-          <ion-item>
-            <ion-input [type]="show ? 'text' : 'password'" formControlName="password"></ion-input>
-            <ion-label>Contraseña</ion-label>
-          </ion-item>
-          <p class="error-message">Mínimo 6 caracteres</p>
-          <a (click)="togglePassword()">{{ show ? 'ocultar' : 'mostrar' }}</a>
-        </div>
-
+        </fieldset>
 
         <button class="enter" ion-button type="submit" [disabled]="!registerForm.valid">Registrar</button>
 

@@ -1,4 +1,5 @@
 my-experiences {
+
   .button {
     bottom: 0;
     margin-bottom: 0;
@@ -11,23 +12,16 @@ my-experiences {
 
   .botones{float:right;}
 
-  .botonfinal{position:fixed;}
-
   .botonfinal{
     position:sticky;
-    width: 89%;
+    width: 100%;
     height: 8%;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding:18px;
     font-weight: 500;
     font-size: 18px;
     color: #ffffff;
     background-color: #f9c00f;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    margin-top: 30px;
+    margin:5px;
   }
 
   .botonfinal:hover{
@@ -39,8 +33,7 @@ my-experiences {
   ion-list .item .item-inner{
     box-sizing: border-box;
     border-radius: 5px;
-    margin: 5px;
-    margin-right: 20px;
+    margin-top: 5px;
     background-color: white;
     resize: none;
     border: 4px solid #f9c00f;

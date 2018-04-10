@@ -14,6 +14,8 @@ import {EditAlumPage} from "../pages/edit-alum/edit-alum";
 import {AllOffersPage} from "../pages/all-offers/all-offers";
 import {Storage} from "@ionic/storage";
 import {LoginPage} from "../pages/login/login";
+import {MyMessagesPageTeacher} from "../pages/my-messages/my-messages";
+import {MyMessagesPageAlum} from "../pages/my-messages/my-messages";
 
 
 
@@ -41,6 +43,8 @@ export class MyApp {
       { title: 'Lista Ofertas (Alumno)', component: AllOffersPage, icon: 'ios-school' },
       { title: 'Editar profesor', component: EditTeacherPage, icon: 'md-color-palette' },
       { title: 'Editar alumno', component: EditAlumPage, icon: 'ios-brush' },
+      { title: 'Mis mensajes (Profesor)', component: MyMessagesPageTeacher, icon: 'md-chatboxes' },
+      { title: 'Mis mensajes (Alumno)', component: MyMessagesPageAlum, icon: 'md-chatboxes' },
 
     ];
 

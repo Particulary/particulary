@@ -73,9 +73,22 @@ export class TeacherProvider {
   }
 
   infoTeacher() {
-  return this.api.get('teacher/info').then(data => {
+  return this.api.get('teacher/info/id').then(data => {
   return data;
   });
   }
+
+  teacherMessages() {
+    return this.api.get('teacher/message').then(data => {
+      return data;
+    });
+  }
+
+  addMessage(message) {
+    return this.api.post('teacher/message', message).then(data => {
+      return data;
+    });
+  }
+
 
 }

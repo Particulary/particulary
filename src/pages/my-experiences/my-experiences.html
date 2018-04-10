@@ -9,7 +9,7 @@
 
 </ion-header>
 
-<ion-content>
+<ion-content padding>
   <ion-list>
     <ion-item *ngFor="let experience of experiences">
       <h4><ion-icon name='ios-school' color="" is-active="false"></ion-icon> {{experience.name}}</h4>
@@ -22,6 +22,7 @@
         <ion-icon name='md-create' is-active="false"></ion-icon>
       </button>
     </ion-item>
+    <br>
   </ion-list>
   <button class="botonfinal" *ngIf="this.showButton==true" ion-button round (click)="addExperience()">Añadir experiencia</button>
 

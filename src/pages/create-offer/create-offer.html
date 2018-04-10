@@ -28,9 +28,9 @@
     <fieldset>
       <legend><span class="number">3</span> Fecha</legend>
         <ion-label>Inicio</ion-label>
-        <ion-input type="date" formControlName="start_date"></ion-input>
+        <ion-datetime class="date" formControlName="start_date"></ion-datetime>
         <ion-label>Fin</ion-label>
-        <ion-input type="date" formControlName="end_date"></ion-input>
+        <ion-datetime class="date" formControlName="end_date"></ion-datetime>
     </fieldset>
 
     <button class="enter" ion-button round type="submit" [disabled]="!createOfferForm.valid">Crear</button>

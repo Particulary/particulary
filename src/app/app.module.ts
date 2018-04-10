@@ -31,6 +31,7 @@ import {MyMessagesPageTeacher} from "../pages/my-messages/my-messages";
 import {MyMessagesPageAlum} from "../pages/my-messages/my-messages";
 import {CreateMessagePageTeacher} from "../pages/create-message/create-message";
 import {CreateMessagePageAlum} from "../pages/create-message/create-message";
+import {RegisterPage} from "../pages/register/register";
 
 
 
@@ -52,6 +53,7 @@ import {CreateMessagePageAlum} from "../pages/create-message/create-message";
     MyMessagesPageAlum,
     CreateMessagePageTeacher,
     CreateMessagePageAlum,
+    RegisterPage,
 
 
     // Pipes
@@ -82,6 +84,7 @@ import {CreateMessagePageAlum} from "../pages/create-message/create-message";
     MyMessagesPageAlum,
     CreateMessagePageTeacher,
     CreateMessagePageAlum,
+    RegisterPage,
 
 
   ],

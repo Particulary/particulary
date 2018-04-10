@@ -16,6 +16,7 @@ import {Storage} from "@ionic/storage";
 import {LoginPage} from "../pages/login/login";
 import {MyMessagesPageTeacher} from "../pages/my-messages/my-messages";
 import {MyMessagesPageAlum} from "../pages/my-messages/my-messages";
+import {RegisterPage} from "../pages/register/register";
 
 
 
@@ -25,7 +26,7 @@ import {MyMessagesPageAlum} from "../pages/my-messages/my-messages";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = LoginPage;
   aux: boolean = true;
 
 
@@ -45,6 +46,7 @@ export class MyApp {
       { title: 'Editar alumno', component: EditAlumPage, icon: 'ios-brush' },
       { title: 'Mis mensajes (Profesor)', component: MyMessagesPageTeacher, icon: 'md-chatboxes' },
       { title: 'Mis mensajes (Alumno)', component: MyMessagesPageAlum, icon: 'md-chatboxes' },
+      { title: 'Login', component: LoginPage, icon: 'ios-brush' },
 
     ];
 

@@ -9,7 +9,7 @@
 
 </ion-header>
 
-<ion-content>
+<ion-content padding>
   <ion-list>
     <ion-item *ngFor="let offer of offers">
       <div class="first">
@@ -30,7 +30,10 @@
 
     </ion-item>
     <br>
+
+    <button class="botonfinal" *ngIf="this.showButton==true" ion-button round color="default"(click)="addOffer()" >Crear clase</button>
+
   </ion-list>
-  <button class="botonfinal" *ngIf="this.showButton==true" ion-button round color="default"(click)="addOffer()" >Crear clase</button>
+
 
 </ion-content>

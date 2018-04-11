@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {NavController, NavParams, ToastController} from 'ionic-angular';
 import {AlumProvider} from "../../providers/alum/alum";
 import {HomePage} from "../home/home";
+import {CreateMessagePageAlum} from "../create-message/create-message";
 
 
 @Component({
@@ -56,5 +57,11 @@ export class AllOffersPage {
       }).present();
     });
   }
+
+
+  addMessageAlum(messageA){
+    this.navCtrl.push(CreateMessagePageAlum, {message: messageA});
+  }
+
 
 }

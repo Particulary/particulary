@@ -27,6 +27,10 @@ import {CreateExperiencePage} from "../pages/create-experience/create-experience
 import {EditExperiencePage} from "../pages/edit-experience/edit-experience";
 import {AlumProvider} from "../providers/alum/alum";
 import {AllOffersPage} from "../pages/all-offers/all-offers";
+import {MyMessagesPageTeacher} from "../pages/my-messages/my-messages";
+import {MyMessagesPageAlum} from "../pages/my-messages/my-messages";
+import {CreateMessagePageTeacher} from "../pages/create-message/create-message";
+import {CreateMessagePageAlum} from "../pages/create-message/create-message";
 import {RegisterPage} from "../pages/register/register";
 import {AlumMyOffersPage} from "../pages/alum-myOffers/alum-myOffers";
 
@@ -46,6 +50,10 @@ import {AlumMyOffersPage} from "../pages/alum-myOffers/alum-myOffers";
     CreateExperiencePage,
     EditExperiencePage,
     AllOffersPage,
+    MyMessagesPageTeacher,
+    MyMessagesPageAlum,
+    CreateMessagePageTeacher,
+    CreateMessagePageAlum,
     RegisterPage,
     AlumMyOffersPage,
 
@@ -74,6 +82,10 @@ import {AlumMyOffersPage} from "../pages/alum-myOffers/alum-myOffers";
     CreateExperiencePage,
     EditExperiencePage,
     AllOffersPage,
+    MyMessagesPageTeacher,
+    MyMessagesPageAlum,
+    CreateMessagePageTeacher,
+    CreateMessagePageAlum,
     RegisterPage,
     AlumMyOffersPage,
 

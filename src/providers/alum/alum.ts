@@ -51,6 +51,18 @@ export class AlumProvider {
     });
   }
 
+  alumMessages() {
+    return this.api.get('student/message').then(data => {
+      return data;
+    });
+  }
+
+
+  addMessageAlum(message) {
+    return this.api.post('student/message', message).then(data => {
+      return data;
+    });
+  }
 
 }
 

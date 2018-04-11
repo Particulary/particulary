@@ -25,6 +25,10 @@
         <button class="botones" title="Contratar" ion-button (click)="applyOffer(offer)" clear icon-only>
           <ion-icon name='md-create' is-active="false"></ion-icon>
         </button>
+        <button ion-button round color="default" (click)="addMessageAlum(offer.teacher_id)">
+          Enviar mensaje
+        </button>
+
       </div>
 
     </ion-item>

@@ -1,0 +1,46 @@
+create-message{
+  ion-list{
+    width: 100%;
+    position: relative;
+  }
+  ion-item:last-child {
+    margin-bottom: 5em;
+  }
+
+  fieldset{
+    legend{
+      color:#176B1E;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    color: black;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-left: 7px;
+    margin: 5px;
+    padding: 5px;
+    background-color: #bdedc1;
+    resize: none;
+    border: 1px solid #40A348;
+    height: 100%;
+
+  }
+
+
+  .enter{
+    position: relative;
+    width: 99.5%;
+    height: 30px;
+    padding:18px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #ffffff;
+    margin-top:10px;
+    margin-bottom: 10px;
+    background: #40A348;
+  }
+
+  .enter:hover {
+    background: #176B1E;
+  }
+}

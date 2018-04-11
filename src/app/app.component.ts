@@ -18,6 +18,7 @@ import {MyMessagesPageTeacher} from "../pages/my-messages/my-messages";
 import {MyMessagesPageAlum} from "../pages/my-messages/my-messages";
 import {RegisterPage} from "../pages/register/register";
 import {AlumMyOffersPage} from "../pages/alum-myOffers/alum-myOffers";
+import {CreateMessagePageTeacher} from "../pages/create-message/create-message";
 
 
 
@@ -27,7 +28,7 @@ import {AlumMyOffersPage} from "../pages/alum-myOffers/alum-myOffers";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage;
+  rootPage: any = CreateMessagePageTeacher;
   aux: boolean = true;
 
 

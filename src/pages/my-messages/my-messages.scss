@@ -1,0 +1,55 @@
+my-messages{
+
+  ion-list {
+    width: 100%;
+    position: relative;
+
+    ion-item:last-child {
+      margin-bottom: 5em;
+    }
+
+    .first {
+      box-sizing: border-box;
+      border-radius: 5px;
+      margin-top: 5px;
+      background-color: #bdedc1;
+      resize: none;
+      border: 0px solid #40A348;
+      height: 100%;
+
+      h4 {
+        padding: 5px 5px 0px 5px;
+        margin-left: 2px;
+      }
+
+      .email {
+        font-family: 'Nunito', sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+      }
+
+      .message {
+        font-family: inherit;
+        font-size: 16px;
+        margin-bottom: 8px;
+      }
+    }
+
+    .botonfinal {
+      position: relative;
+      width: 99.5%;
+      height: 30%;
+      padding: 18px;
+      font-weight: 500;
+      font-size: 18px;
+      color: #ffffff;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      background: #40A348;
+    }
+
+    .botonfinal:hover {
+      background: #176B1E;
+    }
+  }
+}

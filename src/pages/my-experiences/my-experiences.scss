@@ -37,6 +37,9 @@ my-experiences {
     background-color: white;
     resize: none;
     border: 4px solid #f9c00f;
+    .uno {
+      padding-top: 4px;
+    }
   }
 
   ion-list .item .icon {

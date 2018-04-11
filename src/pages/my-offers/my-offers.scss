@@ -47,8 +47,16 @@ my-offers {
     margin-left: 15px;
   }
 
-  .first{float:left;}
+  .first{
+    float:left;
+    .uno{
+      padding-top: 4px;
+    }
+  }
 
-  .second{float:right;}
+  .second{
+    padding-top: 4px;
+    float:right;
+  }
 
 }

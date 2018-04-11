@@ -28,6 +28,7 @@ import {EditExperiencePage} from "../pages/edit-experience/edit-experience";
 import {AlumProvider} from "../providers/alum/alum";
 import {AllOffersPage} from "../pages/all-offers/all-offers";
 import {RegisterPage} from "../pages/register/register";
+import {AlumMyOffersPage} from "../pages/alum-myOffers/alum-myOffers";
 
 
 
@@ -46,6 +47,7 @@ import {RegisterPage} from "../pages/register/register";
     EditExperiencePage,
     AllOffersPage,
     RegisterPage,
+    AlumMyOffersPage,
 
 
     // Pipes
@@ -73,6 +75,7 @@ import {RegisterPage} from "../pages/register/register";
     EditExperiencePage,
     AllOffersPage,
     RegisterPage,
+    AlumMyOffersPage,
 
 
   ],

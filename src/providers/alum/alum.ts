@@ -25,6 +25,12 @@ export class AlumProvider {
     });
   }
 
+  myOffers() {
+    return this.api.get('student/myOffer').then(data => {
+      return data;
+    });
+  }
+
   apply(offer) {
     return this.api.get('student/offer/apply/' + offer.id).then(data => {
       return data;
@@ -33,7 +39,14 @@ export class AlumProvider {
 
 
   infoAlum() {
+
     return this.api.get('student/info').then(data => {
+      return data;
+    });
+  }
+
+  addAppreciation(offer_id, appreciation) {
+    return this.api.post('student/offer/' + offer_id +'/appreciation', {appreciation: appreciation}).then(data => {
       return data;
     });
   }

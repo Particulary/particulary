@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title><ion-icon name='ios-school' is-active="false"></ion-icon> Clases</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let offer of offers">
+      <div class="first">
+        <h4><ion-icon name='ios-book' is-active="false"></ion-icon> {{offer.name}}</h4>
+        <h4 float="right"><ion-icon name='ios-pin' color="danger" is-active="false"></ion-icon> {{offer.location}}</h4>
+        <h4 float="right"><ion-icon name='md-cash' color="secondary" is-active="false"></ion-icon> {{offer.price}} </h4>
+      </div>
+      <div class="second">
+        <h4><ion-icon name='md-calendar' is-active="false"></ion-icon> {{offer.start_date}}</h4>
+        <h4><ion-icon name='md-calendar' is-active="false"></ion-icon> {{offer.end_date}}</h4>
+      </div>
+      <form>
+      <div class="star-rating">
+        <a href="#"  title="Votar con 1 estrellas" (click)="addAppreciation(offer.id, 1)">&#9733;</a>
+        <a href="#"  title="Votar con 2 estrellas" (click)="addAppreciation(offer.id, 2)">&#9733;</a>
+        <a href="#"  title="Votar con 3 estrellas" (click)="addAppreciation(offer.id, 3)">&#9733;</a>
+        <a href="#"  title="Votar con 4 estrellas" (click)="addAppreciation(offer.id, 4)">&#9733;</a>
+        <a href="#"  title="Votar con 5 estrellas" (click)="addAppreciation(offer.id, 5)">&#9733;</a>
+      </div>
+        <!--<button class="enter" ion-button type="submit" round [disabled]="!myOfferForm.valid">Valorar</button>-->
+      </form>
+
+    </ion-item>
+    <br>
+  </ion-list>
+  <button class="botonfinal" *ngIf="this.showButton==true" ion-button round color="default"(click)="addOffer()" >Crear clase</button>
+
+</ion-content>

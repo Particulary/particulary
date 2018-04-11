@@ -39,7 +39,6 @@ export class AlumProvider {
 
 
   infoAlum() {
-
     return this.api.get('student/info').then(data => {
       return data;
     });
@@ -49,6 +48,12 @@ export class AlumProvider {
     return this.api.post('student/offer/' + offer_id +'/appreciation', {appreciation: appreciation}).then(data => {
       return data;
     });
+    }
+
+  infoAlumId(id) {
+    return this.api.get('student/teacherInfo', {id:id}).then(data => {
+      return data;
+    });
   }
 
   alumMessages() {
@@ -56,7 +61,6 @@ export class AlumProvider {
       return data;
     });
   }
-
 
   addMessageAlum(message) {
     return this.api.post('student/message', message).then(data => {

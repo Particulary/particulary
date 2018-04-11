@@ -14,6 +14,7 @@
   <ion-list>
     <ion-item *ngFor="let offer of offers">
       <div class="first">
+        <button class="prof" *ngIf="offer.teacher" (click)="displayTeacher(offer.teacher.id)"><ion-icon name='ios-school' is-active="false"></ion-icon> {{offer.teacher.name}}</button>
         <h4><ion-icon name='ios-book' is-active="false"></ion-icon> {{offer.name}}</h4>
         <h4 float="right"><ion-icon name='ios-pin' color="danger" is-active="false"></ion-icon> {{offer.location}}</h4>
         <h4 float="right"><ion-icon name='md-cash' color="secondary" is-active="false"></ion-icon> {{offer.price}} </h4>

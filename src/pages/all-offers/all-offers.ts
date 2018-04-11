@@ -3,6 +3,8 @@ import {NavController, NavParams, ToastController} from 'ionic-angular';
 import {AlumProvider} from "../../providers/alum/alum";
 import {HomePage} from "../home/home";
 import {CreateMessagePageAlum} from "../create-message/create-message";
+import {EditExperiencePage} from "../edit-experience/edit-experience";
+import {DisplayTeacherPage} from "../display-teacher/display-teacher";
 
 
 @Component({
@@ -42,6 +44,10 @@ export class AllOffersPage {
         position: 'bottom'
       }).present();
     });
+  }
+
+  displayTeacher(id) {
+    this.navCtrl.push(DisplayTeacherPage,{id:id});
   }
 
   reloadOffers(e) {

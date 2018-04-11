@@ -82,6 +82,12 @@ export class TeacherProvider {
     return this.api.get('teacher/message').then(data => {
       return data;
     });
+    }
+
+  infoTeacherId(id) {
+    return this.api.get('teacher/alumInfo', {id:id}).then(data => {
+      return data;
+    });
   }
 
   addMessage(message) {

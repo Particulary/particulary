@@ -19,6 +19,8 @@ import {MyMessagesPageAlum} from "../pages/my-messages/my-messages";
 import {RegisterPage} from "../pages/register/register";
 import {AlumMyOffersPage} from "../pages/alum-myOffers/alum-myOffers";
 import {CreateMessagePageTeacher} from "../pages/create-message/create-message";
+import {DisplayAlumPage} from "../pages/display-alum/display-alum";
+import {DisplayTeacherPage} from "../pages/display-teacher/display-teacher";
 
 
 

@@ -22,7 +22,18 @@
     <div class="photo">
       <img src="assets/imgs/book.png"/>
     </div>
-    <div><p>{{rate}}</p></div>
+    <div class="evaluate">
+      <img *ngIf="star == 1" src="assets/imgs/1.png">
+      <img *ngIf="star == 2" src="assets/imgs/2.png">
+      <img *ngIf="star == 3" src="assets/imgs/3.png">
+      <img *ngIf="star == 4" src="assets/imgs/4.png">
+      <img *ngIf="star == 5" src="assets/imgs/5.png">
+      <img *ngIf="star == 6" src="assets/imgs/6.png">
+      <img *ngIf="star == 7" src="assets/imgs/7.png">
+      <img *ngIf="star == 8" src="assets/imgs/8.png">
+      <img *ngIf="star == 9" src="assets/imgs/9.png">
+      <img *ngIf="star == 10" src="assets/imgs/10.png">
+    </div>
     <fieldset>
       <legend><span class="number"><ion-icon name="ios-person"></ion-icon></span> Info Principal</legend>
 

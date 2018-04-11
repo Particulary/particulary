@@ -91,7 +91,7 @@ export class TeacherProvider {
   }
 
   alumRatingId(id) {
-    return this.api.get('teacher/alumRating',{id:id}).then(data => {
+    return this.api.get('teacher/alumRating/'+id).then(data => {
       return data;
     });
   }

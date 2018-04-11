@@ -63,7 +63,7 @@ export class AlumProvider {
   }
 
   teacherRatingId(id) {
-    return this.api.get('teacher/teacherRating',{id:id}).then(data => {
+    return this.api.get('student/teacherRating/'+id).then(data => {
       return data;
     });
   }

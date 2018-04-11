@@ -12,6 +12,7 @@ export class DisplayTeacherPage {
 
   teacher: any;
   rate: any;
+  star: any;
   emailError: boolean = false;
 
 
@@ -32,6 +33,49 @@ export class DisplayTeacherPage {
 
     this.alumProvider.teacherRatingId(this.navParams.get('id')).then(data => {
       this.rate = data;
+      switch (true){
+
+        case (this.rate <= 0.7):
+          this.star = 1;
+          break;
+
+        case (this.rate > 0.7 && this.rate <= 1.2):
+          this.star = 2;
+          break;
+
+        case (this.rate > 1.2 && this.rate <= 1.7):
+          this.star = 3;
+          break;
+
+        case (this.rate > 1.7 && this.rate <= 2.2):
+          this.star = 4;
+          break;
+
+        case (this.rate > 2.2 && this.rate <= 2.7):
+          this.star = 5;
+          break;
+
+        case (this.rate > 2.7 && this.rate <= 3.2):
+          this.star = 6;
+          break;
+
+        case (this.rate > 3.2 && this.rate <= 3.7):
+          this.star = 7;
+          break;
+
+        case (this.rate > 3.7 && this.rate <= 4.2):
+          this.star = 8;
+          break;
+
+        case (this.rate > 4.2 && this.rate <= 4.7):
+          this.star = 9;
+          break;
+
+        case (this.rate > 4.7):
+          this.star = 10;
+          break;
+
+      }
       console.log(data);
     }).catch(err => {
       console.log('No autorizado');
@@ -42,7 +86,6 @@ export class DisplayTeacherPage {
         position: 'bottom'
       }).present();
     });
-
   }
 
 

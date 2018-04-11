@@ -35,6 +35,8 @@ import {RegisterPage} from "../pages/register/register";
 import {AlumMyOffersPage} from "../pages/alum-myOffers/alum-myOffers";
 import {DisplayTeacherPage} from "../pages/display-teacher/display-teacher";
 import {DisplayAlumPage} from "../pages/display-alum/display-alum";
+import {StripePage} from "../pages/stripe/stripe";
+import {Stripe} from "@ionic-native/stripe";
 
 
 
@@ -60,7 +62,7 @@ import {DisplayAlumPage} from "../pages/display-alum/display-alum";
     AlumMyOffersPage,
     DisplayTeacherPage,
     DisplayAlumPage,
-
+    StripePage,
 
 
     // Pipes
@@ -95,7 +97,7 @@ import {DisplayAlumPage} from "../pages/display-alum/display-alum";
     AlumMyOffersPage,
     DisplayTeacherPage,
     DisplayAlumPage,
-
+    StripePage,
 
   ],
   providers: [
@@ -105,6 +107,7 @@ import {DisplayAlumPage} from "../pages/display-alum/display-alum";
     AlumProvider,
     LoginProvider,
     ApiProvider,
+    Stripe,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

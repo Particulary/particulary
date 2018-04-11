@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {ApiProvider} from '../api/api';
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 /*
   Generated class for the CustomerProvider provider.
@@ -10,7 +11,7 @@ import {ApiProvider} from '../api/api';
 @Injectable()
 export class AlumProvider {
 
-  constructor(public api: ApiProvider) {
+  constructor(public api: ApiProvider, public http: HttpClient) {
   }
 
   editAlum(alum) {
@@ -44,11 +45,43 @@ export class AlumProvider {
     });
   }
 
+  updatePoints(points) {
+    return this.api.post('student/updatePoints', {points: points}).then(data => {
+      return data;
+    });
+  }
   addAppreciation(offer_id, appreciation) {
     return this.api.post('student/offer/' + offer_id +'/appreciation', {appreciation: appreciation}).then(data => {
       return data;
     });
     }
+
+  getStripeToken(body) {
+    let head = {
+      'X-Mashape-Key': 'ffcw6wvO7Jmsh5EIn5KtJoImPYoVp1NCuXUjsnw52GWxSYArzp',
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Accept': 'application/json'
+    };
+
+    return this.http.post('https://noodlio-pay.p.mashape.com/tokens/create', body, {"headers": head}).toPromise().then(data => {
+      return data;
+    });
+
+  }
+
+  payStripe(body) {
+    let head = {
+      'X-Mashape-Key': 'ffcw6wvO7Jmsh5EIn5KtJoImPYoVp1NCuXUjsnw52GWxSYArzp',
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Accept': 'application/json'
+    };
+
+    return this.http.post('https://noodlio-pay.p.mashape.com/charge/token', body, {"headers": head}).toPromise().then(data => {
+      return data;
+    });
+
+  }
+
 
   infoAlumId(id) {
     return this.api.get('student/teacherInfo', {id:id}).then(data => {

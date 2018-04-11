@@ -27,6 +27,8 @@ import {CreateExperiencePage} from "../pages/create-experience/create-experience
 import {EditExperiencePage} from "../pages/edit-experience/edit-experience";
 import {AlumProvider} from "../providers/alum/alum";
 import {AllOffersPage} from "../pages/all-offers/all-offers";
+import {StripePage} from "../pages/stripe/stripe";
+import {Stripe} from "@ionic-native/stripe";
 
 
 
@@ -44,7 +46,7 @@ import {AllOffersPage} from "../pages/all-offers/all-offers";
     CreateExperiencePage,
     EditExperiencePage,
     AllOffersPage,
-
+    StripePage,
 
     // Pipes
     DaysTillTodayPipe,
@@ -70,7 +72,7 @@ import {AllOffersPage} from "../pages/all-offers/all-offers";
     CreateExperiencePage,
     EditExperiencePage,
     AllOffersPage,
-
+    StripePage,
 
   ],
   providers: [
@@ -80,6 +82,7 @@ import {AllOffersPage} from "../pages/all-offers/all-offers";
     AlumProvider,
     LoginProvider,
     ApiProvider,
+    Stripe,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

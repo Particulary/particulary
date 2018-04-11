@@ -15,6 +15,8 @@ import {AllOffersPage} from "../pages/all-offers/all-offers";
 import {Storage} from "@ionic/storage";
 import {LoginPage} from "../pages/login/login";
 import {RegisterPage} from "../pages/register/register";
+import {DisplayAlumPage} from "../pages/display-alum/display-alum";
+import {DisplayTeacherPage} from "../pages/display-teacher/display-teacher";
 
 
 

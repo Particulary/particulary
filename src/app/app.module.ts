@@ -28,6 +28,8 @@ import {EditExperiencePage} from "../pages/edit-experience/edit-experience";
 import {AlumProvider} from "../providers/alum/alum";
 import {AllOffersPage} from "../pages/all-offers/all-offers";
 import {RegisterPage} from "../pages/register/register";
+import {DisplayTeacherPage} from "../pages/display-teacher/display-teacher";
+import {DisplayAlumPage} from "../pages/display-alum/display-alum";
 
 
 
@@ -46,6 +48,9 @@ import {RegisterPage} from "../pages/register/register";
     EditExperiencePage,
     AllOffersPage,
     RegisterPage,
+    DisplayTeacherPage,
+    DisplayAlumPage,
+
 
 
     // Pipes
@@ -73,6 +78,8 @@ import {RegisterPage} from "../pages/register/register";
     EditExperiencePage,
     AllOffersPage,
     RegisterPage,
+    DisplayTeacherPage,
+    DisplayAlumPage,
 
 
   ],

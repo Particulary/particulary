@@ -38,6 +38,12 @@ export class AlumProvider {
     });
   }
 
+  infoAlumId(id) {
+    return this.api.get('student/teacherInfo', {id:id}).then(data => {
+      return data;
+    });
+  }
+
 
 }
 

@@ -78,4 +78,12 @@ export class TeacherProvider {
   });
   }
 
+  infoTeacherId(id) {
+    return this.api.get('teacher/alumInfo', {id:id}).then(data => {
+      return data;
+    });
+  }
+
+
+
 }

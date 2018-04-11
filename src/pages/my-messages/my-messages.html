@@ -18,8 +18,8 @@
       <fieldset class="first">
         <h4 float="right" class="email">
           <ion-icon name='md-person' color="black" is-active="false"></ion-icon>
-          <span class="email" *ngIf="message.teacher">{{ message.teacher.email }}</span>
-          <span class="email" *ngIf="message.alum">{{ message.alum.email }}</span>
+          <span *ngIf="message.teacher">{{ message.teacher.email }}</span>
+          <span *ngIf="message.alum">{{ message.alum.email }}</span>
         </h4>
         <h4 class="message">
           <ion-icon name='md-text' is-active="false"></ion-icon>

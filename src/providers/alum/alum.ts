@@ -62,6 +62,12 @@ export class AlumProvider {
     });
   }
 
+  teacherRatingId(id) {
+    return this.api.get('teacher/teacherRating',{id:id}).then(data => {
+      return data;
+    });
+  }
+
   addMessageAlum(message) {
     return this.api.post('student/message', message).then(data => {
       return data;

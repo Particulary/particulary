@@ -11,7 +11,7 @@ import {HomePage} from "../home/home";
 export class DisplayTeacherPage {
 
   teacher: any;
-  rate: number;
+  rate: any;
   emailError: boolean = false;
 
 
@@ -30,6 +30,18 @@ export class DisplayTeacherPage {
       }).present();
     });
 
+    this.alumProvider.teacherRatingId(this.navParams.get('id')).then(data => {
+      this.rate = data;
+      console.log(data);
+    }).catch(err => {
+      console.log('No autorizado');
+      this.navCtrl.setRoot(HomePage);
+      this.toastCtrl.create({
+        message: 'No autorizado, debes ser profesor para acceder',
+        duration: 3000,
+        position: 'bottom'
+      }).present();
+    });
 
   }
 

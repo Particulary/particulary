@@ -6,6 +6,8 @@ import { EditOfferPage } from "../edit-offer/edit-offer";
 import {HomePage} from "../home/home";
 import {AlumProvider} from "../../providers/alum/alum";
 import {CreateMessagePageAlum, CreateMessagePageTeacher} from "../create-message/create-message";
+import {DisplayTeacherPage} from "../display-teacher/display-teacher";
+import {DisplayAlumPage} from "../display-alum/display-alum";
 
 
 @Component({
@@ -33,7 +35,6 @@ export class MyMessagesPageTeacher {
     });
 
   }
-
 
       addMessageT(messageT) {
            this.navCtrl.push(CreateMessagePageTeacher, {message: messageT});

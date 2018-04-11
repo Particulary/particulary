@@ -1,4 +1,4 @@
-my-offers {
+alum-myOffers {
 
   .button {
     bottom: 0;
@@ -14,18 +14,13 @@ my-offers {
 
   .botonfinal{
     position:sticky;
-    width: 89%;
+    width: 99%;
     height: 8%;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding:18px;
     font-weight: 500;
     font-size: 18px;
     color: #ffffff;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    margin-top: 30px;
+    margin:5px;
   }
 
   .botonfinal:hover{
@@ -52,15 +47,12 @@ my-offers {
 
   .second{float:right;}
 
-
-
-
-
-  .star-rating {
+  .star-rating{
+    margin-left: 10px;
+    float: left;
     $size: 20px;
     $normal: #95A5A6;
     $selected: #F39C12;
-
     display: inline-block;
 
     a {
@@ -82,4 +74,5 @@ my-offers {
       }
     }
   }
+
 }

@@ -28,7 +28,7 @@ import {CreateMessagePageTeacher} from "../pages/create-message/create-message";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = CreateMessagePageTeacher;
+  rootPage: any = AlumMyOffersPage;
   aux: boolean = true;
 
 

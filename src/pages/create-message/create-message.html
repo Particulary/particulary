@@ -12,7 +12,7 @@
     <div class="createMessage">
       <fieldset>
         <legend><ion-icon name='md-text' is-active="false"></ion-icon> Mensaje:</legend>
-        <ion-input type="textarea" formControlName="text"></ion-input>
+        <ion-textarea formControlName="text"></ion-textarea>
         </fieldset>
       <button class="enter" ion-button round type="submit" [disabled]="!createMessageForm.valid">Enviar</button>
     </div>

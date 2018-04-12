@@ -5,6 +5,7 @@ import {HomePage} from "../home/home";
 import {CreateMessagePageAlum} from "../create-message/create-message";
 import {EditExperiencePage} from "../edit-experience/edit-experience";
 import {DisplayTeacherPage} from "../display-teacher/display-teacher";
+import {StripePage} from "../stripe/stripe";
 
 
 @Component({
@@ -31,19 +32,7 @@ export class AllOffersPage {
   }
 
   applyOffer(offer) {
-    this.alumProvider.apply(offer).then(data => {
-      this.toastCtrl.create({
-        message: 'Apply correctly',
-        duration: 3000,
-        position: 'bottom'
-      }).present();
-    }).catch(err => {
-      this.toastCtrl.create({
-        message: err.error.message,
-        duration: 3000,
-        position: 'bottom'
-      }).present();
-    });
+    this.navCtrl.setRoot(StripePage, {offer});
   }
 
   displayTeacher(id) {

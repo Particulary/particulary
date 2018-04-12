@@ -14,6 +14,8 @@
 
   <form [formGroup]="createPaymentForm" (ngSubmit)="createPayment()">
 
+    <fieldset>
+      <legend><span class="number">1</span> Datos de la tarjeta</legend>
     <ion-label>Número de tarjeta</ion-label>
     <ion-input type="text" formControlName="number" placeholder="Min. 3 caracteres"></ion-input>
 
@@ -25,12 +27,16 @@
 
     <ion-label>Año de expiración</ion-label>
     <ion-input type="text" formControlName="exp_year" placeholder="Min. 3 caracteres"></ion-input>
+    </fieldset>
 
-    <ion-label>Descuento</ion-label>
-    <ion-select formControlName="discount">
-      <ion-option *ngIf="points >= 12500" value="12500">5 €</ion-option>
-      <ion-option *ngIf="points >= 22500" value="22500">10 €</ion-option>
-    </ion-select>
+    <fieldset>
+      <legend><span class="number">2</span> Descuento</legend>
+      <ion-select formControlName="discount">
+        <ion-option *ngIf="points >= 12500" value="12500">5 €</ion-option>
+        <ion-option *ngIf="points >= 22500" value="22500">10 €</ion-option>
+      </ion-select>
+    </fieldset>
+
 
     <button class="enter" ion-button round type="submit" [disabled]="!createPaymentForm.valid">Crear</button>
   </form>

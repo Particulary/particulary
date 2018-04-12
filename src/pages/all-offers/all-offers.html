@@ -18,24 +18,29 @@
         <h4><ion-icon name='ios-book' is-active="false"></ion-icon> {{offer.name}}</h4>
         <h4 float="right"><ion-icon name='ios-pin' color="danger" is-active="false"></ion-icon> {{offer.location}}</h4>
         <h4 float="right"><ion-icon name='md-cash' color="secondary" is-active="false"></ion-icon> {{offer.price}} </h4>
+        <h4>
+          <ion-item ion-item *ngFor="let tag of offer.tags">
+            <ion-icon name='ios-book' is-active="false"></ion-icon> {{tag.name}}
+          </ion-item>
+        </h4>
+        <!--<span *ngFor="let tag of offer.tags">-->
+        <!--{{tag.name}}-->
+        <!--</span>-->
       </div>
       <div class="second">
         <h4><ion-icon name='md-calendar' is-active="false"></ion-icon> {{offer.start_date}}</h4>
         <h4><ion-icon name='md-calendar' is-active="false"></ion-icon> {{offer.end_date}}</h4>
       </div>
 
-        <div class="firt">
+      <div class="firt">
         <button class="botones" title="Contratar" ion-button (click)="applyOffer(offer)" clear icon-only>
           <ion-icon name='md-briefcase' is-active="false"></ion-icon>
         </button>
 
-        <button class="botonfinal" ion-button round color="default" (click)="addMessageAlum(offer.teacher_id)">
-          Enviar mensaje
-
         <button class="comprar" ion-button title="Enviar mensaje" (click)="addMessageAlum(offer.teacher_id)" clear icon-only>
           <ion-icon name='md-text' is-active="false"></ion-icon>
         </button>
-        </div>
+      </div>
     </ion-item>
     <br>
   </ion-list>

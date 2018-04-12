@@ -33,7 +33,7 @@ export class AllOffersPage {
   applyOffer(offer) {
     this.alumProvider.apply(offer).then(data => {
       this.toastCtrl.create({
-        message: 'Apply correctly',
+        message: 'Contratado correctamente',
         duration: 3000,
         position: 'bottom'
       }).present();

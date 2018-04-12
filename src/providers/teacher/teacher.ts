@@ -73,9 +73,9 @@ export class TeacherProvider {
   }
 
   infoTeacher() {
-  return this.api.get('teacher/info').then(data => {
-  return data;
-  });
+    return this.api.get('teacher/info').then(data => {
+      return data;
+    });
   }
 
   teacherMessages() {

@@ -93,8 +93,14 @@ all-offers {
     margin-left: 15px;
   }
 
-  .contenedor .first {
+  .first {
     float: left;
+    margin-left: 5px;
+    overflow: auto;
+  }
+
+  .second{
+    float: right;
     margin-left: 100px;
     overflow: auto;
   }

@@ -37,6 +37,7 @@ import {DisplayTeacherPage} from "../pages/display-teacher/display-teacher";
 import {DisplayAlumPage} from "../pages/display-alum/display-alum";
 import {StripePage} from "../pages/stripe/stripe";
 import {Stripe} from "@ionic-native/stripe";
+import {TeacherMyOffersPage} from "../pages/teacher-myOffers/teacher-myOffers";
 
 
 
@@ -63,6 +64,7 @@ import {Stripe} from "@ionic-native/stripe";
     DisplayTeacherPage,
     DisplayAlumPage,
     StripePage,
+    TeacherMyOffersPage,
 
 
     // Pipes
@@ -98,6 +100,7 @@ import {Stripe} from "@ionic-native/stripe";
     DisplayTeacherPage,
     DisplayAlumPage,
     StripePage,
+    TeacherMyOffersPage,
 
   ],
   providers: [

@@ -9,32 +9,30 @@
 
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   <ion-list>
     <ion-item *ngFor="let offer of offers">
       <div class="first">
-        <button class="alum" *ngIf="offer.alum" (click)="displayAlum(offer.alum.id)"><ion-icon name='ios-school' is-active="false"></ion-icon> {{offer.alum.name}}</button>
-        <h4 class="uno"><ion-icon name='ios-book' is-active="false"></ion-icon> {{offer.name}}</h4>
+        <h4><ion-icon name='ios-book' is-active="false"></ion-icon> {{offer.name}}</h4>
         <h4 float="right"><ion-icon name='ios-pin' color="danger" is-active="false"></ion-icon> {{offer.location}}</h4>
         <h4 float="right"><ion-icon name='md-cash' color="secondary" is-active="false"></ion-icon> {{offer.price}} </h4>
       </div>
       <div class="second">
         <h4><ion-icon name='md-calendar' is-active="false"></ion-icon> {{offer.start_date}}</h4>
         <h4><ion-icon name='md-calendar' is-active="false"></ion-icon> {{offer.end_date}}</h4>
-        <button class="botones" title="Eliminar" ion-button color="danger" (click)="deleteOffer(offer)" clear icon-only>
-          <ion-icon name='trash' is-active="false"></ion-icon>
-        </button>
-        <button class="botones" title="Editar" ion-button (click)="editOffer(offer)" clear icon-only>
-          <ion-icon name='md-create' is-active="false"></ion-icon>
-        </button>
       </div>
+      <form>
+      <div class="star-rating">
+        <a href="#"  title="Votar con 1 estrellas" (click)="addAppreciation(offer, 1)">&#9733;</a>
+        <a href="#"  title="Votar con 2 estrellas" (click)="addAppreciation(offer, 1)">&#9733;</a>
+        <a href="#"  title="Votar con 3 estrellas" (click)="addAppreciation(offer, 3)">&#9733;</a>
+        <a href="#"  title="Votar con 4 estrellas" (click)="addAppreciation(offer, 4)">&#9733;</a>
+        <a href="#"  title="Votar con 5 estrellas" (click)="addAppreciation(offer, 5)">&#9733;</a>
+      </div>
+      </form>
 
     </ion-item>
     <br>
-
-    <button class="botonfinal" *ngIf="this.showButton==true" ion-button round color="default"(click)="addOffer()" >Crear clase</button>
-
   </ion-list>
-
 
 </ion-content>

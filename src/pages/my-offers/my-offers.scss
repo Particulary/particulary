@@ -1,9 +1,5 @@
 my-offers {
 
-  .star-rating {
-    float: left;
-  }
-
   ion-list{
     position: relative;
     border-radius: 8px;
@@ -36,7 +32,7 @@ my-offers {
     font-weight: 500;
     font-size: 18px;
     color: #ffffff;
-    background-color: #488aff;
+    margin:5px;
   }
 
   .botonfinal:hover{

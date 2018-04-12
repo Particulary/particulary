@@ -30,9 +30,8 @@
       <div class="second">
         <h4><ion-icon name='md-calendar' is-active="false"></ion-icon> {{offer.start_date}}</h4>
         <h4><ion-icon name='md-calendar' is-active="false"></ion-icon> {{offer.end_date}}</h4>
-
-        <button ion-button round title="Contratar" ion-button (click)="applyOffer(offer)">
-          Contratar
+        <button class="botones" ion-button clear title="Contratar" (click)="applyOffer(offer)">
+          <ion-icon name='md-briefcase' is-active="false"></ion-icon>
         </button>
         <button class="comprar" ion-button title="Enviar mensaje" (click)="addMessageAlum(offer.teacher_id)" clear icon-only>
           <ion-icon name='md-text' is-active="false"></ion-icon>

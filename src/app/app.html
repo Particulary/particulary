@@ -12,6 +12,9 @@
         <ion-icon name="{{ p.icon }}"></ion-icon>
         <span>{{p.title}}</span>
       </button>
+      <button *ngIf="points" ion-item>
+        Puntos: {{points}}
+      </button>
       <button menuClose ion-item (click)="logout()">
         <span>Log Out</span>
       </button>

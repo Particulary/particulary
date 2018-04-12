@@ -30,7 +30,7 @@
     <ion-label>Descuento</ion-label>
     <ion-select formControlName="discount">
       <ion-option *ngIf="points >= 12500" value="12500">5 €</ion-option>
-      <ion-option *ngIf="points >= 22500" value="22500">10 €</ion-option>
+      <ion-option *ngIf="points >= 25000" value="25000">10 €</ion-option>
     </ion-select>
 
     <button class="enter" ion-button round type="submit" [disabled]="!createPaymentForm.valid">Crear</button>

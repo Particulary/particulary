@@ -22,6 +22,7 @@ import {CreateMessagePageTeacher} from "../pages/create-message/create-message";
 import {DisplayAlumPage} from "../pages/display-alum/display-alum";
 import {DisplayTeacherPage} from "../pages/display-teacher/display-teacher";
 import {StripePage} from "../pages/stripe/stripe";
+import {AlumProvider} from "../providers/alum/alum";
 
 
 @Component({
@@ -32,12 +33,13 @@ export class MyApp {
 
   rootPage: any = LoginPage;
   aux: boolean = true;
-
+  points = 0;
 
   pages: Array<{ title: string, component: any, tabIndex?: number, icon?: string }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar,
-              public events: Events, public menuCtrl: MenuController, public storage: Storage) {
+              public events: Events, public menuCtrl: MenuController, public storage: Storage,
+              public alumProvider: AlumProvider) {
     this.initializeApp();
 
     const alum_pages = [
@@ -63,6 +65,11 @@ export class MyApp {
       if (val !== null) {
         if (val['rol'] === 'student') {
           this.pages = alum_pages;
+          this.alumProvider.infoAlum().then(data => {
+            this.points = data['particulary_points'];
+            console.log(this.points);
+          });
+
         } else if (val['rol'] === 'teacher') {
           this.pages = teacher_pages;
         }
@@ -74,6 +81,12 @@ export class MyApp {
         this.pages = alum_pages;
       } else if (rol === 'teacher') {
         this.pages = teacher_pages;
+      }
+    });
+
+    events.subscribe('points:update', (points) => {
+      if (points !== null) {
+        this.points = points;
       }
     });
   }

@@ -23,8 +23,8 @@
         <h4><ion-icon name='md-calendar' is-active="false"></ion-icon> {{offer.start_date}}</h4>
         <h4><ion-icon name='md-calendar' is-active="false"></ion-icon> {{offer.end_date}}</h4>
 
-        <button class="botones" title="Contratar" ion-button (click)="applyOffer(offer)" clear icon-only>
-          <ion-icon name='md-create' is-active="false"></ion-icon>
+        <button ion-button round title="Contratar" ion-button (click)="applyOffer(offer)">
+          Contratar
         </button>
         <button ion-button round color="default" (click)="addMessageAlum(offer.teacher_id)">
           Enviar mensaje

@@ -102,5 +102,10 @@ export class TeacherProvider {
     });
   }
 
+  addAppreciation(offer_id, appreciation) {
+    return this.api.post('student/offer/' + offer_id +'/appreciation', {appreciation: appreciation}).then(data => {
+      return data;
+    });
+  }
 
 }

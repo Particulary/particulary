@@ -22,6 +22,8 @@ import {CreateMessagePageTeacher} from "../pages/create-message/create-message";
 import {DisplayAlumPage} from "../pages/display-alum/display-alum";
 import {DisplayTeacherPage} from "../pages/display-teacher/display-teacher";
 import {StripePage} from "../pages/stripe/stripe";
+import {TeacherMyOffersPage} from "../pages/teacher-myOffers/teacher-myOffers";
+
 
 
 @Component({
@@ -47,6 +49,7 @@ export class MyApp {
       {title: 'Editar perfil', component: EditAlumPage, icon: 'md-color-palette'},
       {title: 'Mensajes', component: MyMessagesPageAlum, icon: 'md-chatbubbles' },
       {title: 'Pago', component: StripePage, icon: 'ios-card'},
+      {title: 'Valorar profesor', component: AlumMyOffersPage, icon: 'ios-brush' },
     ];
 
     const teacher_pages = [
@@ -55,8 +58,7 @@ export class MyApp {
       {title: 'Experiencias', component: MyExperiencesPage, icon: 'md-ribbon'},
       {title: 'Mensajes', component: MyMessagesPageTeacher, icon: 'md-chatbubbles' },
       {title: 'Editar perfil', component: EditTeacherPage, icon: 'md-color-palette'},
-
-
+        {title: 'Valorar alumno', component: TeacherMyOffersPage, icon: 'ios-brush' },
     ];
 
     this.storage.get('auth').then((val) => {

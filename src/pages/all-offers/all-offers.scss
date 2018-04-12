@@ -36,7 +36,15 @@ all-offers {
       margin-bottom: 5em;
     }
 
-    .botones{float:right;}
+    .botones{float:right;
+    color:darkorange;
+    }
+
+    .comprar{
+      color:mediumseagreen;
+      margin-right: -50px;
+      margin-left:30px;
+    }
 
     .botonfinal{
       position:relative;
@@ -87,5 +95,7 @@ all-offers {
     .first{float:left;}
 
     .second{float:right;}
+
+
 
   }

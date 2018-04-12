@@ -5,7 +5,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      <ion-icon name='md-chatboxes' is-active="false"></ion-icon>
+      <ion-icon name='md-chatbubbles' is-active="false"></ion-icon>
       Mensajes
     </ion-title>
   </ion-navbar>
@@ -18,8 +18,8 @@
       <fieldset class="first">
         <h4 float="right" class="email">
           <ion-icon name='md-person' color="black" is-active="false"></ion-icon>
-          <span class="email" *ngIf="message.teacher">{{ message.teacher.email }}</span>
-          <span class="email" *ngIf="message.alum">{{ message.alum.email }}</span>
+          <span *ngIf="message.teacher">{{ message.teacher.email }}</span>
+          <span *ngIf="message.alum">{{ message.alum.email }}</span>
         </h4>
         <h4 class="message">
           <ion-icon name='md-text' is-active="false"></ion-icon>
@@ -29,10 +29,10 @@
       </fieldset>
       <span *ngIf="message.alum"> <button class="botonfinal" *ngIf="this.showButton==true" style="height: 30px"
                                           ion-button round (click)="addMessageT(message.alum_id)">
-          Responder
+           <ion-icon name="md-send"></ion-icon>  Responder
         </button> </span>
       <span *ngIf="message.teacher"> <button class="botonfinal" *ngIf="this.showButton==true" ion-button round (click)="addMessageA(message.teacher_id)">
-          Responder
+        <ion-icon name="md-send"></ion-icon>  Responder
         </button> </span>
     </ion-item>
   </ion-list>

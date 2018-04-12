@@ -4,7 +4,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title><ion-icon name='ios-school'></ion-icon>  Particulary</ion-title>
+    <ion-title><ion-icon name='ios-school'></ion-icon> Particulary</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -20,22 +20,6 @@
     <p class="p4">Como alumno podrás acceder a la lista de ofertas disponibles, inscribirte a las que desees y modificar tu perfil.</p>
   </div>
 
-  <ion-item class="botones" *ngIf="this.aux==true">
-    <button class="first" ion-button color="secondary" (click)="loginAsTeacher()">
-      Profesor
-    </button>
-    <button class="second" ion-button color="danger" (click)="loginAsAlum()">
-      Alumno
-    </button>
-  </ion-item>
-  <ion-item class="botones" *ngIf="this.aux==false">
-    <button class="first" ion-button color="danger" (click)="loginAsTeacher()">
-      Profesor
-    </button>
-    <button class="second" ion-button color="secondary" (click)="loginAsAlum()">
-      Alumno
-    </button>
-  </ion-item>
 
  <!-- <ion-infinite-scroll (ionInfinite)="loadMore($event)">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>

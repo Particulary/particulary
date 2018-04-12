@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Storage} from '@ionic/storage';
-import { Validators, FormBuilder, FormGroup, FormControl} from '@angular/forms';
+import {Validators, FormBuilder, FormGroup, FormControl} from '@angular/forms';
 
 import {
   NavController, ToastController, Modal, ModalController, ModalOptions, Events,
@@ -29,9 +29,10 @@ export class LoginPage {
 
 
     // TODO: Already logged -> Redirect to main page
-    this.storage.get('credentials').then((val) => {
+    this.storage.get('auth').then((val) => {
       if (val !== null) {
-        // this.navCtrl.setRoot(TabsPage, { tabIndex: 0 }, { animate: true, direction: 'forward' });
+        this.menu.enable(true, 'leftMenu');
+        this.navCtrl.setRoot(HomePage);
       }
     });
 
@@ -51,25 +52,28 @@ export class LoginPage {
 
     this.loginProvider.login(user).then(data => {
 
-      console.log(data);
-
       this.menu.enable(true, 'leftMenu');
       // TODO: save api_token and check if session must be saved
       this.storage.set('api_token', data['api_token']);
+      this.storage.set('auth', data);
+
+      this.events.publish('login:update', data['rol']);
+      this.events.publish('token:update', data['api_token']);
+
 
       // TODO: Login susccesfully -> Redirect to main page
-      this.navCtrl.setRoot(HomePage, { tabIndex: 0 }, { animate: true, direction: 'forward' });
+      this.navCtrl.setRoot(HomePage, {}, {animate: true, direction: 'forward'});
 
     }).catch(err => {
 
       console.log(err);
       //TODO: retrieve the error
-        this.toastCtrl.create({
-          message: err.error.login,
-          duration: 3000,
-          position: 'bottom'
-        }).present();
-      });
+      this.toastCtrl.create({
+        message: err.error.login,
+        duration: 3000,
+        position: 'bottom'
+      }).present();
+    });
 
   }
 

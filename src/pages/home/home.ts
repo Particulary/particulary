@@ -17,27 +17,14 @@ export class HomePage {
   loadMore() {}
 
   loginAsTeacher() {
-    this.events.publish('token:update', 'iRV5XSbrgcttVViF18NHFaS0fDMnU13SsXBHNkGaTZtuUREnMI0sSy0sJJ6y');
-    this.toastCtrl.create({
-      message: 'Estás logueado como profesor',
-      duration: 3000,
-      position: 'bottom'
-    }).present();
-    this.aux=true;
+
   }
 
   loginAsTeacherAux() {
-    this.events.publish('token:update', 'iRV5XSbrgcttVViF18NHFaS0fDMnU13SsXBHNkGaTZtuUREnMI0sSy0sJJ6y');
-    this.aux=true;
+
   }
 
   loginAsAlum() {
-    this.events.publish('token:update',  'aRV5XSbrgcttVViF18NHFaS0fDMnU13SsXBHNkGaTZtuUREnMI0sSy0sJJ6y');
-    this.toastCtrl.create({
-      message: 'Estás logueado como alumno',
-      duration: 3000,
-      position: 'bottom'
-    }).present();
-    this.aux=false;
+
   }
 }

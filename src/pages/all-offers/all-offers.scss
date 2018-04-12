@@ -37,46 +37,19 @@ all-offers {
   }
 
   .botones {
+    margin-top: 10px;
+    position: relative;
     float: right;
     color: darkorange;
   }
 
   .comprar {
+    margin-top: 10px;
+    float: left;
+    position: relative;
     color: mediumseagreen;
     margin-right: -50px;
     margin-left: 30px;
-  }
-
-  .botonfinal {
-    position: relative;
-    height: 8%;
-    text-decoration: none;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    font-weight: 200;
-    font-size: 18px;
-    color: #ffffff;
-    background-color: #488aff;
-    border-radius: 6px;
-    border: 0px solid #1026C4;
-    margin: 15px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    float: left;
-  }
-
-  .botonfinal:hover {
-    color: white;
-    background-color: #77a8ff;
-    border: 0px solid #1026C4;
-  }
-
-  .botones {
-    margin: 15px;
-    position: relative;
-    float: left;
   }
 
   ion-list .item .item-inner {
@@ -94,14 +67,21 @@ all-offers {
   }
 
   .first {
+    width: 100%;
     float: left;
     margin-left: 5px;
     overflow: auto;
   }
 
+  .first::-webkit-scrollbar-thumb{
+    width: 5px;
+    color: #f53d3d;
+  }
+
   .second{
+    width:35%;
     float: right;
-    margin-left: 100px;
+    margin-left: 35%;
     overflow: auto;
   }
 }

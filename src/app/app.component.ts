@@ -42,20 +42,20 @@ export class MyApp {
 
     const alum_pages = [
       {title: 'Inicio', component: HomePage, icon: 'ios-home'},
-      {title: 'Lista Ofertas (Alumno)', component: AllOffersPage, icon: 'ios-school'},
-      {title: 'Editar alumno', component: EditAlumPage, icon: 'ios-brush'},
-      { title: 'Mis mensajes (Alumno)', component: MyMessagesPageAlum, icon: 'md-chatboxes' },
-      { title: 'Ofertas de alumno', component: AlumMyOffersPage, icon: 'ios-brush' },
-
-      {title: 'Pago', component: StripePage, icon: 'ios-brush'},
+      {title: 'Buscar clases', component: AllOffersPage, icon: 'ios-search'},
+      {title: 'Mis clases', component: AlumMyOffersPage, icon: 'ios-school' },
+      {title: 'Editar perfil', component: EditAlumPage, icon: 'md-color-palette'},
+      {title: 'Mensajes', component: MyMessagesPageAlum, icon: 'md-chatbubbles' },
+      {title: 'Pago', component: StripePage, icon: 'ios-card'},
     ];
 
     const teacher_pages = [
       {title: 'Inicio', component: HomePage, icon: 'ios-home'},
-      {title: 'Mis Ofertas', component: MyOffersPage, icon: 'ios-school'},
-      {title: 'Mis Experiencias', component: MyExperiencesPage, icon: 'md-ribbon'},
-      {title: 'Editar profesor', component: EditTeacherPage, icon: 'md-color-palette'},
-      { title: 'Mis mensajes (Profesor)', component: MyMessagesPageTeacher, icon: 'md-chatboxes' },
+      {title: 'Clases', component: MyOffersPage, icon: 'ios-school'},
+      {title: 'Experiencias', component: MyExperiencesPage, icon: 'md-ribbon'},
+      {title: 'Mensajes', component: MyMessagesPageTeacher, icon: 'md-chatbubbles' },
+      {title: 'Editar perfil', component: EditTeacherPage, icon: 'md-color-palette'},
+
 
     ];
 

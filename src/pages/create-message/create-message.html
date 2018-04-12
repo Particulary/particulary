@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title><ion-icon name='md-ribbon' is active="false"></ion-icon>Crear mensaje</ion-title>
+    <ion-title><ion-icon name='md-chatbubbles' is active="false"></ion-icon> Crear mensaje</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -11,10 +11,10 @@
   <form [formGroup]="createMessageForm" (ngSubmit)="createMessage()">
     <div class="createMessage">
       <fieldset>
-        <legend><ion-icon name='md-text' is-active="false"></ion-icon> Mensaje:</legend>
+        <legend><ion-icon name='md-text' is-active="false"></ion-icon> Mensaje </legend>
         <ion-textarea formControlName="text"></ion-textarea>
         </fieldset>
-      <button class="enter" ion-button round type="submit" [disabled]="!createMessageForm.valid">Enviar</button>
+      <button class="enter" ion-button round type="submit" [disabled]="!createMessageForm.valid"><ion-icon name="md-send"></ion-icon>  Enviar</button>
     </div>
 
   </form>

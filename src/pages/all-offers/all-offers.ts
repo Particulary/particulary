@@ -33,6 +33,19 @@ export class AllOffersPage {
 
   applyOffer(offer) {
     this.navCtrl.setRoot(StripePage, {offer});
+    this.alumProvider.apply(offer).then(data => {
+      this.toastCtrl.create({
+        message: 'Contratado correctamente',
+        duration: 3000,
+        position: 'bottom'
+      }).present();
+    }).catch(err => {
+      this.toastCtrl.create({
+        message: err.error.message,
+        duration: 3000,
+        position: 'bottom'
+      }).present();
+    });
   }
 
   displayTeacher(id) {

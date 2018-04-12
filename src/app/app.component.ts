@@ -69,11 +69,11 @@ export class MyApp {
           this.pages = alum_pages;
           this.alumProvider.infoAlum().then(data => {
             this.points = data['particulary_points'];
-            console.log(this.points);
           });
 
         } else if (val['rol'] === 'teacher') {
           this.pages = teacher_pages;
+          this.points = 0;
         }
       }
     });
@@ -81,8 +81,12 @@ export class MyApp {
     events.subscribe('login:update', (rol) => {
       if (rol === 'student') {
         this.pages = alum_pages;
+        this.alumProvider.infoAlum().then(data => {
+          this.points = data['particulary_points'];
+        });
       } else if (rol === 'teacher') {
         this.pages = teacher_pages;
+        this.points = 0;
       }
     });
 

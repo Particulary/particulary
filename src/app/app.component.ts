@@ -18,6 +18,7 @@ import {MyMessagesPageTeacher} from "../pages/my-messages/my-messages";
 import {MyMessagesPageAlum} from "../pages/my-messages/my-messages";
 import {RegisterPage} from "../pages/register/register";
 import {AlumMyOffersPage} from "../pages/alum-myOffers/alum-myOffers";
+import {TeacherMyOffersPage} from "../pages/teacher-myOffers/teacher-myOffers";
 
 
 
@@ -48,7 +49,8 @@ export class MyApp {
       { title: 'Mis mensajes (Profesor)', component: MyMessagesPageTeacher, icon: 'md-chatboxes' },
       { title: 'Mis mensajes (Alumno)', component: MyMessagesPageAlum, icon: 'md-chatboxes' },
       { title: 'Login', component: LoginPage, icon: 'ios-brush' },
-      { title: 'Ofertas de alumno', component: AlumMyOffersPage, icon: 'ios-brush' },
+      { title: 'Valorar profesor', component: AlumMyOffersPage, icon: 'ios-brush' },
+      { title: 'Valorar alumno', component: TeacherMyOffersPage, icon: 'ios-brush' },
 
     ];
 

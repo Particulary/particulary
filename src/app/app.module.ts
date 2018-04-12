@@ -33,6 +33,7 @@ import {CreateMessagePageTeacher} from "../pages/create-message/create-message";
 import {CreateMessagePageAlum} from "../pages/create-message/create-message";
 import {RegisterPage} from "../pages/register/register";
 import {AlumMyOffersPage} from "../pages/alum-myOffers/alum-myOffers";
+import {TeacherMyOffersPage} from "../pages/teacher-myOffers/teacher-myOffers";
 
 
 
@@ -56,6 +57,7 @@ import {AlumMyOffersPage} from "../pages/alum-myOffers/alum-myOffers";
     CreateMessagePageAlum,
     RegisterPage,
     AlumMyOffersPage,
+    TeacherMyOffersPage,
 
 
     // Pipes
@@ -88,6 +90,7 @@ import {AlumMyOffersPage} from "../pages/alum-myOffers/alum-myOffers";
     CreateMessagePageAlum,
     RegisterPage,
     AlumMyOffersPage,
+    TeacherMyOffersPage,
 
 
   ],

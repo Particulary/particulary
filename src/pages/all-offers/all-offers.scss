@@ -1,101 +1,101 @@
 all-offers {
 
-    .busqueda{
-      margin-left: 20px;
-      margin-right: 20px;
-      margin-top: 10px;
-      margin-bottom: 3px;
-      width:270px;
-      box-sizing: border-box;
-      border: 2px solid #ccc;
-      border-radius: 20px;
-      font-size: 15px;
-      padding-left: 30px;
-      background-image: url("../../assets/imgs/search.png");
-      background-size: 15px;
-      background-position: 12px 14px;
-      background-repeat: no-repeat;
-      -webkit-transition: width 0.4s ease-in-out;
-      transition: width 0.3s ease-in-out;
-    }
+  .busqueda {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 3px;
+    width: 270px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    font-size: 15px;
+    padding-left: 30px;
+    background-image: url("../../assets/imgs/search.png");
+    background-size: 15px;
+    background-position: 12px 14px;
+    background-repeat: no-repeat;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.3s ease-in-out;
+  }
 
-    .prof{
-      background: none;
-      size: auto;
-      color: #488aff;
-      margin-left: -6px;
-    }
+  .prof {
+    background: none;
+    size: auto;
+    color: #488aff;
+    margin-left: -6px;
+  }
 
-    .button {
-      bottom: 0;
-      margin-bottom: 0;
-      height: 4em;
-    }
+  .button {
+    bottom: 0;
+    margin-bottom: 0;
+    height: 4em;
+  }
 
-    ion-item:last-child {
-      margin-bottom: 5em;
-    }
+  ion-item:last-child {
+    margin-bottom: 5em;
+  }
 
-    .botones{float:right;
-    color:darkorange;
-    }
+  .botones {
+    float: right;
+    color: darkorange;
+  }
 
-    .comprar{
-      color:mediumseagreen;
-      margin-right: -50px;
-      margin-left:30px;
-    }
+  .comprar {
+    color: mediumseagreen;
+    margin-right: -50px;
+    margin-left: 30px;
+  }
 
-    .botonfinal{
-      position:relative;
-      height: 8%;
-      text-decoration: none;
-      padding-left: 20px;
-      padding-right: 20px;
-      padding-top: 0px;
-      padding-bottom: 0px;
-      font-weight: 200;
-      font-size: 18px;
-      color: #ffffff;
-      background-color: #488aff;
-      border-radius: 6px;
-      border: 0px solid #1026C4;
-      margin:15px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      float: left;
-    }
+  .botonfinal {
+    position: relative;
+    height: 8%;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-weight: 200;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #488aff;
+    border-radius: 6px;
+    border: 0px solid #1026C4;
+    margin: 15px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    float: left;
+  }
 
-    .botonfinal:hover{
-      color: white;
-      background-color: #77a8ff;
-      border: 0px solid #1026C4;
-    }
+  .botonfinal:hover {
+    color: white;
+    background-color: #77a8ff;
+    border: 0px solid #1026C4;
+  }
 
-  .botones{
+  .botones {
     margin: 15px;
     position: relative;
     float: left;
   }
 
-    ion-list .item .item-inner{
-      box-sizing: border-box;
-      border-radius: 5px;
-      margin: 5px;
-      margin-right: 20px;
-      background-color: white;
-      resize: none;
-      border: 4px solid #488aff;
-    }
-
-    ion-list .item .first .icon {
-      margin-left: 15px;
-    }
-
-    .first{float:left;}
-
-    .second{float:right;}
-
-
-
+  ion-list .item .item-inner {
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 5px;
+    margin-right: 20px;
+    background-color: white;
+    resize: none;
+    border: 4px solid #488aff;
   }
+
+  ion-list .item .first .icon {
+    margin-left: 15px;
+  }
+
+  .contenedor .first {
+    float: left;
+    margin-left: 100px;
+    overflow: auto;
+  }
+}

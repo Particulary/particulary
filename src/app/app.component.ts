@@ -72,6 +72,8 @@ export class MyApp {
           this.pages = teacher_pages;
           this.points = 0;
         }
+      } else {
+        this.menuCtrl.enable(false, 'leftMenu');
       }
     });
 
@@ -96,7 +98,6 @@ export class MyApp {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.menuCtrl.enable(false, 'leftMenu');
       this.statusBar.styleDefault();
     });
   }

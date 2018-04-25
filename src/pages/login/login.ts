@@ -52,7 +52,6 @@ export class LoginPage {
 
     this.loginProvider.login(user).then(data => {
 
-      this.menu.enable(true, 'leftMenu');
       // TODO: save api_token and check if session must be saved
       this.storage.set('api_token', data['api_token']);
       this.storage.set('auth', data);
@@ -62,6 +61,7 @@ export class LoginPage {
 
 
       // TODO: Login susccesfully -> Redirect to main page
+      this.menu.enable(true, 'leftMenu');
       this.navCtrl.setRoot(HomePage, {}, {animate: true, direction: 'forward'});
 
     }).catch(err => {

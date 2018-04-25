@@ -53,11 +53,12 @@ export class LoginPage {
     this.loginProvider.login(user).then(data => {
 
       // TODO: save api_token and check if session must be saved
-      this.storage.set('api_token', data['api_token']);
-      this.storage.set('auth', data);
+      this.storage.set('auth', data).then(()=>{
 
-      this.events.publish('login:update', data['rol']);
-      this.events.publish('token:update', data['api_token']);
+        this.events.publish('token:update', data['api_token']);
+        this.events.publish('login:update', data['rol']);
+      });
+
 
 
       // TODO: Login susccesfully -> Redirect to main page

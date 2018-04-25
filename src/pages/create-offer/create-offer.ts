@@ -16,7 +16,7 @@ export class CreateOfferPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private teacherProvider: TeacherProvider,
               private alertCtrl: AlertController) {
     this.createOfferForm = this.formBuilder.group({
-      name: new FormControl('', [Validators.required, Validators.minLength(3),Validators.pattern('[a-zA-Z ]*')]),
+      name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       location: new FormControl('', [Validators.required, Validators.minLength(6)]),
       price: new FormControl('', [Validators.required, Validators.min(0.00)]),
       start_date: new FormControl('', Validators.required),

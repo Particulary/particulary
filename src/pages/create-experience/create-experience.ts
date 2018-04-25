@@ -16,7 +16,7 @@ export class CreateExperiencePage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private teacherProvider: TeacherProvider,
               private alertCtrl: AlertController) {
     this.createExperienceForm = this.formBuilder.group({
-      name: new FormControl('', [Validators.required, Validators.minLength(3),Validators.pattern('[a-zA-Z ]*')]),
+      name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       description: new FormControl('', [Validators.required, Validators.minLength(6),]),
       date: new FormControl('', Validators.required),
     });

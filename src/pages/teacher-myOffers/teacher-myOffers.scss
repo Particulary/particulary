@@ -1,4 +1,4 @@
-my-offers {
+teacher-myOffers {
 
   .button {
     bottom: 0;
@@ -53,14 +53,12 @@ my-offers {
   .second{float:right;}
 
 
-
-
-
   .star-rating {
+    margin-top: 10px;
+    float: right;
     $size: 20px;
     $normal: #95A5A6;
     $selected: #F39C12;
-
     display: inline-block;
 
     a {

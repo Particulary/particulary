@@ -6,6 +6,7 @@ import { EditOfferPage } from "../edit-offer/edit-offer";
 import {HomePage} from "../home/home";
 import {DisplayTeacherPage} from "../display-teacher/display-teacher";
 import {DisplayAlumPage} from "../display-alum/display-alum";
+import {AlumMyOffersPage} from "../alum-myOffers/alum-myOffers";
 
 
 @Component({
@@ -51,6 +52,16 @@ showButton: boolean;
       if(i != -1) {
         this.offers.splice(i, 1);
       }
+    }).catch(err => {
+      console.log(err);
+    });
+  }
+
+  addAppreciation(offer, appreciation){
+    offer.alumAppreciation=appreciation;
+    offer.tags="";
+    this.teacherProvider.editOffer(offer, offer.id).then(data => {
+      this.navCtrl.setRoot(MyOffersPage);
     }).catch(err => {
       console.log(err);
     });

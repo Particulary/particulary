@@ -47,7 +47,7 @@ export class AlumMyOffersPage {
     addAppreciation(offer_id, appreciation){
 
       this.alumProvider.addAppreciation(offer_id, appreciation).then(data => {
-        this.navCtrl.setRoot(MyOffersPage);
+        this.navCtrl.setRoot(AlumMyOffersPage);
       }).catch(err => {
         console.log(err);
       });

@@ -48,19 +48,16 @@ export class MyApp {
       {title: 'Inicio', component: HomePage, icon: 'ios-home'},
       {title: 'Buscar clases', component: AllOffersPage, icon: 'ios-search'},
       {title: 'Mis clases', component: AlumMyOffersPage, icon: 'ios-school' },
-      {title: 'Editar perfil', component: EditAlumPage, icon: 'md-color-palette'},
       {title: 'Mensajes', component: MyMessagesPageAlum, icon: 'md-chatbubbles' },
-      {title: 'Pago', component: StripePage, icon: 'ios-card'},
-      {title: 'Valorar profesor', component: AlumMyOffersPage, icon: 'ios-brush' },
+      {title: 'Editar perfil', component: EditAlumPage, icon: 'md-color-palette'},
     ];
 
     const teacher_pages = [
       {title: 'Inicio', component: HomePage, icon: 'ios-home'},
       {title: 'Clases', component: MyOffersPage, icon: 'ios-school'},
-      {title: 'Experiencias', component: MyExperiencesPage, icon: 'md-ribbon'},
       {title: 'Mensajes', component: MyMessagesPageTeacher, icon: 'md-chatbubbles' },
       {title: 'Editar perfil', component: EditTeacherPage, icon: 'md-color-palette'},
-        {title: 'Valorar alumno', component: TeacherMyOffersPage, icon: 'ios-brush' },
+      {title: 'Experiencias', component: MyExperiencesPage, icon: 'md-ribbon'},
     ];
 
     this.storage.get('auth').then((val) => {
@@ -75,6 +72,8 @@ export class MyApp {
           this.pages = teacher_pages;
           this.points = 0;
         }
+      } else {
+        this.menuCtrl.enable(false, 'leftMenu');
       }
     });
 
@@ -99,7 +98,6 @@ export class MyApp {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.menuCtrl.enable(false, 'leftMenu');
       this.statusBar.styleDefault();
     });
   }

@@ -40,7 +40,7 @@ all-offers {
     margin-top: 10px;
     float: left;
     color: darkorange;
-    margin-left: 20px;
+    margin-left: 16px;
   }
 
   .comprar {
@@ -70,6 +70,10 @@ all-offers {
     float: left;
     margin-left: 5px;
     overflow: visible;
+    width: 100%;
+    h4{
+      overflow: auto;
+    }
   }
 
   .first::-webkit-scrollbar{

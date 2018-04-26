@@ -43,13 +43,19 @@ alum-myOffers {
     margin-left: 15px;
   }
 
-  .first{float:left;}
+  .first{
+    float:left;
+    width: 100%;
+    h4{
+      overflow: auto;
+    }
+  }
 
   .second{float:right;}
 
   .star-rating{
-    margin: 15px 0px 0px 15px;
-    float: right;
+    margin: 8px 15px 0px 10px;
+    float: left;
     $size: 20px;
     $normal: #95A5A6;
     $selected: #F39C12;

@@ -57,6 +57,10 @@ my-offers {
 
   .first{
     float:left;
+    width: 100%;
+    h4{
+      overflow: auto;
+    }
     .uno{
       padding-top: 4px;
     }

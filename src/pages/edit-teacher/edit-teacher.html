@@ -52,10 +52,17 @@
       </fieldset>
       <fieldset>
         <legend><span class="number">2</span>Info Adicional</legend>
+
+        <div class="link-input">
+          <ion-label>Perfil profesional</ion-label>
+          <ion-input type="url" formControlName="linkedin" [value]="teacher.linkedin?teacher.linkedin:''" placeholder="Mín. 5 caracteres"></ion-input>
+        </div>
+
         <div class="bio-input">
           <ion-label>Biografía</ion-label>
             <ion-input type="text" formControlName="bio" [value]="teacher.bio?teacher.bio:''" placeholder="Mín. 5 caracteres"></ion-input>
         </div>
+
       </fieldset>
       <button class="enter" round ion-button type="submit" [disabled]="!editTeacherForm.valid">Editar</button>
     </form>

@@ -23,7 +23,7 @@ export class CreateMessagePageTeacher {
   }
 
   createMessage() {
-    console.log(this.navParams)
+    console.log(this.navParams);
     let message = {
 
       text: this.createMessageForm.value.text,
@@ -55,7 +55,7 @@ export class CreateMessagePageAlum {
   }
 
  createMessage() {
-    console.log(this.navParams)
+    console.log(this.navParams);
     let message = {
 
       text: this.createMessageForm.value.text,

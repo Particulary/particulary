@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import {Events, NavController, NavParams, ToastController} from 'ionic-angular';
-import {TeacherProvider} from "../../providers/teacher/teacher";
-
+import {CreateOfferPage} from "../create-offer/create-offer";
+import {CreateExperiencePage} from "../create-experience/create-experience";
+import {AllOffersPage} from "../all-offers/all-offers";
+import {Storage} from "@ionic/storage";
 
 @Component({
   selector: 'page-home',
@@ -9,9 +11,32 @@ import {TeacherProvider} from "../../providers/teacher/teacher";
 })
 export class HomePage {
 
-  aux: boolean = true;
-  constructor(public navCtrl: NavController, public navParams: NavParams,  public events: Events, private teacherProvider: TeacherProvider, public toastCtrl: ToastController) {
-    this.loginAsTeacherAux();
+  aux: boolean ;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public toastCtrl: ToastController) {
+    this.storage.get('auth').then((val) => {
+      if (val !== null) {
+        if (val['rol'] === 'student') {
+          this.aux = true;
+
+        } else if (val['rol'] === 'teacher') {
+          this.aux = false;
+        }
+      } else {
+        this.aux = true;
+      }
+    });
+  }
+
+  addOffer() {
+    this.navCtrl.push(CreateOfferPage);
+  }
+
+  addExperience() {
+    this.navCtrl.push(CreateExperiencePage);
+  }
+
+  searchOffers() {
+    this.navCtrl.push(AllOffersPage);
   }
 
   loadMore() {}

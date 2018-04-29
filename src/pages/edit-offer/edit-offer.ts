@@ -29,7 +29,7 @@ export class EditOfferPage {
   }
 
   pastDateValidator(control: FormGroup) {
-    console.log(control.controls['start_date'].value)
+    console.log(control.controls['start_date'].value);
     if (control.controls['end_date'].value < control.controls['start_date'].value)
       return {"invalid_end_date": true};
   }

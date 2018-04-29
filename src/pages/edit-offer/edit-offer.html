@@ -48,6 +48,13 @@
 
       <ion-label>Fin</ion-label>
       <ion-input type="date" formControlName="end_date" [value]="offer.end_date"></ion-input>
+
+      <ion-select formControlName="disponibilidad" [(ngModel)]="offer.disponibilidad">
+        <ion-option value="Mañana">Mañana</ion-option>
+        <ion-option value="Tarde">Tarde</ion-option>
+        <ion-option value="Cualquiera">Cualquiera</ion-option>
+      </ion-select>
+
     </fieldset>
     <button class="enter" ion-button type="submit" round [disabled]="!editOfferForm.valid">Editar</button>
 

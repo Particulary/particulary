@@ -10,14 +10,26 @@
 </ion-header>
 
 <ion-content>
-  <img src="assets/imgs/logo-ini.png" width="20px" height="130px" class="icon"/>
-  <div class="text" align="left">
-    <h3 class="p1">Este es el MVP de Particulary. </h3>
-    <p class="p2">En esta pantalla encontrarás la opción de logearte como alumno y como profesor,
-      para poder así acceder a las diferentes funcionalidades dependiendo del rol.</p>
-    <p class="p3">Como profesor puedes crear ofertas, editar tus datos y añadir experiencias
-      a tu perfil.</p>
-    <p class="p4">Como alumno podrás acceder a la lista de ofertas disponibles, inscribirte a las que desees y modificar tu perfil.</p>
+  <div class="teacher" align="left" *ngIf="this.aux == false">
+    <p class="p1">¿Te gustaria impartir clases?</p>
+    <button class="crearClase"  (click)="addOffer()" ><ion-icon name='md-create' is-active="false"></ion-icon> Crea una clase</button>
+    <br>
+    <br>
+    <p class="p1">¿Tienes alguna experiencia</p>
+    <p class="p1">que podrias destacar</p>
+    <p class="p1">en tu perfil?</p>
+    <button class="crearExperiencia" (click)="addExperience()"><ion-icon name='md-ribbon' is-active="false"></ion-icon> Añade experiencias</button>
+  </div>
+
+  <div class="student" align="left" *ngIf="this.aux == true">
+    <h6 class="p1"><ion-icon name='ios-megaphone' is-active="false"></ion-icon> ¡Comencemos!</h6>
+    <p>Utiliza nuestro buscador en el que se filtraran los resultados gracias a las palabras claves que utilices.</p>
+    <p>Las clases contienen etiquetas que te ayudaran a encontrarlas.</p>
+    <br>
+    <button class="buscarClases" (click)="searchOffers()" >
+      <ion-icon name="ios-search"></ion-icon>
+      Buscar
+    </button>
   </div>
 
 

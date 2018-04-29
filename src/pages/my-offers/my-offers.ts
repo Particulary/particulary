@@ -20,7 +20,7 @@ showButton: boolean;
   constructor(public navCtrl: NavController, public navParams: NavParams, private teacherProvider: TeacherProvider, public toastCtrl: ToastController) {
     this.teacherProvider.myOffers().then(data => {
       this.offers = data;
-      console.log(this.offers)
+      console.log(this.offers);
       this.showButton=true;
     }).catch(err => {
       console.log('Not authorized');

@@ -33,7 +33,7 @@ export class DisplayTeacherPage {
 
     this.alumProvider.teacherRatingId(this.navParams.get('id')).then(data => {
       this.rate = data;
-      console.log(this.rate)
+      console.log(this.rate);
       switch (true){
 
         case (this.rate <= 0.7):

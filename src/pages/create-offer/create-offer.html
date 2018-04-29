@@ -8,20 +8,24 @@
 </ion-header>
 
 <ion-content class="createOffer">
-  <form [formGroup]="createOfferForm" (ngSubmit)="createOffer()">
+  <form id="formulario" [formGroup]="createOfferForm" (ngSubmit)="createOffer()">
     <div class="createOffer">
     <fieldset>
       <legend><span class="number">1</span> Info Clase</legend>
         <ion-label>Título</ion-label>
-        <ion-input type="text" formControlName="name" placeholder="Min. 3 caracteres"></ion-input>
-        <ion-label>Lugar</ion-label>
-        <ion-input type="text" formControlName="location" placeholder="Min. 6 caracteres"></ion-input>
+        <ion-input type="text" formControlName="name" placeholder="Mín. 3 caracteres"></ion-input>
+        <p color="danger" ion-text *ngIf="createOfferForm.get('name').hasError('minlength')">Mínimo 3 caracteres</p>
+      <ion-label>Lugar</ion-label>
+        <ion-input type="text" formControlName="location" placeholder="Mín. 6 caracteres"></ion-input>
+      <p color="danger" ion-text *ngIf="createOfferForm.get('location').hasError('minlength')">Mínimo 6 caracteres</p>
     </fieldset>
 
     <fieldset>
       <legend><span class="number">2</span> Precio</legend>
         <ion-label>Por hora</ion-label>
-        <ion-input type="number" formControlName="price"></ion-input>
+        <ion-input type="number" formControlName="price" min="0"></ion-input>
+      <p color="danger" ion-text *ngIf="createOfferForm.get('price').hasError('min')">No puede ser negativo</p>
+
 
     </fieldset>
 

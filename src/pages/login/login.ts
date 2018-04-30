@@ -57,7 +57,6 @@ export class LoginPage {
       // TODO: save api_token and check if session must be saved
       this.storage.set('auth', data).then(() => {
 
-        console.log('hehr: ' + data);
         this.events.publish('token:update', data['api_token']);
         this.events.publish('login:update', data);
 

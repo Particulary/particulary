@@ -30,6 +30,14 @@
         </button>
       </div>
 
+        <div class="star-rating" *ngIf="offer.status=='IMPARTED'">
+          <a href="#" [style.color]="offer.alumAppreciation >= 1 ? 'yellow' : 'grey'"  title="Votar con 1 estrellas" (click)="addAppreciation(offer, 1)">&#9733;</a>
+          <a href="#" [style.color]="offer.alumAppreciation >= 1 ? 'yellow' : 'grey'"  title="Votar con 2 estrellas" (click)="addAppreciation(offer, 1)">&#9733;</a>
+          <a href="#" [style.color]="offer.alumAppreciation >= 1 ? 'yellow' : 'grey'" title="Votar con 3 estrellas" (click)="addAppreciation(offer, 3)">&#9733;</a>
+          <a href="#" [style.color]="offer.alumAppreciation >= 1 ? 'yellow' : 'grey'"title="Votar con 4 estrellas" (click)="addAppreciation(offer, 4)">&#9733;</a>
+          <a href="#" [style.color]="offer.alumAppreciation >= 1 ? 'yellow' : 'grey'" title="Votar con 5 estrellas" (click)="addAppreciation(offer, 5)">&#9733;</a>
+        </div>
+
     </ion-item>
     <br>
   </ion-list>

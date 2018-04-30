@@ -71,4 +71,32 @@ my-offers {
     float:right;
   }
 
+  .star-rating{
+    margin: 8px 15px 0px 10px;
+    float: left;
+    $size: 20px;
+    $normal: #95A5A6;
+    $selected: #F39C12;
+    display: inline-block;
+
+    a {
+      display: inline-block;
+      width: $size;
+      height: $size;
+      line-height: $size;
+      font-size: $size;
+      color: $normal;
+      text-decoration: none;
+      text-align: center;
+      transition: color .3s;
+    }
+    &:hover a {
+      color: $selected;
+
+      &:hover ~ a {
+        color: $normal;
+      }
+    }
+  }
+
 }

@@ -14,6 +14,9 @@ page-login {
   }
 
   .content-align-wrapper {
+    .user{
+      text-align: left;
+    }
     .content-align {
       text-align: center;
       img {
@@ -84,6 +87,24 @@ page-login {
         color: #4D9BBA;
         font-size: 18px;
         font-family: 'Nunito', sans-serif;
+      }
+
+      .rol{
+        position: relative;
+        background: rgba(255,255,255,0.1);
+        border: none;
+        font-size: 16px;
+        height: auto;
+        margin: 0;
+        outline: 0;
+        padding: 10px;
+        width: 100%;
+        background-color: #e8eeef;
+        color: #8a97a0;
+        box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+        margin-bottom: 30px;
+        text-align: left;
+        border-radius: 2px;
       }
 
       button.enter {

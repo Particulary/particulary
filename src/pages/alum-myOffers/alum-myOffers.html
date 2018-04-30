@@ -23,7 +23,7 @@
         <h4><ion-icon name='md-time' is-active="false"></ion-icon> {{offer.availability}}</h4>
       </div>
       <form>
-      <div class="star-rating">
+      <div class="star-rating" *ngIf="current_date >= offer.start_date">
         <a href="#" [style.color]="offer.teacherAppreciation >= 1 ? 'yellow' : 'grey'" title="Votar con 1 estrellas" (click)="addAppreciation(offer.id, 1)">&#9733;</a>
         <a href="#" [style.color]="offer.teacherAppreciation >= 2 ? 'yellow' : 'grey'" title="Votar con 2 estrellas" (click)="addAppreciation(offer.id, 2)">&#9733;</a>
         <a href="#" [style.color]="offer.teacherAppreciation >= 3 ? 'yellow' : 'grey'" title="Votar con 3 estrellas" (click)="addAppreciation(offer.id, 3)">&#9733;</a>

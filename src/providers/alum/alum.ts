@@ -33,7 +33,7 @@ export class AlumProvider {
   }
 
   apply(offer) {
-    return this.api.get('student/offer/apply/' + offer.id).then(data => {
+    return this.api.get('student/offer/apply/' + offer.id, {hired_hours: offer.hired_hours}).then(data => {
       return data;
     });
   }

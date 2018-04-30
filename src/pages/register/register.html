@@ -31,7 +31,7 @@
 
             <ion-label>Correo electrónico:</ion-label>
             <ion-input type="email" formControlName="email" (ionblur)="validateEmail()"></ion-input>
-          <p color="danger" ion-text *ngIf="registerForm.get('email').hasError('pattern')">Email inválido</p>
+          <p color="danger" ion-text *ngIf="registerForm.get('email').hasError('pattern')">Correo inválido</p>
 
 
           <ion-label>Teléfono:</ion-label>
@@ -64,8 +64,6 @@
 
           <ion-label>Descripción:</ion-label>
             <ion-textarea formControlName="bio" ></ion-textarea>
-          <p color="danger" ion-text *ngIf="registerForm.get('bio').hasError('required')">Añade una descripción</p>
-
 
         </fieldset>
 

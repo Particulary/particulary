@@ -17,6 +17,7 @@
         <legend><span class="number">1</span> Info experiencia</legend>
         <ion-label>Nombre</ion-label>
         <ion-input type="text" formControlName="name" placeholder="Min. 3 caracteres" [value]="experience.name"></ion-input>
+        <p color="danger" ion-text *ngIf="editExperienceForm.get('name').hasError('minlength')">Mínimo 3 caracteres</p>
         <ion-label>Fecha</ion-label>
         <ion-input type="date" formControlName="date" [value]="experience.date"></ion-input>
       </fieldset>
@@ -24,6 +25,7 @@
         <legend><span class="number">2</span> Info Adicional</legend>
         <ion-label>Descripción</ion-label>
         <ion-input type="text" formControlName="description" placeholder="Min. 6 caracteres" [value]="experience.description"></ion-input>
+        <p color="danger" ion-text *ngIf="editExperienceForm.get('description').hasError('minlength')">Mínimo 6 caracteres</p>
       </fieldset>
       <button class="enter" ion-button round type="submit" [disabled]="!editExperienceForm.valid">Editar</button>
     </form>

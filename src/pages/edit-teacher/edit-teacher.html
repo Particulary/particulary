@@ -25,28 +25,34 @@
         <div class="name-input">
           <ion-label>Nombre</ion-label>
             <ion-input type="text" formControlName="name" [value]="teacher.name?teacher.name:''" placeholder="Mín. 3 caracteres"></ion-input>
+          <p color="danger" ion-text *ngIf="editTeacherForm.get('name').hasError('minlength')">Mínimo 3 caracteres</p>
+          <p color="danger" ion-text *ngIf="editTeacherForm.get('name').hasError('pattern')">Caracteres inválidos</p>
         </div>
 
         <div class="surname-input">
           <ion-label>Apellidos</ion-label>
             <ion-input type="text" formControlName="surname" [value]="teacher.surname?teacher.surname:''" placeholder="Mín. 3 caracteres"></ion-input>
+          <p color="danger" ion-text *ngIf="editTeacherForm.get('surname').hasError('minlength')">Mínimo 3 caracteres</p>
+          <p color="danger" ion-text *ngIf="editTeacherForm.get('surname').hasError('pattern')">Caracteres inválidos</p>
+
         </div>
 
         <div class="email-input">
           <ion-label>Email</ion-label>
             <ion-input type="email" formControlName="email" [value]="teacher.email?teacher.email:''" (ionblur)="validateEmail()" placeholder="mail@example.com"></ion-input>
-            <p *ngIf="this.emailError==true">Formato no válido</p>
+          <p color="danger" ion-text *ngIf="editTeacherForm.get('email').hasError('pattern')">Correo inválido</p>
         </div>
 
         <div class="phone-input">
           <ion-label>Teléfono</ion-label>
             <ion-input type="tel" formControlName="phone" [value]="teacher.phone?teacher.phone:''"></ion-input>
-            <p *ngIf="this.telefonoError==true">Formato no válido</p>
+          <p color="danger" ion-text *ngIf="editTeacherForm.get('phone').hasError('pattern')">Teléfono inválido</p>
         </div>
 
         <div class="address-input">
           <ion-label>Dirección</ion-label>
             <ion-input type="text" formControlName="address" [value]="teacher.address?teacher.address:''" placeholder="Mín. 5 caracteres"></ion-input>
+          <p color="danger" ion-text *ngIf="editTeacherForm.get('address').hasError('minlength')">Mínimo 5 caracteres</p>
         </div>
 
       </fieldset>
@@ -55,6 +61,8 @@
         <div class="bio-input">
           <ion-label>Biografía</ion-label>
             <ion-input type="text" formControlName="bio" [value]="teacher.bio?teacher.bio:''" placeholder="Mín. 5 caracteres"></ion-input>
+          <p color="danger" ion-text *ngIf="editTeacherForm.get('bio').hasError('minlength')">Mínimo 5 caracteres</p>
+
         </div>
       </fieldset>
       <button class="enter" round ion-button type="submit" [disabled]="!editTeacherForm.valid">Editar</button>

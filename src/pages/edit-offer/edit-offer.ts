@@ -23,6 +23,7 @@ export class EditOfferPage {
       location: new FormControl('', [Validators.required, Validators.minLength(6)]),
       status: new FormControl('', Validators.required),
       price: new FormControl('', [Validators.required, Validators.min(0.00)]),
+      max_hours: new FormControl('', [Validators.required, Validators.min(0.00)]),
       start_date: new FormControl('', Validators.required),
       end_date: new FormControl('', [Validators.required]),
     }, { 'validator': this.pastDateValidator });
@@ -40,6 +41,7 @@ export class EditOfferPage {
       location: this.editOfferForm.value.location,
       status: this.editOfferForm.value.status,
       price: this.editOfferForm.value.price,
+      max_hours: this.editOfferForm.value.max_hours,
       start_date: this.editOfferForm.value.start_date,
       end_date: this.editOfferForm.value.end_date,
     };

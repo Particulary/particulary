@@ -24,6 +24,7 @@ import {LoginPage} from "../login/login";
 export class RegisterPage {
 
   registerForm: FormGroup;
+  userType: String;
   emailError: boolean = false;
   show: boolean = false;
 
@@ -40,6 +41,7 @@ export class RegisterPage {
       phone: new FormControl('', [Validators.required,Validators.pattern('(\\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}')]),
       address: new FormControl('', [Validators.required, Validators.minLength(5)]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      linkedin: new FormControl(''),
       bio: new FormControl('', [Validators.required]),
       type: new FormControl('', [Validators.required]),
     });
@@ -57,24 +59,17 @@ export class RegisterPage {
       phone: this.registerForm.value.phone,
       address: this.registerForm.value.address,
       password: this.registerForm.value.password,
+      linkedin: this.registerForm.value.linkedin,
       bio: this.registerForm.value.bio,
       type: this.registerForm.value.type,
     };
     this.loginProvider.register(user).then(data => {
-
-      console.log(data);
-
-      this.menu.enable(true, 'leftMenu');
-      // TODO: save api_token and check if session must be saved
-      this.storage.set('api_token', data['api_token']);
-
-
+      this.menu.enable(false, 'leftMenu');
       // TODO: Login susccesfully -> Redirect to main page
       this.navCtrl.setRoot(LoginPage, { tabIndex: 0 }, { animate: true, direction: 'forward' });
       this.presentAlert();
 
     }).catch(err => {
-
       console.log(err);
       //TODO: retrieve the error
       this.toastCtrl.create({

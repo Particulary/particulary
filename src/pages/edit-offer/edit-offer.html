@@ -45,7 +45,13 @@
     </fieldset>
 
     <fieldset>
-      <legend><span class="number">3</span> Fecha</legend>
+      <legend><span class="number">3</span> Máximo de horas</legend>
+      <ion-input type="number" formControlName="max_hours" min="0" [value]="offer.max_hours"></ion-input>
+      <p color="danger" ion-text *ngIf="editOfferForm.get('max_hours').hasError('min')">No puede ser negativo</p>
+    </fieldset>
+
+    <fieldset>
+      <legend><span class="number">4</span> Fecha</legend>
 
       <ion-label>Inicio</ion-label>
       <ion-input type="date" formControlName="start_date" [value]="offer.start_date"></ion-input>

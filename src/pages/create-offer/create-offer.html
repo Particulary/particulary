@@ -3,47 +3,54 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title><ion-icon name='ios-school' is active="false"></ion-icon>Crear clase</ion-title>
+    <ion-title>
+      <ion-icon name='ios-school' is active="false"></ion-icon>
+      Crear clase
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="createOffer">
   <form id="formulario" [formGroup]="createOfferForm" (ngSubmit)="createOffer()">
     <div class="createOffer">
-    <fieldset>
-      <legend><span class="number">1</span> Info Clase</legend>
+      <fieldset>
+        <legend><span class="number">1</span> Info Clase</legend>
         <ion-label>Título</ion-label>
         <ion-input type="text" formControlName="name" placeholder="Mín. 3 caracteres"></ion-input>
         <p color="danger" ion-text *ngIf="createOfferForm.get('name').hasError('minlength')">Mínimo 3 caracteres</p>
-      <ion-label>Lugar</ion-label>
+        <ion-label>Lugar</ion-label>
         <ion-input type="text" formControlName="location" placeholder="Mín. 6 caracteres"></ion-input>
-      <p color="danger" ion-text *ngIf="createOfferForm.get('location').hasError('minlength')">Mínimo 6 caracteres</p>
-    </fieldset>
+        <p color="danger" ion-text *ngIf="createOfferForm.get('location').hasError('minlength')">Mínimo 6 caracteres</p>
+      </fieldset>
 
-    <fieldset>
-      <legend><span class="number">2</span> Precio</legend>
+      <fieldset>
+        <legend><span class="number">2</span> Precio</legend>
         <ion-label>Por hora</ion-label>
         <ion-input type="number" formControlName="price" min="0"></ion-input>
-      <p color="danger" ion-text *ngIf="createOfferForm.get('price').hasError('min')">No puede ser negativo</p>
+        <p color="danger" ion-text *ngIf="createOfferForm.get('price').hasError('min')">No puede ser negativo</p>
+      </fieldset>
 
+      <fieldset>
+        <legend><span class="number">3</span> Máximo de horas</legend>
+        <ion-input type="number" formControlName="max_hours" min="0"></ion-input>
+        <p color="danger" ion-text *ngIf="createOfferForm.get('max_hours').hasError('min')">No puede ser negativo</p>
+      </fieldset>
 
-    </fieldset>
-
-    <fieldset>
-      <legend><span class="number">3</span> Fecha</legend>
+      <fieldset>
+        <legend><span class="number">4</span> Fecha</legend>
         <ion-label>Inicio</ion-label>
         <ion-datetime class="date" formControlName="start_date"></ion-datetime>
-      <ion-label>Fin</ion-label>
+        <ion-label>Fin</ion-label>
         <ion-datetime class="date" formControlName="end_date"></ion-datetime>
         <ion-label>Disponibilidad</ion-label>
-        <ion-select formControlName="availability" [(ngModel)]="offer.availability">
+        <ion-select formControlName="availability">
           <ion-option value="Mañana">Mañana</ion-option>
           <ion-option value="Tarde">Tarde</ion-option>
           <ion-option value="Cualquiera">Cualquiera</ion-option>
         </ion-select>
-    </fieldset>
+      </fieldset>
 
-    <button class="enter" ion-button round type="submit" [disabled]="!createOfferForm.valid">Crear</button>
+      <button class="enter" ion-button round type="submit" [disabled]="!createOfferForm.valid">Crear</button>
     </div>
 
   </form>

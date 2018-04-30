@@ -19,8 +19,10 @@ export class CreateOfferPage {
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       location: new FormControl('', [Validators.required, Validators.minLength(6)]),
       price: new FormControl('', [Validators.required, Validators.min(0.00)]),
+      max_hours: new FormControl('', [Validators.required, Validators.min(0.00)]),
       start_date: new FormControl('', Validators.required),
       end_date: new FormControl('', Validators.required),
+      availability: new FormControl('', Validators.required),
     });
   }
 
@@ -29,8 +31,11 @@ export class CreateOfferPage {
       name: this.createOfferForm.value.name,
       location: this.createOfferForm.value.location,
       price: this.createOfferForm.value.price,
+      max_hours: this.createOfferForm.value.max_hours,
       start_date: this.createOfferForm.value.start_date,
       end_date: this.createOfferForm.value.end_date,
+      availability: this.createOfferForm.value.availability,
+
     };
 
     this.teacherProvider.addOffer(offer).then(data => {

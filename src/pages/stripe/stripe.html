@@ -5,7 +5,8 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      <ion-icon name="ios-card"></ion-icon> Pago
+      <ion-icon name="ios-card"></ion-icon>
+      Pago
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -15,22 +16,39 @@
   <form [formGroup]="createPaymentForm" (ngSubmit)="createPayment()">
 
     <fieldset>
-      <legend><span class="number">1</span> Datos de la tarjeta</legend>
-    <ion-label>Número de tarjeta</ion-label>
-    <ion-input type="text" formControlName="number" placeholder="Número de tarjeta"></ion-input>
+      <legend><span class="number">1</span> Horas a contratar</legend>
+      <ion-label>Nº de horas</ion-label>
+      <ion-input type="text" ([ngModel])="hired_hours" formControlName="hired_hours" placeholder="Número de horas"></ion-input>
+      <p color="danger" ion-text *ngIf="createPaymentForm.get('hired_hours').hasError('max')">No puede ser mayor que
+        {{offer.max_hours}}</p>
 
-    <ion-label>CVC</ion-label>
-    <ion-input type="text" formControlName="cvc" placeholder="CVC"></ion-input>
-
-    <ion-label>Mes de expiración</ion-label>
-    <ion-input type="text" formControlName="exp_month" placeholder="Mes de expiración"></ion-input>
-
-    <ion-label>Año de expiración</ion-label>
-    <ion-input type="text" formControlName="exp_year" placeholder="Año de expiración"></ion-input>
+      <div class="price" *ngIf="!createPaymentForm.get('hired_hours').hasError('max')">
+        Precio total: {{createPaymentForm.value.hired_hours * offer.price}}
+      </div>
     </fieldset>
 
     <fieldset>
-      <legend><span class="number">2</span> Descuento</legend>
+      <legend><span class="number">2</span> Datos de la tarjeta</legend>
+    <ion-label>Número de tarjeta</ion-label>
+    <ion-input type="text" formControlName="number" placeholder="Número de tarjeta"></ion-input>
+      <p class="uno" color="danger" ion-text *ngIf="createPaymentForm.get('number').hasError('pattern')">La tarjeta tiene que ser de 16 dígitos</p>
+
+      <ion-label>CVC</ion-label>
+    <ion-input type="text" formControlName="cvc" placeholder="CVC"></ion-input>
+      <p class="uno" color="danger" ion-text *ngIf="createPaymentForm.get('cvc').hasError('pattern')">CVC inválido</p>
+
+      <ion-label>Mes de expiración</ion-label>
+    <ion-input type="text" formControlName="exp_month" placeholder="Mes de expiración"></ion-input>
+      <p class="uno" color="danger" ion-text *ngIf="createPaymentForm.get('exp_month').hasError('pattern')">Mes de expiración inválido</p>
+      <ion-label>Año de expiración</ion-label>
+    <ion-input type="text" formControlName="exp_year" placeholder="Año de expiración"></ion-input>
+      <p class="uno" color="danger" ion-text *ngIf="createPaymentForm.get('exp_year').hasError('pattern')">Año de expiración inválido</p>
+      <p class="dos" color="danger" ion-text *ngIf="createPaymentForm.get('exp_year').hasError('max')">Año demasiado alto</p>
+      <p class="dos" color="danger" ion-text *ngIf="createPaymentForm.get('exp_year').hasError('min')">Año demasiado bajo</p>
+    </fieldset>
+
+    <fieldset>
+      <legend><span class="number">3</span> Descuento</legend>
       <ion-select formControlName="discount">
         <ion-option *ngIf="points >= 12500" value="12500">5 €</ion-option>
         <ion-option *ngIf="points >= 25000" value="25000">10 €</ion-option>

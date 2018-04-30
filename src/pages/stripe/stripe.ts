@@ -16,6 +16,7 @@ export class StripePage {
   amount = 1000;
   points = 0;
   offer;
+  hired_hours = 1;
 
   constructor(public navCtrl: NavController, public toastCtrl: ToastController, public navParams: NavParams,
               private stripe: Stripe, private alumProvider: AlumProvider, private formBuilder: FormBuilder,
@@ -25,10 +26,13 @@ export class StripePage {
 
     this.stripe.setPublishableKey('pk_live_EuJKkK58l167vDf6BLCQ3zyG');
 
+    console.log(this.offer);
+
     this.createPaymentForm = this.formBuilder.group({
+      hired_hours: new FormControl('', [Validators.required, Validators.min(0.00), Validators.max(this.offer.max_hours)]),
       cvc: new FormControl('', [Validators.required, Validators.pattern('^\\d{3}$')]),
-      exp_month: new FormControl('', [Validators.required, Validators.maxLength(2), Validators.pattern('^\\d+$')]),
-      exp_year: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(4), Validators.pattern('^\\d+$')]),
+      exp_month: new FormControl('', [Validators.required, Validators.maxLength(2), Validators.pattern('(0[1-9]|1[012])')]),
+      exp_year: new FormControl('', [Validators.required, Validators.minLength(4), Validators.min(2015.00), Validators.max(2040.00), Validators.maxLength(4), Validators.pattern('([0-9]{4})')]),
       number: new FormControl('', [Validators.required, Validators.pattern('^\\d{16}$')]),
       discount: new FormControl(''),
     });
@@ -73,7 +77,9 @@ export class StripePage {
         this.alumProvider.updatePoints(next_points).then(data => {
 
           this.events.publish('points:update', next_points);
+
           // Apply to the offer
+          this.offer.hired_hours = this.createPaymentForm.value.hired_hours;
           this.alumProvider.apply(this.offer).then(data => {
             this.toastCtrl.create({
               message: 'Apply correctly',

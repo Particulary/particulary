@@ -17,56 +17,64 @@
         <img src="assets/imgs/logo.png" class="gsad-icon"/>
 
         <fieldset>
-          <legend class="legend"><span class="number">1</span>Información básica</legend>
+          <legend class="legend"><span class="number">1</span>Tu perfil</legend>
 
-            <ion-label>Nombre:</ion-label>
+          <ion-label>Rol*</ion-label>
+          <ion-select [(ngModel)]="userType" class="rol" formControlName="type" >
+            <ion-option value="teacher">Profesor</ion-option>
+            <ion-option value="alum">Alumno</ion-option>
+          </ion-select>
+
+        </fieldset>
+
+        <fieldset>
+          <legend class="legend"><span class="number">2</span>Información básica</legend>
+
+            <ion-label>Nombre*:</ion-label>
             <ion-input type="text" formControlName="name" placeholder="Mín. 3 caracteres"></ion-input>
-          <p color="danger" ion-text *ngIf="registerForm.get('name').hasError('minlength')">Mínimo 3 caracteres</p>
-          <br>
-          <p color="danger" ion-text *ngIf="registerForm.get('name').hasError('pattern')">Caracteres inválidos</p>
+          <p class="uno" color="danger" ion-text *ngIf="registerForm.get('name').hasError('minlength')">Mínimo 3 caracteres</p>
+          <p class="dos" color="danger" ion-text *ngIf="registerForm.get('name').hasError('pattern')">Caracteres inválidos</p>
 
-          <ion-label>Apellidos:</ion-label>
+          <ion-label>Apellidos*:</ion-label>
             <ion-input type="text" formControlName="surname" placeholder="Mín. 3 caracteres" ></ion-input>
-          <p color="danger" ion-text *ngIf="registerForm.get('surname').hasError('minlength')">Mínimo 3 caracteres</p>
-          <p color="danger" ion-text *ngIf="registerForm.get('surname').hasError('pattern')">Caracteres inválidos</p>
+          <p class="uno" color="danger" ion-text *ngIf="registerForm.get('surname').hasError('minlength')">Mínimo 3 caracteres</p>
+          <p class="dos" color="danger" ion-text *ngIf="registerForm.get('surname').hasError('pattern')">Caracteres inválidos</p>
 
-            <ion-label>Correo electrónico:</ion-label>
+            <ion-label>Correo electrónico*:</ion-label>
             <ion-input type="email" formControlName="email" (ionblur)="validateEmail()"></ion-input>
-          <p color="danger" ion-text *ngIf="registerForm.get('email').hasError('pattern')">Correo inválido</p>
+          <p class="uno" color="danger" ion-text *ngIf="registerForm.get('email').hasError('pattern')">Correo inválido</p>
 
 
-          <ion-label>Teléfono:</ion-label>
+          <ion-label>Teléfono*:</ion-label>
             <ion-input type="tel" formControlName="phone" ></ion-input>
-          <p color="danger" ion-text *ngIf="registerForm.get('phone').hasError('pattern')">Teléfono inválido</p>
+          <p class="uno" color="danger" ion-text *ngIf="registerForm.get('phone').hasError('pattern')">Teléfono inválido</p>
 
 
-          <ion-label>Dirección:</ion-label>
+          <ion-label>Dirección*:</ion-label>
             <ion-input type="text" formControlName="address" ></ion-input>
-          <p color="danger" ion-text *ngIf="registerForm.get('address').hasError('minlength')">Mínimo 5 caracteres</p>
+          <p class="uno" color="danger" ion-text *ngIf="registerForm.get('address').hasError('minlength')">Mínimo 5 caracteres</p>
+
+          <ion-label>Descripción*:</ion-label>
+          <ion-textarea formControlName="bio" ></ion-textarea>
+
+
+          <div *ngIf="userType=='teacher'">
+            <ion-label>Perfil profesional:</ion-label>
+            <ion-input type="text" formControlName="linkedin" ></ion-input>
+          </div>
+
 
 
           <div class="password-input">
-              <ion-label>Contraseña:</ion-label>
+              <ion-label>Contraseña*:</ion-label>
               <ion-input [type]="show ? 'text' : 'password'" formControlName="password"></ion-input>
-            <p color="danger" ion-text *ngIf="registerForm.get('password').hasError('minlength')">Mínimo 6 caracteres</p>
+            <p class="uno" color="danger" ion-text *ngIf="registerForm.get('password').hasError('minlength')">Mínimo 6 caracteres</p>
             <a (click)="togglePassword()">{{ show ? 'ocultar' : 'mostrar' }}</a>
           </div>
 
         </fieldset>
 
-        <fieldset>
-          <legend class="legend"><span class="number">2</span>Tu perfil</legend>
 
-          <ion-label>Rol</ion-label>
-          <ion-select class="rol" formControlName="type" >
-            <ion-option value="teacher">Profesor</ion-option>
-            <ion-option value="alum">Alumno</ion-option>
-          </ion-select>
-
-          <ion-label>Descripción:</ion-label>
-            <ion-textarea formControlName="bio" ></ion-textarea>
-
-        </fieldset>
 
         <button class="enter" ion-button type="submit" [disabled]="!registerForm.valid">Registrar</button>
 

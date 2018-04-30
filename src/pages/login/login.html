@@ -27,6 +27,14 @@
           <a (click)="togglePassword()">{{ show ? 'ocultar' : 'mostrar' }}</a>
         </div>
 
+        <div class="user-input">
+          <ion-label>Usuario</ion-label>
+          <ion-select formControlName="type">
+            <ion-option value="ALUM">Alumno</ion-option>
+            <ion-option value="TEACHER">Profesor</ion-option>
+          </ion-select>
+        </div>
+
         <div class="remember-input">
           <ion-item text-right>
             <ion-label>Mantener sesión iniciada</ion-label>

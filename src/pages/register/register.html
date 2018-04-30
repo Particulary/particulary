@@ -17,6 +17,20 @@
         <img src="assets/imgs/logo.png" class="gsad-icon"/>
 
         <fieldset>
+          <legend class="legend"><span class="number">2</span>Tu perfil</legend>
+
+          <ion-label>Rol</ion-label>
+          <ion-select [(ngModel)]="userType" class="rol" formControlName="type" >
+            <ion-option value="teacher">Profesor</ion-option>
+            <ion-option value="alum">Alumno</ion-option>
+          </ion-select>
+
+          <ion-label>Descripción:</ion-label>
+          <ion-textarea formControlName="bio" ></ion-textarea>
+
+        </fieldset>
+
+        <fieldset>
           <legend class="legend"><span class="number">1</span>Información básica</legend>
 
             <ion-label>Nombre:</ion-label>
@@ -43,6 +57,11 @@
             <ion-input type="text" formControlName="address" ></ion-input>
           <p color="danger" ion-text *ngIf="registerForm.get('address').hasError('minlength')">Mínimo 5 caracteres</p>
 
+          <div *ngIf="userType=='teacher'">
+            <ion-label>Linkedin:</ion-label>
+            <ion-input type="text" formControlName="linkedin" ></ion-input>
+          </div>
+
 
           <div class="password-input">
               <ion-label>Contraseña:</ion-label>
@@ -53,19 +72,7 @@
 
         </fieldset>
 
-        <fieldset>
-          <legend class="legend"><span class="number">2</span>Tu perfil</legend>
 
-          <ion-label>Rol</ion-label>
-          <ion-select class="rol" formControlName="type" >
-            <ion-option value="teacher">Profesor</ion-option>
-            <ion-option value="alum">Alumno</ion-option>
-          </ion-select>
-
-          <ion-label>Descripción:</ion-label>
-            <ion-textarea formControlName="bio" ></ion-textarea>
-
-        </fieldset>
 
         <button class="enter" ion-button type="submit" [disabled]="!registerForm.valid">Registrar</button>
 

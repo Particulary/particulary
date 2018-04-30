@@ -24,6 +24,7 @@ import {LoginPage} from "../login/login";
 export class RegisterPage {
 
   registerForm: FormGroup;
+  userType: String;
   emailError: boolean = false;
   show: boolean = false;
 
@@ -40,6 +41,7 @@ export class RegisterPage {
       phone: new FormControl('', [Validators.required,Validators.pattern('(\\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}')]),
       address: new FormControl('', [Validators.required, Validators.minLength(5)]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      linkedin: new FormControl(''),
       bio: new FormControl('', [Validators.required]),
       type: new FormControl('', [Validators.required]),
     });
@@ -57,6 +59,7 @@ export class RegisterPage {
       phone: this.registerForm.value.phone,
       address: this.registerForm.value.address,
       password: this.registerForm.value.password,
+      linkedin: this.registerForm.value.linkedin,
       bio: this.registerForm.value.bio,
       type: this.registerForm.value.type,
     };

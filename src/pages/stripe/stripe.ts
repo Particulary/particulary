@@ -35,9 +35,7 @@ export class StripePage {
 
     // Get my info: points
     this.alumProvider.infoAlum().then(data => {
-      this.points = data['particulary_points'];
-
-
+      this.points = data['particulary_points'] == null ? 0 : data['particulary_points'];
     });
   }
 
@@ -50,10 +48,12 @@ export class StripePage {
       discount: this.createPaymentForm.value.discount,
     };
 
+    var next_points;
     if (pay.discount) {
-      var next_points = this.points - pay.discount;
+      next_points = this.points - pay.discount;
       this.amount = this.offer.price - (pay.discount * 0.0004);
     } else {
+      next_points = this.points;
       this.amount = this.offer.price;
     }
 
@@ -69,6 +69,7 @@ export class StripePage {
       this.alumProvider.payStripe(body).then(data => {
         console.log(data);
         // Update my points
+        next_points += this.offer.price * 100;
         this.alumProvider.updatePoints(next_points).then(data => {
 
           this.events.publish('points:update', next_points);

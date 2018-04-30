@@ -56,15 +56,15 @@ export class LoginPage {
 
       // TODO: save api_token and check if session must be saved
       this.storage.set('auth', data).then(() => {
-      this.events.publish('login:update', data);
-      this.events.publish('token:update', data['api_token']);
+
+        console.log('hehr: ' + data);
+        this.events.publish('token:update', data['api_token']);
+        this.events.publish('login:update', data);
+
+        // TODO: Login susccesfully -> Redirect to main page
+        this.menu.enable(true, 'leftMenu');
+        this.navCtrl.setRoot(HomePage, {}, {animate: true, direction: 'forward'});
       });
-
-
-
-      // TODO: Login susccesfully -> Redirect to main page
-      this.menu.enable(true, 'leftMenu');
-      this.navCtrl.setRoot(HomePage, {}, {animate: true, direction: 'forward'});
 
     }).catch(err => {
 

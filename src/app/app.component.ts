@@ -62,28 +62,31 @@ export class MyApp {
 
     this.storage.get('auth').then((val) => {
       if (val !== null) {
-        if (val['rol'] === 'student') {
+        if (val['rol'] == 'student') {
           this.pages = alum_pages;
           this.alumProvider.infoAlum().then(data => {
             this.points = data['particulary_points'];
           });
 
-        } else if (val['rol'] === 'teacher') {
+        } else if (val['rol'] == 'teacher') {
           this.pages = teacher_pages;
           this.points = 0;
         }
+
+        console.log(this.pages);
       } else {
         this.menuCtrl.enable(false, 'leftMenu');
       }
     });
 
-    events.subscribe('login:update', (rol) => {
-      if (rol === 'student') {
+    events.subscribe('login:update', (val) => {
+      console.log(val.rol);
+      if (val.rol == 'student') {
         this.pages = alum_pages;
         this.alumProvider.infoAlum().then(data => {
           this.points = data['particulary_points'];
         });
-      } else if (rol === 'teacher') {
+      } else if (val.rol == 'teacher') {
         this.pages = teacher_pages;
         this.points = 0;
       }

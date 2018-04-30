@@ -43,12 +43,12 @@
         <ion-label>Fin</ion-label>
         <ion-datetime class="date" formControlName="end_date"></ion-datetime>
         <ion-label>Disponibilidad</ion-label>
-        <ion-select formControlName="availability" [(ngModel)]="offer.availability">
+        <ion-select formControlName="availability">
           <ion-option value="Mañana">Mañana</ion-option>
           <ion-option value="Tarde">Tarde</ion-option>
           <ion-option value="Cualquiera">Cualquiera</ion-option>
         </ion-select>
-    </fieldset>
+      </fieldset>
 
       <button class="enter" ion-button round type="submit" [disabled]="!createOfferForm.valid">Crear</button>
     </div>

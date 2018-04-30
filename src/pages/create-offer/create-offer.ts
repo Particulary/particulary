@@ -22,6 +22,7 @@ export class CreateOfferPage {
       max_hours: new FormControl('', [Validators.required, Validators.min(0.00)]),
       start_date: new FormControl('', Validators.required),
       end_date: new FormControl('', Validators.required),
+      availability: new FormControl('', Validators.required),
     });
   }
 
@@ -33,6 +34,8 @@ export class CreateOfferPage {
       max_hours: this.createOfferForm.value.max_hours,
       start_date: this.createOfferForm.value.start_date,
       end_date: this.createOfferForm.value.end_date,
+      availability: this.createOfferForm.value.availability,
+
     };
 
     this.teacherProvider.addOffer(offer).then(data => {

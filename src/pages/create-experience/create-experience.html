@@ -14,13 +14,15 @@
         <legend><span class="number">1</span> Info Experiencia</legend>
           <ion-label>Nombre</ion-label>
           <ion-input type="text" formControlName="name" placeholder="Min. 3 caracteres"></ion-input>
-          <ion-label>Fecha</ion-label>
+        <p color="danger" ion-text *ngIf="createOfferForm.get('name').hasError('minlength')">Mínimo 3 caracteres</p>
+        <ion-label>Fecha</ion-label>
           <ion-datetime class="date" formControlName="date"></ion-datetime>
       </fieldset>
       <fieldset>
         <legend><span class="number">2</span> Info adicional</legend>
           <ion-label>Descripción</ion-label>
           <ion-input type="text" formControlName="description" placeholder="Min. 6 caracteres"></ion-input>
+        <p color="danger" ion-text *ngIf="createOfferForm.get('description').hasError('minlength')">Mínimo 6 caracteres</p>
       </fieldset>
       <button class="enter" ion-button round type="submit" [disabled]="!createExperienceForm.valid">Crear</button>
     </form>

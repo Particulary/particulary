@@ -61,20 +61,12 @@ export class RegisterPage {
       type: this.registerForm.value.type,
     };
     this.loginProvider.register(user).then(data => {
-
-      console.log(data);
-
-      this.menu.enable(true, 'leftMenu');
-      // TODO: save api_token and check if session must be saved
-      this.storage.set('api_token', data['api_token']);
-
-
+      this.menu.enable(false, 'leftMenu');
       // TODO: Login susccesfully -> Redirect to main page
       this.navCtrl.setRoot(LoginPage, { tabIndex: 0 }, { animate: true, direction: 'forward' });
       this.presentAlert();
 
     }).catch(err => {
-
       console.log(err);
       //TODO: retrieve the error
       this.toastCtrl.create({

@@ -40,6 +40,7 @@ export class LoginPage {
       email: new FormControl('', [Validators.required, Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$')]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
       session: new FormControl(false),
+      type: new FormControl('')
     });
 
   }
@@ -48,22 +49,21 @@ export class LoginPage {
     let user = {
       email: this.loginForm.value.email,
       password: this.loginForm.value.password,
+      type: this.loginForm.value.type
     };
 
     this.loginProvider.login(user).then(data => {
 
       // TODO: save api_token and check if session must be saved
-      this.storage.set('auth', data).then(()=>{
+      this.storage.set('auth', data).then(() => {
 
         this.events.publish('token:update', data['api_token']);
-        this.events.publish('login:update', data['rol']);
+        this.events.publish('login:update', data);
+
+        // TODO: Login susccesfully -> Redirect to main page
+        this.menu.enable(true, 'leftMenu');
+        this.navCtrl.setRoot(HomePage, {}, {animate: true, direction: 'forward'});
       });
-
-
-
-      // TODO: Login susccesfully -> Redirect to main page
-      this.menu.enable(true, 'leftMenu');
-      this.navCtrl.setRoot(HomePage, {}, {animate: true, direction: 'forward'});
 
     }).catch(err => {
 

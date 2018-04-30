@@ -19,9 +19,11 @@
 
         <ion-label>Nombre</ion-label>
         <ion-input type="text" formControlName="name" placeholder="Min. 3 caracteres" [value]="offer.name"></ion-input>
+      <p color="danger" ion-text *ngIf="editOfferForm.get('name').hasError('minlength')">Mínimo 3 caracteres</p>
 
       <ion-label>Lugar </ion-label>
       <ion-input type="text" formControlName="location" placeholder="Min. 6 caracteres" [value]="offer.location"></ion-input>
+      <p color="danger" ion-text *ngIf="editOfferForm.get('location').hasError('minlength')">Mínimo 3 caracteres</p>
 
       <ion-label>Estado de la clase</ion-label>
         <ion-select formControlName="status" [(ngModel)]="offer.status">
@@ -38,6 +40,8 @@
       <legend><span class="number">2</span> Precio</legend>
       <ion-label>Por hora</ion-label>
       <ion-input type="text" formControlName="price" [value]="offer.price"></ion-input>
+      <p color="danger" ion-text *ngIf="editOfferForm.get('price').hasError('min')">No puede ser negativo</p>
+
     </fieldset>
 
     <fieldset>

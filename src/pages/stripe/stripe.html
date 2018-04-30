@@ -43,6 +43,8 @@
       <ion-label>Año de expiración</ion-label>
     <ion-input type="text" formControlName="exp_year" placeholder="Año de expiración"></ion-input>
       <p class="uno" color="danger" ion-text *ngIf="createPaymentForm.get('exp_year').hasError('pattern')">Año de expiración inválido</p>
+      <p class="dos" color="danger" ion-text *ngIf="createPaymentForm.get('exp_year').hasError('max')">Año demasiado alto</p>
+      <p class="dos" color="danger" ion-text *ngIf="createPaymentForm.get('exp_year').hasError('min')">Año demasiado bajo</p>
     </fieldset>
 
     <fieldset>

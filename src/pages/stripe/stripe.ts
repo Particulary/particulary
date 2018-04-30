@@ -31,8 +31,8 @@ export class StripePage {
     this.createPaymentForm = this.formBuilder.group({
       hired_hours: new FormControl('', [Validators.required, Validators.min(0.00), Validators.max(this.offer.max_hours)]),
       cvc: new FormControl('', [Validators.required, Validators.pattern('^\\d{3}$')]),
-      exp_month: new FormControl('', [Validators.required, Validators.maxLength(2), Validators.pattern('^\\d+$')]),
-      exp_year: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(4), Validators.pattern('^\\d+$')]),
+      exp_month: new FormControl('', [Validators.required, Validators.maxLength(2), Validators.pattern('(0[1-9]|1[012])')]),
+      exp_year: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(4), Validators.pattern('([0-9]{4})')]),
       number: new FormControl('', [Validators.required, Validators.pattern('^\\d{16}$')]),
       discount: new FormControl(''),
     });

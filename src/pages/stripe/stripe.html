@@ -40,6 +40,21 @@
 
       <ion-label>Año de expiración</ion-label>
       <ion-input type="text" formControlName="exp_year" placeholder="Año de expiración"></ion-input>
+      <legend><span class="number">1</span> Datos de la tarjeta</legend>
+    <ion-label>Número de tarjeta</ion-label>
+    <ion-input type="text" formControlName="number" placeholder="Número de tarjeta"></ion-input>
+      <p class="uno" color="danger" ion-text *ngIf="createPaymentForm.get('number').hasError('pattern')">La tarjeta tiene que ser de 16 dígitos</p>
+
+      <ion-label>CVC</ion-label>
+    <ion-input type="text" formControlName="cvc" placeholder="CVC"></ion-input>
+      <p class="uno" color="danger" ion-text *ngIf="createPaymentForm.get('cvc').hasError('pattern')">CVC inválido</p>
+
+      <ion-label>Mes de expiración</ion-label>
+    <ion-input type="text" formControlName="exp_month" placeholder="Mes de expiración"></ion-input>
+      <p class="uno" color="danger" ion-text *ngIf="createPaymentForm.get('exp_month').hasError('pattern')">Mes de expiración inválido</p>
+      <ion-label>Año de expiración</ion-label>
+    <ion-input type="text" formControlName="exp_year" placeholder="Año de expiración"></ion-input>
+      <p class="uno" color="danger" ion-text *ngIf="createPaymentForm.get('exp_year').hasError('pattern')">Año de expiración inválido</p>
     </fieldset>
 
     <fieldset>

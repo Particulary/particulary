@@ -62,6 +62,7 @@
         <div class="link-input">
           <ion-label>LinkedIn</ion-label>
           <ion-input type="url" formControlName="linkedin" [value]="teacher.linkedin?teacher.linkedin:''"></ion-input>
+          <p class="uno" color="danger" ion-text *ngIf="editTeacherForm.get('linkedin').hasError('pattern')">Debe ser una URL</p>
         </div>
 
         <div class="bio-input">

@@ -59,8 +59,9 @@
 
 
           <div *ngIf="userType=='teacher'">
-            <ion-label>Perfil profesional:</ion-label>
+            <ion-label>Perfil profesional*:</ion-label>
             <ion-input type="text" formControlName="linkedin" ></ion-input>
+            <p class="uno" color="danger" ion-text *ngIf="registerForm.get('linkedin').hasError('pattern')">Debe ser una URL</p>
           </div>
 
 

@@ -40,7 +40,7 @@ export class EditTeacherPage {
       phone: new FormControl('', [Validators.required,Validators.pattern('(\\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}')]),
       address: new FormControl('', [Validators.required, Validators.minLength(5)]),
       bio: new FormControl('', [Validators.required, Validators.minLength(5)]),
-      linkedin: new FormControl(''),
+      linkedin: new FormControl('', [Validators.required,Validators.pattern('https?://.+')]),
       //appreciation: new FormControl('', [Validators.required, Validators.max(5)]),
     });
   }

@@ -26,6 +26,7 @@ export class EditOfferPage {
       max_hours: new FormControl('', [Validators.required, Validators.min(0.00)]),
       start_date: new FormControl('', Validators.required),
       end_date: new FormControl('', [Validators.required]),
+      availability: new FormControl('', Validators.required),
     }, { 'validator': this.pastDateValidator });
   }
 
@@ -44,6 +45,7 @@ export class EditOfferPage {
       max_hours: this.editOfferForm.value.max_hours,
       start_date: this.editOfferForm.value.start_date,
       end_date: this.editOfferForm.value.end_date,
+      availability: this.editOfferForm.value.availability,
     };
 
     this.teacherProvider.editOffer(offer, this.offer.id).then(data => {

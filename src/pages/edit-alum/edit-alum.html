@@ -22,15 +22,13 @@
 
         <div class="name-input">
           <ion-label>Nombre</ion-label>
-          <ion-input type="text" formControlName="name" [value]="alum.name?alum.name:''" placeholder="Mín. 3 caracteres"></ion-input>
-          <p class="uno" color="danger" ion-text *ngIf="editAlumForm.get('name').hasError('minlength')">Mínimo 3 caracteres</p>
+          <ion-input type="text" formControlName="name" [value]="alum.name?alum.name:''" ></ion-input>
           <p class="dos" color="danger" ion-text *ngIf="editAlumForm.get('name').hasError('pattern')">Caracteres inválidos</p>
         </div>
 
         <div class="surname-input">
           <ion-label>Apellidos</ion-label>
-          <ion-input type="text" formControlName="surname" [value]="alum.surname?alum.surname:''" placeholder="Mín. 3 caracteres"></ion-input>
-          <p class="uno" color="danger" ion-text *ngIf="editAlumForm.get('surname').hasError('minlength')">Mínimo 3 caracteres</p>
+          <ion-input type="text" formControlName="surname" [value]="alum.surname?alum.surname:''" ></ion-input>
           <p class="dos" color="danger" ion-text *ngIf="editAlumForm.get('surname').hasError('pattern')">Caracteres inválidos</p>
         </div>
 

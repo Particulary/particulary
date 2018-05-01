@@ -34,8 +34,8 @@ export class EditTeacherPage {
 
     this.editTeacherForm = this.formBuilder.group({
       //subject: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      name: new FormControl('', [Validators.required, Validators.minLength(3),Validators.pattern('[a-zA-ZñÑáéíóúÁÉÍÓÚ ]*')]),
-      surname: new FormControl('', [Validators.required, Validators.minLength(3),Validators.pattern('[a-zA-ZñÑáéíóúÁÉÍÓÚ ]*')]),
+      name: new FormControl('', [Validators.required, Validators.pattern('[a-zA-ZñÑáéíóúÁÉÍÓÚ ]*')]),
+      surname: new FormControl('', [Validators.required, Validators.pattern('[a-zA-ZñÑáéíóúÁÉÍÓÚ ]*')]),
       email: new FormControl('', [Validators.required, Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$')]),
       phone: new FormControl('', [Validators.required,Validators.pattern('(\\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}')]),
       address: new FormControl('', [Validators.required, Validators.minLength(5)]),

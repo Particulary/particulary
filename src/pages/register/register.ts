@@ -41,7 +41,7 @@ export class RegisterPage {
       phone: new FormControl('', [Validators.required,Validators.pattern('(\\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}')]),
       address: new FormControl('', [Validators.required, Validators.minLength(5)]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-      linkedin: new FormControl('', [Validators.required,Validators.pattern('https?://.+')]),
+      linkedin: new FormControl('', [Validators.pattern('https?://.+')]),
       bio: new FormControl('', [Validators.required]),
       type: new FormControl('', [Validators.required]),
     });

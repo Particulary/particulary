@@ -19,6 +19,7 @@
         <div class="email-input">
           <ion-label>Correo electrónico</ion-label>
           <ion-input type="email" formControlName="email" (ionblur)="validateEmail()"></ion-input>
+          <p class="dos" color="danger" ion-text *ngIf="loginForm.get('session').hasError('pattern')">Caracteres inválidos</p>
         </div>
 
         <div class="password-input">

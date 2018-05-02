@@ -1,6 +1,6 @@
 display-alum {
   .guay{
-    max-width: 500px;
+    max-width: 100%;
     padding: 10px 20px;
     background: #f4f7f8;
     margin: 10px auto;
@@ -93,7 +93,7 @@ display-alum {
   }
 
   .photo img{
-    margin-left: 85px;
+    margin-left: 105px;
     margin-bottom: 20px;
     width: 100px;
     height: 100px;
@@ -101,7 +101,7 @@ display-alum {
 
   p {
     font-size: 14px;
-    margin-left: 15px;
+    margin-left: 30px;
   }
 
   ion-label{
@@ -116,6 +116,7 @@ display-alum {
   }
 
   .evaluate{
+    width: 300px;
     margin-bottom: 30px;
   }
 

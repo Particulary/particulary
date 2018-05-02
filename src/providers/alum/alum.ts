@@ -21,7 +21,7 @@ export class AlumProvider {
   }
 
   offers(search) {
-    return this.api.get('student/offer', {name: search}).then(data => {
+    return this.api.post('student/offer', search).then(data => {
       return data;
     });
   }

@@ -21,6 +21,9 @@
         <ion-label>Lugar</ion-label>
         <ion-input type="text" formControlName="location" placeholder="Mín. 6 caracteres"></ion-input>
         <p color="danger" ion-text *ngIf="createOfferForm.get('location').hasError('minlength')">Mínimo 6 caracteres</p>
+
+        <ion-label>Tags</ion-label>
+        <ion-input type="text" formControlName="tags" placeholder="Tags separados por coma"></ion-input>
       </fieldset>
 
       <fieldset>

@@ -52,7 +52,4 @@ export class AlumMyOffersPage {
         console.log(err);
       });
     }
-
-
-
 }

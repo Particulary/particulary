@@ -12,9 +12,9 @@
 <ion-content padding>
   <ion-list>
     <ion-item *ngFor="let experience of experiences">
-      <h4 class="uno"><ion-icon name='ios-school' color="" is-active="false"></ion-icon> {{experience.name}}</h4>
-      <h4><ion-icon name='ios-quote' is-active="false"></ion-icon> {{experience.description}}</h4>
-      <h4><ion-icon name='md-calendar' is-active="false"></ion-icon> {{experience.date}}</h4>
+      <div class="uno"><ion-icon class="icon" name='ios-school' color="" is-active="false"></ion-icon> <textarea class="area">{{experience.name}}</textarea></div>
+      <div class="uno"><ion-icon class="icon" name='ios-quote' is-active="false"></ion-icon> <textarea class="area">{{experience.description}}</textarea></div>
+      <div><ion-icon class="icon" name='md-calendar' is-active="false"></ion-icon> {{experience.date}}</div>
       <button class="botones" title="Delete" ion-button color="danger" (click)="deleteExperience(experience)" clear icon-only>
         <ion-icon name='trash' is-active="false"></ion-icon>
       </button>

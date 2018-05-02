@@ -32,11 +32,11 @@
 
             <ion-label>Nombre*:</ion-label>
             <ion-input type="text" formControlName="name" ></ion-input>
-          <p class="dos" color="danger" ion-text *ngIf="registerForm.get('name').hasError('pattern')">Caracteres inválidos</p>
+          <p class="uno" color="danger" ion-text *ngIf="registerForm.get('name').hasError('pattern')">Caracteres inválidos</p>
 
           <ion-label>Apellidos*:</ion-label>
             <ion-input type="text" formControlName="surname" ></ion-input>
-          <p class="dos" color="danger" ion-text *ngIf="registerForm.get('surname').hasError('pattern')">Caracteres inválidos</p>
+          <p class="uno" color="danger" ion-text *ngIf="registerForm.get('surname').hasError('pattern')">Caracteres inválidos</p>
 
             <ion-label>Correo electrónico*:</ion-label>
             <ion-input type="email" formControlName="email" (ionblur)="validateEmail()"></ion-input>

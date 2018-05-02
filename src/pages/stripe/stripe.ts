@@ -55,10 +55,10 @@ export class StripePage {
     var next_points;
     if (pay.discount) {
       next_points = this.points - pay.discount;
-      this.amount = this.offer.price - (pay.discount * 0.0004);
+      this.amount = (this.createPaymentForm.value.hired_hours * this.offer.price) - (pay.discount * 0.0004);
     } else {
       next_points = this.points;
-      this.amount = this.offer.price;
+      this.amount = this.createPaymentForm.value.hired_hours * this.offer.price;
     }
 
     // Get strype token
@@ -66,14 +66,11 @@ export class StripePage {
     this.alumProvider.getStripeToken(body).then(data => {
       this.stripe_token = data['id'];
 
-      //TODO: Get pay amount
-
       // Pay with stripe
       body = `amount=${this.amount}&currency=eur&description=Particulary payment&source=${this.stripe_token}&stripe_account=acct_1CCVZNBQn2r701hB&test=true`;
       this.alumProvider.payStripe(body).then(data => {
-        console.log(data);
         // Update my points
-        next_points += this.offer.price * 100;
+        next_points += this.amount * 100;
         this.alumProvider.updatePoints(next_points).then(data => {
 
           this.events.publish('points:update', next_points);

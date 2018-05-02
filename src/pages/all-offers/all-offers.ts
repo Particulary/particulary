@@ -6,6 +6,7 @@ import {CreateMessagePageAlum} from "../create-message/create-message";
 // import {EditExperiencePage} from "../edit-experience/edit-experience";
 import {DisplayTeacherPage} from "../display-teacher/display-teacher";
 import {StripePage} from "../stripe/stripe";
+import {FormBuilder, FormControl, Validators} from "@angular/forms";
 
 
 @Component({
@@ -15,13 +16,18 @@ import {StripePage} from "../stripe/stripe";
 export class AllOffersPage {
 
   offers: any;
-  searchInput: string;
+  searchForm: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alumProvider: AlumProvider, public toastCtrl: ToastController,) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alumProvider: AlumProvider,
+              public toastCtrl: ToastController, private formBuilder: FormBuilder) {
+    this.searchForm = this.formBuilder.group({
+      name: new FormControl(''),
+      tags: new FormControl('')
+    });
+
     this.alumProvider.offers('').then(data => {
       this.offers = data;
     }).catch(err => {
-      console.log('Not authorized');
       this.navCtrl.setRoot(HomePage);
       this.toastCtrl.create({
         message: 'No autorizado, debes ser alumno para acceder',
@@ -39,8 +45,9 @@ export class AllOffersPage {
     this.navCtrl.push(DisplayTeacherPage,{id:id});
   }
 
-  reloadOffers(e) {
-    this.alumProvider.offers(e.target.value).then(data => {
+  reloadOffers() {
+    console.log(this.searchForm.value);
+    this.alumProvider.offers(this.searchForm.value).then(data => {
       this.offers = data;
     }).catch(err => {
       console.log('Not authorized');

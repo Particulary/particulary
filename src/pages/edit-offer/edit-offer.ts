@@ -14,10 +14,15 @@ export class EditOfferPage {
 
   offer: any;
   editOfferForm: FormGroup;
+  tags: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private teacherProvider: TeacherProvider,
               private alertCtrl: AlertController) {
     this.offer = navParams.data;
+
+    this.tags = this.offer.tags.map(tag => {
+      return tag.name;
+    });
 
     this.editOfferForm = this.formBuilder.group({
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -28,11 +33,11 @@ export class EditOfferPage {
       start_date: new FormControl('', Validators.required),
       end_date: new FormControl('', [Validators.required]),
       availability: new FormControl('', Validators.required),
+      tags: new FormControl('')
     }, { 'validator': this.pastDateValidator });
   }
 
   pastDateValidator(control: FormGroup) {
-    console.log(control.controls['start_date'].value);
     if (control.controls['end_date'].value < control.controls['start_date'].value)
       return {"invalid_end_date": true};
   }
@@ -46,6 +51,7 @@ export class EditOfferPage {
       max_hours: this.editOfferForm.value.max_hours,
       start_date: this.editOfferForm.value.start_date,
       end_date: this.editOfferForm.value.end_date,
+      tags: this.editOfferForm.value.tags
       availability: this.editOfferForm.value.availability,
     };
 

@@ -25,6 +25,9 @@
       <ion-input type="text" formControlName="location" placeholder="Min. 6 caracteres" [value]="offer.location"></ion-input>
       <p color="danger" ion-text *ngIf="editOfferForm.get('location').hasError('minlength')">Mínimo 3 caracteres</p>
 
+      <ion-label>Tags</ion-label>
+      <ion-input type="text" formControlName="tags" [value]="tags" placeholder="Tags separados por coma"></ion-input>
+
       <ion-label>Estado de la clase</ion-label>
         <ion-select formControlName="status" [(ngModel)]="offer.status">
           <ion-option value="OFFERED">Ofertado</ion-option>

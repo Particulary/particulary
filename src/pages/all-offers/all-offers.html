@@ -10,7 +10,11 @@
 </ion-header>
 
 <ion-content>
-  <ion-input class="busqueda" type="text" (keyup)="reloadOffers($event)" placeholder="Buscar clases"></ion-input>
+  <div class="search" [formGroup]="searchForm">
+    <ion-input class="busqueda" formControlName="name" type="text" (keyup)="reloadOffers()" placeholder="Buscar clases"></ion-input>
+    <ion-input class="busqueda" formControlName="tags" type="text" (keyup)="reloadOffers()" placeholder="Buscar por tags"></ion-input>
+  </div>
+
   <ion-list>
     <ion-item *ngFor="let offer of offers">
       <div class="first">
@@ -23,9 +27,6 @@
             <ion-icon name='ios-book' is-active="false"></ion-icon> {{tag.name}}
           </ion-item>
         </h4>
-        <!--<span *ngFor="let tag of offer.tags">-->
-        <!--{{tag.name}}-->
-        <!--</span>-->
       </div>
       <div class="second">
         <h4><ion-icon name='md-calendar' is-active="false"></ion-icon> {{offer.start_date}}</h4>

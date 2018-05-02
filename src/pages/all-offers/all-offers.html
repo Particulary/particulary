@@ -21,10 +21,10 @@
   <ion-list>
     <ion-item *ngFor="let offer of offers">
       <div class="first">
-        <button class="prof" *ngIf="offer.teacher" (click)="displayTeacher(offer.teacher.id)"><ion-icon name='ios-school' is-active="false"></ion-icon> {{offer.teacher.name}}</button>
-        <h4><ion-icon name='ios-book' is-active="false"></ion-icon> {{offer.name}}</h4>
-        <h4 float="right"><ion-icon name='ios-pin' color="danger" is-active="false"></ion-icon> {{offer.location}}</h4>
-        <h4 float="right"><ion-icon name='md-cash' color="secondary" is-active="false"></ion-icon> {{offer.price}} </h4>
+        <button class="prof" *ngIf="offer.teacher" (click)="displayTeacher(offer.teacher.id)"><ion-icon class="icon1" name='ios-school' is-active="false"></ion-icon> {{offer.teacher.name}}</button>
+        <h4><ion-icon class="icon" name='ios-book' is-active="false"></ion-icon> <textarea class="area">{{offer.name}}</textarea></h4>
+        <h4 float="right"><ion-icon class="icon" name='ios-pin' color="danger" is-active="false"></ion-icon> <textarea class="area">{{offer.location}}</textarea></h4>
+        <h4 float="right"><ion-icon class="icon" name='md-cash' color="secondary" is-active="false"></ion-icon> {{offer.price}} </h4>
         <h4>
           <ion-item ion-item *ngFor="let tag of offer.tags">
             <ion-icon name='ios-book' is-active="false"></ion-icon> {{tag.name}}

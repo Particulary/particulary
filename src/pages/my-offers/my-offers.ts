@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import {NavController, NavParams, ToastController} from 'ionic-angular';
+import {AlertController, NavController, NavParams, ToastController} from 'ionic-angular';
 import { TeacherProvider } from "../../providers/teacher/teacher";
 import { CreateOfferPage } from "../create-offer/create-offer";
 import { EditOfferPage } from "../edit-offer/edit-offer";
 import {HomePage} from "../home/home";
-import {DisplayTeacherPage} from "../display-teacher/display-teacher";
+// import {DisplayTeacherPage} from "../display-teacher/display-teacher";
 import {DisplayAlumPage} from "../display-alum/display-alum";
-import {AlumMyOffersPage} from "../alum-myOffers/alum-myOffers";
+// import {AlumMyOffersPage} from "../alum-myOffers/alum-myOffers";
 
 
 @Component({
@@ -17,7 +17,8 @@ export class MyOffersPage {
 
   offers: any;
 showButton: boolean;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private teacherProvider: TeacherProvider, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private teacherProvider: TeacherProvider, public toastCtrl: ToastController,
+              private alertCtrl: AlertController) {
     this.teacherProvider.myOffers().then(data => {
       this.offers = data;
       console.log(this.offers);
@@ -52,6 +53,7 @@ showButton: boolean;
       if(i != -1) {
         this.offers.splice(i, 1);
       }
+      this.offerDeleted();
     }).catch(err => {
       console.log(err);
     });
@@ -62,8 +64,16 @@ showButton: boolean;
     offer.tags="";
     this.teacherProvider.editOffer(offer, offer.id).then(data => {
       this.navCtrl.setRoot(MyOffersPage);
+
     }).catch(err => {
       console.log(err);
     });
+  }
+
+  offerDeleted() {
+    let alert = this.alertCtrl.create({
+      message: 'Eliminado  correctamente',
+    });
+    alert.present();
   }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {AlertController, NavController, NavParams} from 'ionic-angular';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {MyOffersPage} from "../my-offers/my-offers";
 import {TeacherProvider} from "../../providers/teacher/teacher";
@@ -15,7 +15,8 @@ export class EditOfferPage {
   offer: any;
   editOfferForm: FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private teacherProvider: TeacherProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private teacherProvider: TeacherProvider,
+              private alertCtrl: AlertController) {
     this.offer = navParams.data;
 
     this.editOfferForm = this.formBuilder.group({
@@ -50,8 +51,16 @@ export class EditOfferPage {
 
     this.teacherProvider.editOffer(offer, this.offer.id).then(data => {
       this.navCtrl.setRoot(MyOffersPage);
+      this.offerEdited();
     }).catch(err => {
       console.log(err);
     });
   }
+  offerEdited() {
+    let alert = this.alertCtrl.create({
+      message: 'Oferta editada correctamente',
+    });
+    alert.present();
+  }
+
 }

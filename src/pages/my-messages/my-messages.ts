@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import {NavController, NavParams, ToastController} from 'ionic-angular';
 import { TeacherProvider } from "../../providers/teacher/teacher";
-import { CreateOfferPage } from "../create-offer/create-offer";
-import { EditOfferPage } from "../edit-offer/edit-offer";
+// import { CreateOfferPage } from "../create-offer/create-offer";
+// import { EditOfferPage } from "../edit-offer/edit-offer";
 import {HomePage} from "../home/home";
 import {AlumProvider} from "../../providers/alum/alum";
 import {CreateMessagePageAlum, CreateMessagePageTeacher} from "../create-message/create-message";
-import {DisplayTeacherPage} from "../display-teacher/display-teacher";
-import {DisplayAlumPage} from "../display-alum/display-alum";
+// import {DisplayTeacherPage} from "../display-teacher/display-teacher";
+// import {DisplayAlumPage} from "../display-alum/display-alum";
 
 
 @Component({

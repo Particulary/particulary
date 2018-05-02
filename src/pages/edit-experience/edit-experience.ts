@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {AlertController, NavController, NavParams} from 'ionic-angular';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {MyOffersPage} from "../my-offers/my-offers";
+// import {MyOffersPage} from "../my-offers/my-offers";
 import {TeacherProvider} from "../../providers/teacher/teacher";
 import {MyExperiencesPage} from "../my-experiences/my-experiences";
 
@@ -16,7 +16,8 @@ export class EditExperiencePage {
   experience: any;
   editExperienceForm: FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private teacherProvider: TeacherProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private teacherProvider: TeacherProvider,
+              private alertCtrl: AlertController) {
     this.experience = navParams.data;
     this.editExperienceForm = this.formBuilder.group({
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -34,8 +35,17 @@ export class EditExperiencePage {
 
     this.teacherProvider.editExperience(experience, this.experience.id).then(data => {
       this.navCtrl.setRoot(MyExperiencesPage);
+      this.experienceEdited();
     }).catch(err => {
       console.log(err);
     });
   }
+
+  experienceEdited() {
+    let alert = this.alertCtrl.create({
+      message: 'Experiencia editada correctamente',
+    });
+    alert.present();
+  }
+
 }

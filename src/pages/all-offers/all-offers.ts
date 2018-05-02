@@ -3,7 +3,7 @@ import {NavController, NavParams, ToastController} from 'ionic-angular';
 import {AlumProvider} from "../../providers/alum/alum";
 import {HomePage} from "../home/home";
 import {CreateMessagePageAlum} from "../create-message/create-message";
-import {EditExperiencePage} from "../edit-experience/edit-experience";
+// import {EditExperiencePage} from "../edit-experience/edit-experience";
 import {DisplayTeacherPage} from "../display-teacher/display-teacher";
 import {StripePage} from "../stripe/stripe";
 

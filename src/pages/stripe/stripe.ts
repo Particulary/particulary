@@ -82,7 +82,7 @@ export class StripePage {
           this.offer.hired_hours = this.createPaymentForm.value.hired_hours;
           this.alumProvider.apply(this.offer).then(data => {
             this.toastCtrl.create({
-              message: 'Apply correctly',
+              message: 'Pagado correctamente',
               duration: 3000,
               position: 'bottom'
             }).present();

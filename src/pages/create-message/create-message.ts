@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {AlertController, NavController, NavParams} from 'ionic-angular';
 import {FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { MyMessagesPageAlum } from "../my-messages/my-messages";
 import { MyMessagesPageTeacher} from "../my-messages/my-messages";
@@ -16,7 +16,8 @@ export class CreateMessagePageTeacher {
   createMessageForm: FormGroup;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private teacherProvider: TeacherProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private teacherProvider: TeacherProvider,
+              private alertCtrl: AlertController) {
     this.createMessageForm = this.formBuilder.group({
       text: new FormControl('', [Validators.required, Validators.minLength(1),]),
     });
@@ -32,9 +33,17 @@ export class CreateMessagePageTeacher {
 
     this.teacherProvider.addMessage(message).then(data => {
       this.navCtrl.setRoot(MyMessagesPageTeacher);
+      this.messageCreated();
     }).catch(err => {
       console.log(err);
     });
+  }
+
+  messageCreated() {
+    let alert = this.alertCtrl.create({
+      message: 'Mensaje enviado correctamente',
+    });
+    alert.present();
   }
 
 }
@@ -48,7 +57,8 @@ export class CreateMessagePageAlum {
   createMessageForm: FormGroup;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private alumProvider: AlumProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private alumProvider: AlumProvider,
+              private alertCtrl: AlertController) {
     this.createMessageForm = this.formBuilder.group({
       text: new FormControl('', [Validators.required, Validators.minLength(1),]),
     });
@@ -64,9 +74,17 @@ export class CreateMessagePageAlum {
 
     this.alumProvider.addMessageAlum(message).then(data => {
       this.navCtrl.setRoot(MyMessagesPageAlum);
+      this.messageCreated();
     }).catch(err => {
       console.log(err);
     });
   }
 
-}
+  messageCreated() {
+    let alert = this.alertCtrl.create({
+      message: 'Mensaje enviado correctamente',
+    });
+    alert.present();
+  }
+
+  }

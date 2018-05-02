@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NavController, NavParams, ToastController} from 'ionic-angular';
+import {AlertController, NavController, NavParams, ToastController} from 'ionic-angular';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {TeacherProvider} from "../../providers/teacher/teacher";
 import {HomePage} from "../home/home";
@@ -16,7 +16,8 @@ export class EditTeacherPage {
   emailError: boolean = false;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private teacherProvider: TeacherProvider,  public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private teacherProvider: TeacherProvider,
+              public toastCtrl: ToastController, private alertCtrl: AlertController) {
     this.teacher=false;
     this.teacherProvider.infoTeacher().then(data => {
       this.teacher = data;
@@ -68,9 +69,16 @@ export class EditTeacherPage {
 
     this.teacherProvider.editTeacher(teacher).then(data => {
       this.navCtrl.setRoot(HomePage);
+      this.teacherEdited();
     }).catch(err => {
       console.log(err);
     });
+  }
+  teacherEdited() {
+    let alert = this.alertCtrl.create({
+      message: 'Perfil editado correctamente',
+    });
+    alert.present();
   }
 
 

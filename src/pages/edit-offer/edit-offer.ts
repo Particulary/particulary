@@ -51,7 +51,7 @@ export class EditOfferPage {
       max_hours: this.editOfferForm.value.max_hours,
       start_date: this.editOfferForm.value.start_date,
       end_date: this.editOfferForm.value.end_date,
-      tags: this.editOfferForm.value.tags
+      tags: this.editOfferForm.value.tags,
       availability: this.editOfferForm.value.availability,
     };
 

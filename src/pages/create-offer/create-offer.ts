@@ -35,7 +35,7 @@ export class CreateOfferPage {
       max_hours: this.createOfferForm.value.max_hours,
       start_date: this.createOfferForm.value.start_date,
       end_date: this.createOfferForm.value.end_date,
-      tags: this.createOfferForm.value.tags
+      tags: this.createOfferForm.value.tags,
       availability: this.createOfferForm.value.availability,
 
     };

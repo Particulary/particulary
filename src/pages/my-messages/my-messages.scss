@@ -16,22 +16,39 @@ my-messages{
       resize: none;
       border: 0px solid #40A348;
       height: 100%;
+      width: 100%;
 
       h4 {
         padding: 5px 5px 0px 5px;
         margin-left: 2px;
+        width: 90%;
+      }
+      .area{
+        background-color: #bdedc1;
+        margin-left: 8px;
+        .icon-message {
+          float: left;
+        }
+        textarea{
+          resize: none;
+          background-color: #bdedc1;
+          border: 0px solid #bdedc1;
+        }
       }
 
       .email {
         font-family: 'Nunito', sans-serif;
         font-weight: 700;
         font-size: 16px;
+        width: 88%;
       }
 
       .message {
         font-family: inherit;
         font-size: 16px;
         margin-bottom: 8px;
+        overflow-y:auto;
+        width: 88%;
       }
     }
 

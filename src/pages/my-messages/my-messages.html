@@ -21,10 +21,10 @@
           <span *ngIf="message.teacher">{{ message.teacher.email }}</span>
           <span *ngIf="message.alum">{{ message.alum.email }}</span>
         </h4>
-        <h4 class="message">
-          <ion-icon name='md-text' is-active="false"></ion-icon>
-          {{message.text}}
-        </h4>
+        <div class="area">
+        <ion-icon class="icon-message" name='md-text' is-active="false"></ion-icon>
+        <textarea class="message">{{message.text}}</textarea>
+        </div>
 
       </fieldset>
       <span *ngIf="message.alum"> <button class="botonfinal" *ngIf="this.showButton==true" style="height: 30px"

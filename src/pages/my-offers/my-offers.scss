@@ -58,12 +58,21 @@ my-offers {
   .first{
     float:left;
     width: 100%;
-    h4{
-      overflow: auto;
-    }
     .uno{
       padding-top: 4px;
     }
+  }
+  .area{
+    resize: none;
+    width: 90%;
+    border: 0px;
+  }
+
+  .icon{
+    float: left;
+    margin-top: 2px;
+    margin-left: 8px;
+    margin-right: 5px;
   }
 
   .second{

@@ -79,8 +79,6 @@ export class LoginPage {
   }
 
   register() {
-
-    // TODO: redirect to register page
     this.navCtrl.push(RegisterPage, {}, {animate: true, direction: 'forward'});
   }
 

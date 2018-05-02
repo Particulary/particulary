@@ -36,17 +36,6 @@
           </ion-select>
         </div>
 
-        <div class="remember-input">
-          <ion-item text-right>
-            <ion-label>Mantener sesión iniciada</ion-label>
-            <ion-checkbox formControlName="session" color="primary"></ion-checkbox>
-          </ion-item>
-        </div>
-
-        <div class="forgot-password-wrapper">
-          <a class="forgot-password" (click)="forgotPassword()">¿Has olvidado tu contraseña?</a>
-        </div>
-
         <button class="enter" ion-button type="submit" [disabled]="!loginForm.valid">Entrar</button>
         <a class="register" (click)="register()">Regístrate</a>
 

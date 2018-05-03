@@ -66,14 +66,12 @@ export class LoginPage {
       });
 
     }).catch(err => {
-
-      console.log(err);
-      //TODO: retrieve the error
+      console.log(err.error);
       this.toastCtrl.create({
-        message: err.error.login,
+        message: err.error,
         duration: 3000,
         position: 'bottom'
-      }).present();
+      }).present({});
     });
 
   }

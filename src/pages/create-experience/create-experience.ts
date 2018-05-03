@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {AlertController, NavController, NavParams} from 'ionic-angular';
+import {AlertController, NavController, NavParams, ToastController} from 'ionic-angular';
 import {FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { MyExperiencesPage } from "../my-experiences/my-experiences";
 import { TeacherProvider } from "../../providers/teacher/teacher";
@@ -14,7 +14,7 @@ export class CreateExperiencePage {
   createExperienceForm: FormGroup;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private teacherProvider: TeacherProvider,
-              private alertCtrl: AlertController) {
+              private alertCtrl: AlertController, private toastCtrl: ToastController) {
     this.createExperienceForm = this.formBuilder.group({
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       description: new FormControl('', [Validators.required, Validators.minLength(6),]),
@@ -34,6 +34,11 @@ export class CreateExperiencePage {
       this.experienceCreated();
     }).catch(err => {
       console.log(err);
+      this.toastCtrl.create({
+        message: err.error,
+        duration: 3000,
+        position: 'bottom'
+      }).present({});
     });
   }
 

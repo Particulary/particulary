@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {AlertController, NavController, NavParams} from 'ionic-angular';
+import {AlertController, NavController, NavParams, ToastController} from 'ionic-angular';
 import {FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { MyMessagesPageAlum } from "../my-messages/my-messages";
 import { MyMessagesPageTeacher} from "../my-messages/my-messages";
@@ -58,7 +58,7 @@ export class CreateMessagePageAlum {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private alumProvider: AlumProvider,
-              private alertCtrl: AlertController) {
+              private alertCtrl: AlertController, private toastCtrl: ToastController) {
     this.createMessageForm = this.formBuilder.group({
       text: new FormControl('', [Validators.required, Validators.minLength(1),]),
     });
@@ -77,6 +77,11 @@ export class CreateMessagePageAlum {
       this.messageCreated();
     }).catch(err => {
       console.log(err);
+      this.toastCtrl.create({
+        message: err.error,
+        duration: 3000,
+        position: 'bottom'
+      }).present({});
     });
   }
 

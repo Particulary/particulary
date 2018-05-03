@@ -73,7 +73,7 @@ export class RegisterPage {
       console.log(err);
       //TODO: retrieve the error
       this.toastCtrl.create({
-        message: err.error.login,
+        message: err.error,
         duration: 3000,
         position: 'bottom'
       }).present();

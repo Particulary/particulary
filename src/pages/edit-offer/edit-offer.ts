@@ -20,8 +20,8 @@ export class EditOfferPage {
               private alertCtrl: AlertController, private toastCtrl: ToastController) {
     this.offer = navParams.data;
 
-    this.tags = this.offer.tags.map(tag => {
-      return tag.name;
+    this.offer.tags.map(tag => {
+      this.tags +=  tag.name + ',';
     });
 
     this.editOfferForm = this.formBuilder.group({

@@ -22,7 +22,9 @@ export class AllOffersPage {
               public toastCtrl: ToastController, private formBuilder: FormBuilder) {
     this.searchForm = this.formBuilder.group({
       name: new FormControl(''),
-      tags: new FormControl('')
+      tags: new FormControl(''),
+      min_price: new FormControl(''),
+      max_price: new FormControl('')
     });
 
     this.alumProvider.offers('').then(data => {

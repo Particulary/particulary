@@ -24,7 +24,7 @@
       <fieldset>
         <legend><span class="number">2</span> Info Adicional</legend>
         <ion-label>Descripción</ion-label>
-        <ion-input type="text" formControlName="description" placeholder="Min. 6 caracteres" [value]="experience.description"></ion-input>
+        <ion-textarea class="area" type="textarea" formControlName="description" placeholder="Min. 6 caracteres" [value]="experience.description"></ion-textarea>
         <p color="danger" ion-text *ngIf="editExperienceForm.get('description').hasError('minlength')">Mínimo 6 caracteres</p>
       </fieldset>
       <button class="enter" ion-button round type="submit" [disabled]="!editExperienceForm.valid">Editar</button>

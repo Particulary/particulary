@@ -24,6 +24,7 @@ all-offers {
     size: auto;
     color: #488aff;
     margin-left: -6px;
+    margin-bottom: 15px;
   }
 
   .button {
@@ -37,14 +38,14 @@ all-offers {
   }
 
   .botones {
-    margin-top: 10px;
+    margin-top: 20px;
     float: left;
     color: darkorange;
     margin-left: 16px;
   }
 
   .comprar {
-    margin-top: 14px;
+    margin-top: 24px;
     float: left;
     color: mediumseagreen;
     margin-right: 20px;
@@ -60,6 +61,7 @@ all-offers {
     background-color: white;
     resize: none;
     border: 4px solid #488aff;
+
   }
 
   ion-list .item .first .icon {
@@ -69,16 +71,25 @@ all-offers {
   .first {
     float: left;
     margin-left: 5px;
-    overflow: visible;
     width: 100%;
-    h4{
-      overflow: auto;
-    }
   }
 
-  .first::-webkit-scrollbar{
-    width: 5px;
-    color: #f53d3d;
+  .area{
+    resize: none;
+    width: 90%;
+    border: 0px;
+  }
+  .icon{
+    float: left;
+    margin-top: 2px;
+    margin-left: 8px;
+    margin-right: 5px;
+  }
+  .icon1{
+    float: left;
+    margin-top: -2px;
+    margin-left: 8px;
+    margin-right: 5px;
   }
 
   .second{

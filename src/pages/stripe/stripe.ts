@@ -86,7 +86,7 @@ export class StripePage {
             this.navCtrl.setRoot(HomePage);
           }).catch(err => {
             this.toastCtrl.create({
-              message: err.error.message,
+              message: err.error,
               duration: 3000,
               position: 'bottom'
             }).present();

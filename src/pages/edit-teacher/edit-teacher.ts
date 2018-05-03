@@ -72,6 +72,11 @@ export class EditTeacherPage {
       this.teacherEdited();
     }).catch(err => {
       console.log(err);
+      this.toastCtrl.create({
+        message: err.error,
+        duration: 3000,
+        position: 'bottom'
+      }).present({});
     });
   }
   teacherEdited() {

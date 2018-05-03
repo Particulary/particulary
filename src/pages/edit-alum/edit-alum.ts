@@ -68,6 +68,11 @@ export class EditAlumPage {
       this.alumEdited();
     }).catch(err => {
       console.log(err);
+      this.toastCtrl.create({
+        message: err.error,
+        duration: 3000,
+        position: 'bottom'
+      }).present({});
     });
   }
 

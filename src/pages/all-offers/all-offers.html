@@ -13,9 +13,14 @@
   <div class="search" [formGroup]="searchForm">
     <ion-input class="busqueda" formControlName="name" type="text" (keyup)="reloadOffers()" placeholder="Buscar clases"></ion-input>
     <ion-input class="busqueda" formControlName="tags" type="text" (keyup)="reloadOffers()" placeholder="Buscar por tags"></ion-input>
-
-    <ion-input class="busqueda" formControlName="min_price" type="text" (keyup)="reloadOffers()" placeholder="Precio mínimo"></ion-input>
-    <ion-input class="busqueda" formControlName="max_price" type="text" (keyup)="reloadOffers()" placeholder="Precio máximo"></ion-input>
+    <div class="rango">
+      <div class="izq">
+        <label>Min:</label><ion-input class="min" formControlName="min_price" type="text" (keyup)="reloadOffers()" ></ion-input>
+      </div>
+      <div class="der">
+       <label>Max:</label><ion-input class="max" formControlName="max_price" type="text" (keyup)="reloadOffers()" ></ion-input>
+      </div>
+    </div>
   </div>
 
   <ion-list>

@@ -2,7 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {Nav, Platform, Events, MenuController, NavController, ToastController} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 
-import {CreateExperiencePage} from "../pages/create-experience/create-experience";
+// import {CreateExperiencePage} from "../pages/create-experience/create-experience";
 import {MyOffersPage} from "../pages/my-offers/my-offers";
 
 import {EditTeacherPage} from "../pages/edit-teacher/edit-teacher";
@@ -16,13 +16,13 @@ import {Storage} from "@ionic/storage";
 import {LoginPage} from "../pages/login/login";
 import {MyMessagesPageTeacher} from "../pages/my-messages/my-messages";
 import {MyMessagesPageAlum} from "../pages/my-messages/my-messages";
-import {RegisterPage} from "../pages/register/register";
+// import {RegisterPage} from "../pages/register/register";
 import {AlumMyOffersPage} from "../pages/alum-myOffers/alum-myOffers";
-import {CreateMessagePageTeacher} from "../pages/create-message/create-message";
-import {DisplayAlumPage} from "../pages/display-alum/display-alum";
-import {DisplayTeacherPage} from "../pages/display-teacher/display-teacher";
-import {StripePage} from "../pages/stripe/stripe";
-import {TeacherMyOffersPage} from "../pages/teacher-myOffers/teacher-myOffers";
+// import {CreateMessagePageTeacher} from "../pages/create-message/create-message";
+// import {DisplayAlumPage} from "../pages/display-alum/display-alum";
+// import {DisplayTeacherPage} from "../pages/display-teacher/display-teacher";
+// import {StripePage} from "../pages/stripe/stripe";
+// import {TeacherMyOffersPage} from "../pages/teacher-myOffers/teacher-myOffers";
 import {AlumProvider} from "../providers/alum/alum";
 
 

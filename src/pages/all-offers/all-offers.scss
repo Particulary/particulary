@@ -19,6 +19,57 @@ all-offers {
     transition: width 0.3s ease-in-out;
   }
 
+  label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: right;
+    margin-top: 10px;
+  }
+
+  .rango{
+    display: inline;
+    margin-left: -190px;
+    overflow: hidden;
+  }
+
+  .izq{float: left;
+    margin-left: -190px;
+    margin-top: 5px;
+  }
+
+  .der{float: left;
+    margin-left: -200px;
+    margin-top: 4px;
+    }
+
+  .min {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 15px;
+    display: inline-block;
+    margin-left: 10px;
+  }
+
+  .textmin{
+    float: left;}
+
+  .max {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 15px;
+    display: inline-block;
+    float: right;
+    margin-left: 10px;
+  }
+
+  .textmax{float: right;}
+
   .prof {
     background: none;
     size: auto;

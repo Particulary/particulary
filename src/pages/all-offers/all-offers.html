@@ -10,10 +10,11 @@
 </ion-header>
 
 <ion-content>
-  <div class="search" [formGroup]="searchForm">
+  <fieldset class="search" [formGroup]="searchForm">
     <ion-input class="busqueda" formControlName="name" type="text" (keyup)="reloadOffers()" placeholder="Buscar clases"></ion-input>
     <ion-input class="busqueda" formControlName="tags" type="text" (keyup)="reloadOffers()" placeholder="Buscar por tags"></ion-input>
     <div class="rango">
+      <h4>Rango de precio: </h4>
       <div class="izq">
         <label>Min:</label><ion-input class="min" formControlName="min_price" type="text" (keyup)="reloadOffers()" ></ion-input>
       </div>
@@ -21,7 +22,7 @@
        <label>Max:</label><ion-input class="max" formControlName="max_price" type="text" (keyup)="reloadOffers()" ></ion-input>
       </div>
     </div>
-  </div>
+  </fieldset>
 
   <ion-list>
     <ion-item *ngFor="let offer of offers">

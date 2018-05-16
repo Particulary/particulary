@@ -13,7 +13,7 @@
   <ion-list>
     <ion-item *ngFor="let offer of offers">
       <div class="first">
-        <button class="alum" *ngIf="offer.alum" (click)="displayAlum(offer.alum.id)"><ion-icon name='ios-school' is-active="false"></ion-icon> {{offer.alum.name}}</button>
+        <button class="alum" *ngIf="offer.alum" (click)="displayAlum(offer.alum.id)"><ion-icon class="icon" name='ios-school' is-active="false"></ion-icon> {{offer.alum.name}}</button>
         <h4 class="uno"> <ion-icon class="icon" name='ios-book' is-active="false"></ion-icon> <textarea class="area">{{offer.name}}</textarea></h4>
         <h4 float="right"><ion-icon class="icon" name='ios-pin' color="danger" is-active="false"></ion-icon> <textarea class="area">{{offer.location}}</textarea></h4>
         <h4 float="right"><ion-icon class="icon" name='md-cash' color="secondary" is-active="false"></ion-icon> {{offer.price}} </h4>

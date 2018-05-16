@@ -62,15 +62,6 @@
             <p class="uno" color="danger" ion-text *ngIf="registerForm.get('linkedin').hasError('pattern')">Debe ser una URL</p>
           </div>
 
-
-
-          <div class="password-input">
-              <ion-label>Contraseña*:</ion-label>
-              <ion-input [type]="show ? 'text' : 'password'" formControlName="password"></ion-input>
-            <p class="uno" color="danger" ion-text *ngIf="registerForm.get('password').hasError('minlength')">Mínimo 6 caracteres</p>
-            <a (click)="togglePassword()">{{ show ? 'ocultar' : 'mostrar' }}</a>
-          </div>
-
         </fieldset>
 
 

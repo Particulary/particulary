@@ -76,4 +76,20 @@ showButton: boolean;
     });
     alert.present();
   }
+
+  aceptar(offer) {
+    this.teacherProvider.changeState(offer.id, 'aceptada').then(data => {
+
+    }).catch(err => {
+      console.log(err);
+    });
+  }
+
+  cancelar(offer) {
+    this.teacherProvider.changeState(offer.id, 'rechazada').then(data => {
+
+    }).catch(err => {
+      console.log(err);
+    });
+  }
 }

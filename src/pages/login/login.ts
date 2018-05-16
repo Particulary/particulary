@@ -92,4 +92,12 @@ export class LoginPage {
     this.show = !this.show;
   }
 
+  forgotPassword() {
+    this.loginProvider.forgotPassword(this.loginForm.value.email, this.loginForm.value.type).then(data => {
+
+    }).catch(err => {
+      console.log(err);
+    })
+  }
+
 }

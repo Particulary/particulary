@@ -94,9 +94,18 @@ export class LoginPage {
 
   forgotPassword() {
     this.loginProvider.forgotPassword(this.loginForm.value.email, this.loginForm.value.type).then(data => {
-
+      this.toastCtrl.create({
+        message: 'Se ha enviado un correo con la nueva contraseña',
+        duration: 3000,
+        position: 'bottom'
+      }).present({});
     }).catch(err => {
       console.log(err);
+      this.toastCtrl.create({
+        message: err.error,
+        duration: 3000,
+        position: 'bottom'
+      }).present({});
     })
   }
 

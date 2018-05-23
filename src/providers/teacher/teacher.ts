@@ -108,4 +108,10 @@ export class TeacherProvider {
     });
   }
 
+  changeState(offer_id, state) {
+    return this.api.post('teacher/offer/' + offer_id +'/changeState', {state: state}).then(data => {
+      return data;
+    });
+  }
+
 }

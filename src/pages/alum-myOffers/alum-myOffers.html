@@ -16,6 +16,14 @@
         <h4><ion-icon name='ios-book' is-active="false"></ion-icon> {{offer.name}}</h4>
         <h4 class="mod" float="right"><ion-icon name='ios-pin' color="danger" is-active="false"></ion-icon> {{offer.location}}</h4>
         <h4 class="mod" float="right"><ion-icon name='md-cash' color="secondary" is-active="false"></ion-icon> {{offer.price}} </h4>
+
+        <p *ngIf="!offer.state">
+          Oferta a la espera de aceptación
+        </p>
+        <p *ngIf="offer.state == 'aceptada'">
+          Oferta aceptada
+        </p>
+
       </div>
       <div class="second">
         <h4><ion-icon name='md-calendar' is-active="false"></ion-icon> {{offer.start_date}}</h4>

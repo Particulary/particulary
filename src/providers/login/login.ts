@@ -25,4 +25,10 @@ export class LoginProvider {
       return data;
     });
   }
+
+  forgotPassword(email, type) {
+    return this.api.post('forgotPassword', {email, type}).then(data => {
+      return data;
+    });
+  }
 }

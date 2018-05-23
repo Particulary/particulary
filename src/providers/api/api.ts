@@ -10,7 +10,7 @@ import 'rxjs/add/operator/toPromise';
 */
 @Injectable()
 export class ApiProvider {
-  url: string = 'http://practicasispp.tk/api';
+  url: string = 'http://dev.practicasispp.tk/api';
 
   constructor(public http: HttpClient) {
   }

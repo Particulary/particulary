@@ -40,7 +40,6 @@ export class RegisterPage {
       email: new FormControl('', [Validators.required,Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$')]),
       phone: new FormControl('', [Validators.required,Validators.pattern('(\\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}')]),
       address: new FormControl('', [Validators.required, Validators.minLength(5)]),
-      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
       linkedin: new FormControl('', [Validators.pattern('https?://.+')]),
       bio: new FormControl('', [Validators.required]),
       type: new FormControl('', [Validators.required]),
@@ -58,7 +57,6 @@ export class RegisterPage {
       email: this.registerForm.value.email,
       phone: this.registerForm.value.phone,
       address: this.registerForm.value.address,
-      password: this.registerForm.value.password,
       linkedin: this.registerForm.value.linkedin,
       bio: this.registerForm.value.bio,
       type: this.registerForm.value.type,
@@ -94,10 +92,6 @@ export class RegisterPage {
     } else {
       this.emailError = false;
     }
-  }
-
-  togglePassword() {
-    this.show = !this.show;
   }
 
 }

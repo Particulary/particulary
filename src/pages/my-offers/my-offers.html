@@ -19,8 +19,8 @@
         <h4 float="right"><ion-icon class="icon" name='md-cash' color="secondary" is-active="false"></ion-icon> {{offer.price}} </h4>
 
         <div *ngIf="offer.alum && offer.status!='IMPARTED'">
-          <p class="aceptar" (click)="aceptar(offer)">Aceptar</p>
-          <p class="rechazar" (click)="cancelar(offer)">Cancelar</p>
+          <button class="aceptar" (click)="aceptar(offer)">Aceptar</button>
+          <button class="rechazar" (click)="cancelar(offer)">Cancelar</button>
         </div>
       </div>
       <div class="second">

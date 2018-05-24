@@ -17,10 +17,10 @@
         <h4 class="mod" float="right"><ion-icon name='ios-pin' color="danger" is-active="false"></ion-icon> {{offer.location}}</h4>
         <h4 class="mod" float="right"><ion-icon name='md-cash' color="secondary" is-active="false"></ion-icon> {{offer.price}} </h4>
 
-        <p *ngIf="!offer.state">
+        <p class="mensaje" *ngIf="!offer.state">
           Oferta a la espera de aceptación
         </p>
-        <p *ngIf="offer.state == 'aceptada'">
+        <p class="mensaje" *ngIf="offer.state == 'aceptada'">
           Oferta aceptada
         </p>
 

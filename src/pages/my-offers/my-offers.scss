@@ -109,7 +109,6 @@ my-offers {
   }
   .aceptar{
     margin-top: 20px;
-    margin-left: 13px;
     padding: 4px;
     background: green;
     width: 63px;
@@ -118,12 +117,25 @@ my-offers {
   }
   .rechazar{
     margin-top: 10px;
-    margin-left: 13px;
+    margin-left: 3px;
     padding: 4px;
     background: red;
     width: 63px;
     color: white;
     border-radius: 8px;
+  }
+
+  .verde{
+    font-weight: 800;
+    color: green;
+    margin-top: 20px;
+    margin-left: 13px;
+  }
+  .rojo{
+    font-weight: 800;
+    color: red;
+    margin-top: 10px;
+    margin-left: 13px;
   }
 
 }

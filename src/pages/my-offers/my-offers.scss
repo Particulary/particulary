@@ -107,5 +107,23 @@ my-offers {
       }
     }
   }
+  .aceptar{
+    margin-top: 20px;
+    margin-left: 13px;
+    padding: 4px;
+    background: #32db64;
+    width: 56px;
+    color: white;
+    border-radius: 8px;
+  }
+  .rechazar{
+    margin-top: 10px;
+    margin-left: 13px;
+    padding: 4px;
+    background: #f53d3d;
+    width: 63px;
+    color: white;
+    border-radius: 8px;
+  }
 
 }

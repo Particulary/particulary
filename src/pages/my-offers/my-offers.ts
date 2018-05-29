@@ -79,6 +79,15 @@ showButton: boolean;
 
   aceptar(offer) {
     this.teacherProvider.changeState(offer.id, 'aceptada').then(data => {
+      this.alertCtrl.create({
+        message: 'Oferta aceptada correctamente',
+      }).present();
+
+      this.teacherProvider.myOffers().then(data => {
+        this.offers = data;
+      }).catch(err => {
+        console.log('Not authorized');
+      });
 
     }).catch(err => {
       console.log(err);
@@ -87,6 +96,16 @@ showButton: boolean;
 
   cancelar(offer) {
     this.teacherProvider.changeState(offer.id, 'rechazada').then(data => {
+      this.alertCtrl.create({
+        message: 'Oferta rechazada correctamente',
+      }).present();
+
+      this.teacherProvider.myOffers().then(data => {
+        this.offers = data;
+      }).catch(err => {
+        console.log('Not authorized');
+      });
+
 
     }).catch(err => {
       console.log(err);

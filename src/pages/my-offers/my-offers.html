@@ -18,7 +18,7 @@
         <h4 float="right"><ion-icon class="icon" name='ios-pin' color="danger" is-active="false"></ion-icon> <textarea class="area">{{offer.location}}</textarea></h4>
         <h4 float="right"><ion-icon class="icon" name='md-cash' color="secondary" is-active="false"></ion-icon> {{offer.price}} </h4>
 
-        <div *ngIf="offer.alum && offer.status!='IMPARTED'">
+        <div *ngIf="offer.alum && offer.status=='OFFERED'">
           <div class="jei"><ion-icon class="verde" name="checkmark"></ion-icon><button class="aceptar" (click)="aceptar(offer)">Aceptar</button></div>
          <div class="dos"><ion-icon class="rojo" name="close"></ion-icon><button class="rechazar" (click)="cancelar(offer)">Cancelar</button></div>
         </div>

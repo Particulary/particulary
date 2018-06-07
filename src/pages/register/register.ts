@@ -64,7 +64,6 @@ export class RegisterPage {
     this.loginProvider.register(user).then(data => {
       this.menu.enable(false, 'leftMenu');
       // TODO: Login susccesfully -> Redirect to main page
-      this.navCtrl.setRoot(LoginPage, { tabIndex: 0 }, { animate: true, direction: 'forward' });
       this.presentAlert();
 
     }).catch(err => {
@@ -81,7 +80,15 @@ export class RegisterPage {
 
   presentAlert() {
     let alert = this.alertCtrl.create({
-      message: 'Registrado correctamente',
+      message: 'Registrado correctamente, verifica tu email para obtener la contraseña.',
+      buttons: [
+        {
+          text: 'Aceptar',
+          handler: () => {
+            this.navCtrl.setRoot(LoginPage, { tabIndex: 0 }, { animate: true, direction: 'forward' });
+          }
+        }
+      ]
     });
     alert.present();
   }
